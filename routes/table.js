@@ -3,16 +3,14 @@
  */
 
 const
-    removeTablesBauernstube = require('./removeTablesBauernstube.js'),
-    removeTablesBerglerStubeHubertusStube = require('./removeTablesBerglerStubeHubertusStube.js'),
-    removeTablesEdelweissKaminStube = require('./removeTablesEdelweissKaminStube.js'),
-    removeTablesTeestubeTeelounge = require('./removeTablesTeestubeTeelounge.js'),
-    removeTablesWaeldlerStubeKristallStube = require('./removeTablesWaeldlerStubeKristallStube.js'),
-    addTablesBauernstube = require('./addTablesBauernstube.js'),
-    addTablesBerglerStubeHubertusStube = require('./addTablesBerglerStubeHubertusStube.js'),
-    addTablesEdelweissKaminStube = require('./addTablesEdelweissKaminStube.js'),
-    addTablesWaeldlerStubeKristallStube = require('./addTablesWaeldlerStubeKristallStube.js'),
-    addTablesTeestubeTeelounge = require('./addTablesTeestubeTeelounge.js'),
+    removeTablesFeuerstein = require('./removeTablesFeuerstein.js'),
+    removeTablesPanoramaRestaurant1 = require('./removeTablesPanoramaRestaurant1.js'),
+    removeTablesPanoramaRestaurant2 = require('./removeTablesPanoramaRestaurant2.js'),
+    removeTablesSteakRestaurant = require('./removeTablesSteakRestaurant.js'),
+    addTablesFeuerstein = require('./addTablesFeuerstein.js'),
+    addTablesPanoramaRestaurant1 = require('./addTablesPanoramaRestaurant1.js'),
+    addTablesPanoramaRestaurant2 = require('./addTablesPanoramaRestaurant2.js'),
+    addTablesSteakRestaurant = require('./addTablesSteakRestaurant.js'),
     Promise = require('promise'),
     dateFns = require('date-fns');
 
@@ -58,14 +56,13 @@ module.exports = {
         console.log('topValue' + topValue);
         console.log('leftValue' + leftValue);
 
-        removeTablesEdelweissKaminStube.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesTeestubeTeelounge.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesWaeldlerStubeKristallStube.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesBauernstube.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesBerglerStubeHubertusStube.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesPanoramaRestaurant2.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesPanoramaRestaurant1.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesFeuerstein.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesSteakRestaurant.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
 
         setTimeout(function () {
-            db.hubertusTables.find(
+            db.oberjochTables.find(
                 {
                     "department": departmentValue,
                 },
@@ -117,14 +114,13 @@ module.exports = {
         console.log('topValue' + topValue);
         console.log('leftValue' + leftValue);
 
-        addTablesBauernstube.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesBerglerStubeHubertusStube.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesEdelweissKaminStube.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesTeestubeTeelounge.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesWaeldlerStubeKristallStube.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesFeuerstein.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesPanoramaRestaurant1.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesPanoramaRestaurant2.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesSteakRestaurant.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
 
         setTimeout(function () {
-            db.hubertusTables.find(
+            db.oberjochTables.find(
                 {
                     "department": departmentValue,
                 },
@@ -140,7 +136,7 @@ module.exports = {
     getTable: function (req, res, db) {
         console.log("tables get called");
         //Get guests from Mongo DB
-        db.hubertusTables.find(function (err, tables) {
+        db.oberjochTables.find(function (err, tables) {
             if (err) {
                 res.send(err);
             }
@@ -211,23 +207,20 @@ module.exports = {
             console.log(departmentValueDB);
         }
 
-        if (departmentValue === "BerglerStubeHubertusStube") {
-            departmentValueDB = "berglerStubeHubertusStube";
+        if (departmentValue === "SteakRestaurant") {
+            departmentValueDB = "steakRestaurant";
         }
-        else if (departmentValue === "Bauernstube") {
-            departmentValueDB = "Bauernstube";
+        else if (departmentValue === "PanoramaRestaurant1") {
+            departmentValueDB = "panoramaRestaurant1";
         }
-        else if (departmentValue === "WaeldlerStubeKristallStube") {
-            departmentValueDB = "waeldlerStubeKristallStube";
+        else if (departmentValue === "PanoramaRestaurant2") {
+            departmentValueDB = "panoramaRestaurant2";
         }
-        else if (departmentValue === "EdelweissKaminStube") {
-            departmentValueDB = "edelweissKaminStube";
-        }
-        else if (departmentValue === "TeestubeTeelounge") {
-            departmentValueDB = "teestubeTeelounge";
+        else if (departmentValue === "Feuerstein") {
+            departmentValueDB = "feuerstein";
         }
 
-        db.hubertusTables.update(
+        db.oberjochTables.update(
             {
                 department: departmentValueDB,
                 "tables.number": tableValue
@@ -245,7 +238,7 @@ module.exports = {
             });
 
         setTimeout(function () {
-            db.hubertusTables.findOne(
+            db.oberjochTables.findOne(
                 {
                     "department": departmentValueDB,
                     "tables.number": tableValue
@@ -266,12 +259,12 @@ module.exports = {
         console.log("dispenseTable request made to /dispenseTable");
         let dispenseTable = req.body;
         let tablesTemp3 = [];
-        let departments = [ "berglerStubeHubertusStube", "Bauernstube", "waeldlerStubeKristallStube", "edelweissKaminStube", "teestubeTeelounge"];
+        let departments = [ "panoramaRestaurant1", "feuerstein", "panoramaRestaurant2", "steakRestaurant"];
         new Promise(function (resolve, reject) {
             if (dispenseTable.constructor === Array) {
             console.log("dispenseTable[h].table.groups.length > dispenseTable[h].group.length");
             new Promise(function (resolve, reject) {
-                db.hubertusTables.find({
+                db.oberjochTables.find({
                 }, function (err, tables) {
                     if (err) {
                         res.send(err);
@@ -323,23 +316,23 @@ module.exports = {
                 console.log("tablesTemp3 after");
                 console.log(JSON.stringify(tablesTemp3[0]));
             }).then(function () { // (**)
-                    db.hubertusTables.remove({
+                    db.oberjochTables.remove({
                     }, function (err, tables) {
                         if (err) {
                             console.log(err);
                         } else {
                             console.log("removed");
                             console.log(tables);
-                            db.hubertusTables.save(tablesTemp3[0][0]);
-                            db.hubertusTables.save(tablesTemp3[0][1]);
-                            db.hubertusTables.save(tablesTemp3[0][2]);
-                            db.hubertusTables.save(tablesTemp3[0][3]);
-                            db.hubertusTables.save(tablesTemp3[0][4]);
+                            db.oberjochTables.save(tablesTemp3[0][0]);
+                            db.oberjochTables.save(tablesTemp3[0][1]);
+                            db.oberjochTables.save(tablesTemp3[0][2]);
+                            db.oberjochTables.save(tablesTemp3[0][3]);
+                            db.oberjochTables.save(tablesTemp3[0][4]);
                         }
                     });
             });
         } else {
-            db.hubertusTables.findAndModify({
+            db.oberjochTables.findAndModify({
                 query: {department: dispenseTable.department, "tables.number": dispenseTable.number},
                 update: {
                     $set: {
@@ -361,7 +354,7 @@ module.exports = {
         }).then(function () { // (**)
             setTimeout(function () {
                 console.log("Dispense Table2: ");
-                db.hubertusTables.find(
+                db.oberjochTables.find(
                     {}, function (err, tables) {
                         if (err) {
                             res.send(err);
@@ -394,7 +387,7 @@ module.exports = {
 
 
 /*
- db.hubertusTables.findAndModify({
+ db.oberjochTables.findAndModify({
  query: {
  department: dispenseTable[h].table.department,
  "tables.number": dispenseTable[h].table.number
@@ -409,7 +402,7 @@ module.exports = {
  });
 
 
- db.hubertusTables.findAndModify({
+ db.oberjochTables.findAndModify({
  query: {
  department: dispenseTable[h].table.department,
  },
@@ -429,7 +422,7 @@ module.exports = {
  }};
 
 
- db.hubertusTables.findAndModify({
+ db.oberjochTables.findAndModify({
  query: {department: dispenseTable[h].table.department, "tables.number": dispenseTable[h].table.number},
  update: {
  $set: {
@@ -450,7 +443,7 @@ module.exports = {
  */
 /*
  }).then(function (tablesTemp3) { // (**)
- db.hubertusTables.find({
+ db.oberjochTables.find({
  department:  "waeldlerStubeKristallStube",
  }, function (err, tables) {
  if (err) {
@@ -464,7 +457,7 @@ module.exports = {
  }
  });
  }).then(function (tablesTemp3) { // (**)
- db.hubertusTables.find({
+ db.oberjochTables.find({
  department:  "Bauernstube",
  }, function (err, tables) {
  if (err) {
@@ -478,7 +471,7 @@ module.exports = {
  }
  });
  }).then(function (tablesTemp3) { // (**)
- db.hubertusTables.find({
+ db.oberjochTables.find({
  department:  "berglerStubeHubertusStube",
  }, function (err, tables) {
  if (err) {
@@ -493,7 +486,7 @@ module.exports = {
  }
  });
  }).then(function (tablesTemp3) { // (**)
- db.hubertusTables.find({
+ db.oberjochTables.find({
  department:  "teestubeTeelounge",
  }, function (err, tables) {
  if (err) {
@@ -509,8 +502,8 @@ module.exports = {
  */
 
 
-//let foo = db.hubertusTables.find().toArray();
-//let bar = db.hubertusTables.find().forEach(printjson);
+//let foo = db.oberjochTables.find().toArray();
+//let bar = db.oberjochTables.find().forEach(printjson);
 
 
 
@@ -543,7 +536,7 @@ module.exports = {
 
 
 /*
- db.hubertusTables.findAndModify({
+ db.oberjochTables.findAndModify({
  query: {
  department: dispenseTable[h].table.department,
  "tables.number": dispenseTable[h].table.number
@@ -566,7 +559,7 @@ module.exports = {
  }).then(function() { // (**)
  console.log("removeNulls promise");
  setTimeout(function () {
- db.hubertusTables.findAndModify({
+ db.oberjochTables.findAndModify({
  query: {
  department: dispenseTable[h].table.department,
  "tables.number": dispenseTable[h].table.number
@@ -596,7 +589,7 @@ module.exports = {
  console.log("dispenseTable[h].table.groups.length === dispenseTable[h].group.length");
  console.log(dispenseTable[h].table.department);
  console.log(dispenseTable[h].table.number);
- db.hubertusTables.findAndModify({
+ db.oberjochTables.findAndModify({
  query: {department: dispenseTable[h].table.department, "tables.number": dispenseTable[h].table.number},
  update: {
  $set: {

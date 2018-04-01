@@ -17,20 +17,19 @@ export class FormComponent implements OnInit {
   @Input('tableNumber') tableNumber: string;
   @Input('nameTraceInput') nameTraceInput: string;
   @Input('employee') employee: string;
-  @Input('tablesBauernstube') tablesBauernstube: Table[];
-  @Input('tablesBerglerStubeHubertusStube') tablesBerglerStubeHubertusStube: Table[];
-  @Input('tablesEdelweissKaminStube') tablesEdelweissKaminStube: Table[];
+  @Input('tablesFeuerstein') tablesFeuerstein: Table[];
+  @Input('tablesPanoramaRestaurant1') tablesPanoramaRestaurant1: Table[];
+  @Input('tablesPanoramaRestaurant2') tablesPanoramaRestaurant2: Table[];
   @Input('tablesTeestubeTeelounge') tablesTeestubeTeelounge: Table[];
-  @Input('tablesWaeldlerStubeKristallStube') tablesWaeldlerStubeKristallStube: Table[];
+  @Input('tablesSteakRestaurant') tablesSteakRestaurant: Table[];
   @Input('showInfoFormBool') showInfoFormBool: boolean;
   @Input('showNotizFormBool') showNotizFormBool: boolean;
   @Input('notizElements') notizElements: any;
-  @Input('showBauernStubnBool') showBauernStubnBool: boolean;
-  @Input('showBerglerBool') showBerglerBool: boolean;
-  @Input('showEdelweissBool') showEdelweissBool: boolean;
-  @Input('showWaeldlerBool') showWaeldlerBool: boolean;
-  @Input('showTeeStubeBool') showTeeStubeBool: boolean;
-  @Input('showAlleBool') showAlleBool: boolean;
+  @Input('showTablesFeuerstein') showTablesFeuerstein: boolean;
+  @Input('showTablesPanoramaRestaurant1') showTablesPanoramaRestaurant1: boolean;
+  @Input('showTablesPanoramaRestaurant2') showTablesPanoramaRestaurant2: boolean;
+  @Input('showTablesSteakRestaurant') showTablesSteakRestaurant: boolean;
+  @Input('showTablesAlle') showAlle: boolean;
   @Output()
   notizResponse:EventEmitter<any> = new EventEmitter();
   @Output()
@@ -42,7 +41,7 @@ export class FormComponent implements OnInit {
   notizDate: any;
 
   constructor(private tischplanService: TischplanService, private _flashMessagesService: FlashMessagesService) {
-    this.departments = ["Bauernstube", "BerglerStubeHubertusStube", "EdelweissKaminStube", "WaeldlerStubeKristallStube", "TeestubeTeelounge" ];
+    this.departments = ["Feuerstein", "PanoramaRestaurant1", "PanoramaRestaurant2", "SteakResaurant" ];
   }
 
   ngOnInit() {
@@ -79,34 +78,28 @@ export class FormComponent implements OnInit {
             if (Information === null) {
               return;
             } else {
-              if (Information.tables[0].department === "Bauernstube") {
-                for (let i = 0; i < this.tablesBauernstube.length; i++) {
-                  if (this.tablesBauernstube[i].number === Information.tables[0].number) {
-                    this.tablesBauernstube[i] = Information.tables[0];
+              if (Information.tables[0].department === "feuerstein") {
+                for (let i = 0; i < this.tablesFeuerstein.length; i++) {
+                  if (this.tablesFeuerstein[i].number === Information.tables[0].number) {
+                    this.tablesFeuerstein[i] = Information.tables[0];
                   }
                 }
-              } else if (Information.tables[0].department === "waeldlerStubeKristallStube") {
-                for (let i = 0; i < this.tablesWaeldlerStubeKristallStube.length; i++) {
-                  if (this.tablesWaeldlerStubeKristallStube[i].number === Information.tables[0].number) {
-                    this.tablesWaeldlerStubeKristallStube[i] = Information.tables[0];
+              } else if (Information.tables[0].department === "steakResaurant") {
+                for (let i = 0; i < this.tablesSteakRestaurant.length; i++) {
+                  if (this.tablesSteakRestaurant[i].number === Information.tables[0].number) {
+                    this.tablesSteakRestaurant[i] = Information.tables[0];
                   }
                 }
-              } else if (Information.tables[0].department === "berglerStubeHubertusStube") {
-                for (let i = 0; i < this.tablesBerglerStubeHubertusStube.length; i++) {
-                  if (this.tablesBerglerStubeHubertusStube[i].number === Information.tables[0].number) {
-                    this.tablesBerglerStubeHubertusStube[i] = Information.tables[0];
+              } else if (Information.tables[0].department === "panoramaRestaurant1") {
+                for (let i = 0; i < this.tablesPanoramaRestaurant1.length; i++) {
+                  if (this.tablesPanoramaRestaurant1[i].number === Information.tables[0].number) {
+                    this.tablesPanoramaRestaurant1[i] = Information.tables[0];
                   }
                 }
-              } else if (Information.tables[0].department === "edelweissKaminStube") {
-                for (let i = 0; i < this.tablesEdelweissKaminStube.length; i++) {
-                  if (this.tablesEdelweissKaminStube[i].number === Information.tables[0].number) {
-                    this.tablesEdelweissKaminStube[i] = Information.tables[0];
-                  }
-                }
-              } else if (Information.tables[0].department === "teestubeTeelounge") {
-                for (let i = 0; i < this.tablesTeestubeTeelounge.length; i++) {
-                  if (this.tablesTeestubeTeelounge[i].number === Information.tables[0].number) {
-                    this.tablesTeestubeTeelounge[i] = Information.tables[0];
+              } else if (Information.tables[0].department === "panoramaRestaurant2") {
+                for (let i = 0; i < this.tablesPanoramaRestaurant2.length; i++) {
+                  if (this.tablesPanoramaRestaurant2[i].number === Information.tables[0].number) {
+                    this.tablesPanoramaRestaurant2[i] = Information.tables[0];
                   }
                 }
               }

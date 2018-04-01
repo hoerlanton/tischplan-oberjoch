@@ -118,38 +118,32 @@ export class NavigationComponent implements OnInit {
     let indexZiel = 0;
     let indexQuell = 0;
 
-    if (Number(quellTisch) >= 30 && Number(quellTisch) <= 47) {
-      tableToMove.department = "berglerStubeHubertusStube";
+    if (Number(quellTisch) >= 201 && Number(quellTisch) <= 319) {
+      tableToMove.department = "panoramaRestaurant1";
       indexQuell = 3;
-    } else if (Number(quellTisch) >= 10 && Number(quellTisch) <= 26) {
-      tableToMove.department = "Bauernstube";
+    } else if (Number(quellTisch) >= 1 && Number(quellTisch) <= 21) {
+      tableToMove.department = "feuerstein";
       indexQuell = 2;
-    } else if (Number(quellTisch) >= 50 && Number(quellTisch) <= 77) {
-      tableToMove.department = "waeldlerStubeKristallStube";
+    } else if ((Number(quellTisch) >= 101 && Number(quellTisch) <= 104) && (Number(quellTisch) >= 401 && Number(quellTisch) <= 508)) {
+      tableToMove.department = "panoramaRestaurant2";
       indexQuell = 1;
-    } else if (Number(quellTisch) >= 80 && Number(quellTisch) <= 99) {
-      tableToMove.department = "edelweissKaminStube";
+    } else if (Number(quellTisch) >= 701 && Number(quellTisch) <= 714) {
+      tableToMove.department = "steakRestaurant";
       indexQuell = 4;
-    } else if ((Number(quellTisch) >= 1 && Number(quellTisch) <= 6) || quellTisch === "Tee1" || quellTisch === "Tee2" || quellTisch === "Tee3" || quellTisch === "Tee4" || quellTisch === "Tee5" || quellTisch === "Tee6") {
-      tableToMove.department = "teestubeTeelounge";
-      indexQuell = 0;
     }
 
-    if (Number(zielTisch) >= 30 && Number(zielTisch) <= 47) {
-      tableToMove.targetDepartment = "berglerStubeHubertusStube";
+    if (Number(zielTisch) >= 201 && Number(zielTisch) <= 319) {
+      tableToMove.department = "panoramaRestaurant1";
       indexZiel = 3;
-    } else if (Number(zielTisch) >= 10 && Number(zielTisch) <= 26) {
-      tableToMove.targetDepartment = "Bauernstube";
+    } else if (Number(zielTisch) >= 1 && Number(zielTisch) <= 21) {
+      tableToMove.department = "feuerstein";
       indexZiel = 2;
-    } else if (Number(zielTisch) >= 50 && Number(zielTisch) <= 77) {
-      tableToMove.targetDepartment = "waeldlerStubeKristallStube";
+    } else if ((Number(zielTisch) >= 101 && Number(zielTisch) <= 104) && (Number(zielTisch) >= 401 && Number(zielTisch) <= 508)) {
+      tableToMove.department = "panoramaRestaurant2";
       indexZiel = 1;
-    } else if (Number(zielTisch) >= 80 && Number(zielTisch) <= 99) {
-      tableToMove.targetDepartment = "edelweissKaminStube";
+    } else if (Number(zielTisch) >= 701 && Number(zielTisch) <= 714) {
+      tableToMove.department = "steakRestaurant";
       indexZiel = 4;
-    } else if ((Number(zielTisch) >= 1 && Number(zielTisch) <= 6) || zielTisch === "Tee1" || zielTisch === "Tee2" || zielTisch === "Tee3" || zielTisch === "Tee4" || zielTisch === "Tee5" || zielTisch === "Tee6") {
-      tableToMove.targetDepartment = "teestubeTeelounge";
-      indexZiel = 0;
     }
 
 

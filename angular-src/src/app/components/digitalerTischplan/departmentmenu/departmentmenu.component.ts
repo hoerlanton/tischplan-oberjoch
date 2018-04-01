@@ -12,23 +12,20 @@ export class DepartmentmenuComponent implements OnInit {
   @Input('buttonBgColor3') buttonBgColor3: string;
   @Input('buttonBgColor4') buttonBgColor4: string;
   @Input('buttonBgColor5') buttonBgColor5: string;
-  @Input('buttonBgColor6') buttonBgColor6: string;
   @Input('fontColor1') fontColor1: string;
   @Input('fontColor2') fontColor2: string;
   @Input('fontColor3') fontColor3: string;
   @Input('fontColor4') fontColor4: string;
   @Input('fontColor5') fontColor5: string;
-  @Input('fontColor6') fontColor6: string;
-  @Input('showBauernStubnBool') showBauernStubnBool: boolean;
-  @Input('showBerglerBool') showBerglerBool: boolean;
-  @Input('showEdelweissBool') showEdelweissBool: boolean;
-  @Input('showWaeldlerBool') showWaeldlerBool: boolean;
-  @Input('showTeeStubeBool') showTeeStubeBool: boolean;
-  @Input('showAlleBool') showAlleBool: boolean;
-  @Output() showBauernStubnBoolChange: EventEmitter<boolean> = new EventEmitter();
-  @Output() showBerglerBoolChange: EventEmitter<boolean> = new EventEmitter();
-  @Output() showEdelweissBoolChange: EventEmitter<boolean> = new EventEmitter();
-  @Output() showWaeldlerBoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Input('showTablesFeuerstein') showTablesFeuerstein: boolean;
+  @Input('showTablesPanoramaRestaurant1') showTablesPanoramaRestaurant1: boolean;
+  @Input('showTablesPanoramaRestaurant2') showTablesPanoramaRestaurant2: boolean;
+  @Input('showTablesSteakRestaurant') showTablesSteakRestaurant: boolean;
+  @Input('showTablesAlle') showTablesAlle: boolean;
+  @Output() showFeuersteinBoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() showPanoramaRestaurant1BoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() showPanoramaRestaurant2BoolChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() showSteakRestaurantBoolChange: EventEmitter<boolean> = new EventEmitter();
   @Output() showTeeStubeBoolChange: EventEmitter<boolean> = new EventEmitter();
   @Output() showAlleBoolChange: EventEmitter<boolean> = new EventEmitter();
   @Input('buttonBgColorInfoForm') buttonBgColorInfoForm: string;
@@ -57,15 +54,14 @@ export class DepartmentmenuComponent implements OnInit {
   }
 
 
-  showBauernStubn() {
+  showFeuersteinFunction () {
 
-    //console.log("showBauernStubn!");
-    this.showBauernStubnBool = true;
-    this.showBerglerBool = false;
-    this.showWaeldlerBool = false;
-    this.showEdelweissBool = false;
-    this.showTeeStubeBool = false;
-    this.showAlleBool = false;
+    //console.log("showFeuerstein!");
+    this.showTablesFeuerstein = true;
+    this.showTablesPanoramaRestaurant1 = false;
+    this.showTablesSteakRestaurant = false;
+    this.showTablesPanoramaRestaurant2 = false;
+    this.showTablesAlle = false;
     this.showAbteilungen = false;
 
     if (this.buttonBgColor1 === "154846") {
@@ -74,7 +70,6 @@ export class DepartmentmenuComponent implements OnInit {
       this.buttonBgColor3 = "0a7a74";
       this.buttonBgColor4 = "0a7a74";
       this.buttonBgColor5 = "0a7a74";
-      this.buttonBgColor6 = "0a7a74";
     } else {
       this.buttonBgColor1 = "0a7a74";
     }
@@ -84,29 +79,26 @@ export class DepartmentmenuComponent implements OnInit {
       this.fontColor3 = "f3efe4";
       this.fontColor4 = "f3efe4";
       this.fontColor5 = "f3efe4";
-      this.fontColor6 = "f3efe4";
     } else {
       this.fontColor1 = "f3efe4";
     }
 
-    this.showBauernStubnBoolChange.emit(this.showBauernStubnBool);
-    this.showBerglerBoolChange.emit(this.showBerglerBool);
-    this.showEdelweissBoolChange.emit(this.showEdelweissBool);
-    this.showWaeldlerBoolChange.emit(this.showWaeldlerBool);
-    this.showTeeStubeBoolChange.emit(this.showTeeStubeBool);
-    this.showAlleBoolChange.emit(this.showAlleBool);
+    this.showFeuersteinBoolChange.emit(this.showTablesFeuerstein);
+    this.showPanoramaRestaurant1BoolChange.emit(this.showTablesPanoramaRestaurant1);
+    this.showPanoramaRestaurant2BoolChange.emit(this.showTablesPanoramaRestaurant2);
+    this.showSteakRestaurantBoolChange.emit(this.showTablesSteakRestaurant);
+    this.showAlleBoolChange.emit(this.showTablesAlle);
   }
 
-  showBergler() {
-    //console.log("showBergler!");
+  showSteakRestaurantFunction () {
+    //console.log("showPanoramRestaurant1!");
     this.showAbteilungen = false;
-    this.showBauernStubnBool = false;
-    this.showBerglerBool = true;
-    //console.log(this.showBerglerBool);
-    this.showWaeldlerBool = false;
-    this.showEdelweissBool = false;
-    this.showTeeStubeBool = false;
-    this.showAlleBool = false;
+    this.showTablesFeuerstein = false;
+    this.showTablesPanoramaRestaurant1 = false;
+    //console.log(this.showPanoramaRestaurant1);
+    this.showTablesSteakRestaurant = true;
+    this.showTablesPanoramaRestaurant2 = false;
+    this.showTablesAlle = false;
 
     if (this.buttonBgColor2 === "154846") {
       this.buttonBgColor2 = "0d2f2e";
@@ -114,7 +106,6 @@ export class DepartmentmenuComponent implements OnInit {
       this.buttonBgColor3 = "0a7a74";
       this.buttonBgColor4 = "0a7a74";
       this.buttonBgColor5 = "0a7a74";
-      this.buttonBgColor6= "0a7a74";
     } else {
       this.buttonBgColor2 = "0a7a74";
     }
@@ -124,26 +115,23 @@ export class DepartmentmenuComponent implements OnInit {
       this.fontColor3 = "f3efe4";
       this.fontColor4 = "f3efe4";
       this.fontColor5 = "f3efe4";
-      this.fontColor6 = "f3efe4";
     } else {
       this.fontColor2 = "f3efe4";
     }
-    this.showBauernStubnBoolChange.emit(this.showBauernStubnBool);
-    this.showBerglerBoolChange.emit(this.showBerglerBool);
-    this.showEdelweissBoolChange.emit(this.showEdelweissBool);
-    this.showWaeldlerBoolChange.emit(this.showWaeldlerBool);
-    this.showTeeStubeBoolChange.emit(this.showTeeStubeBool);
-    this.showAlleBoolChange.emit(this.showAlleBool);
+    this.showFeuersteinBoolChange.emit(this.showTablesFeuerstein);
+    this.showPanoramaRestaurant1BoolChange.emit(this.showTablesPanoramaRestaurant1);
+    this.showPanoramaRestaurant2BoolChange.emit(this.showTablesPanoramaRestaurant2);
+    this.showSteakRestaurantBoolChange.emit(this.showTablesSteakRestaurant);
+    this.showAlleBoolChange.emit(this.showTablesAlle);
   }
 
-  showWaeldler() {
-    //console.log("showWaeldler!");
-    this.showBauernStubnBool = false;
-    this.showBerglerBool = false;
-    this.showWaeldlerBool = true;
-    this.showEdelweissBool = false;
-    this.showTeeStubeBool = false;
-    this.showAlleBool = false;
+  showPanoramaRestaurant1Function () {
+    //console.log("showSteakRestaurant!");
+    this.showTablesFeuerstein = false;
+    this.showTablesPanoramaRestaurant1 = true;
+    this.showTablesSteakRestaurant = false;
+    this.showTablesPanoramaRestaurant2 = false;
+    this.showTablesAlle = false;
     this.showAbteilungen = false;
 
     if (this.buttonBgColor3 === "154846") {
@@ -152,7 +140,6 @@ export class DepartmentmenuComponent implements OnInit {
       this.buttonBgColor2 = "0a7a74";
       this.buttonBgColor4 = "0a7a74";
       this.buttonBgColor5 = "0a7a74";
-      this.buttonBgColor6 = "0a7a74";
     } else {
       this.buttonBgColor3 = "0a7a74";
     }
@@ -162,26 +149,23 @@ export class DepartmentmenuComponent implements OnInit {
       this.fontColor2 = "f3efe4";
       this.fontColor4 = "f3efe4";
       this.fontColor5 = "f3efe4";
-      this.fontColor6 = "f3efe4";
     } else {
       this.fontColor3 = "f3efe4";
     }
-    this.showBauernStubnBoolChange.emit(this.showBauernStubnBool);
-    this.showBerglerBoolChange.emit(this.showBerglerBool);
-    this.showEdelweissBoolChange.emit(this.showEdelweissBool);
-    this.showWaeldlerBoolChange.emit(this.showWaeldlerBool);
-    this.showTeeStubeBoolChange.emit(this.showTeeStubeBool);
-    this.showAlleBoolChange.emit(this.showAlleBool);
+    this.showFeuersteinBoolChange.emit(this.showTablesFeuerstein);
+    this.showPanoramaRestaurant1BoolChange.emit(this.showTablesPanoramaRestaurant1);
+    this.showPanoramaRestaurant2BoolChange.emit(this.showTablesPanoramaRestaurant2);
+    this.showSteakRestaurantBoolChange.emit(this.showTablesSteakRestaurant);
+    this.showAlleBoolChange.emit(this.showTablesAlle);
   }
 
-  showEdelweiss() {
-    //console.log("showEdelweiss!");
-    this.showBauernStubnBool = false;
-    this.showBerglerBool = false;
-    this.showWaeldlerBool = false;
-    this.showEdelweissBool = true;
-    this.showTeeStubeBool = false;
-    this.showAlleBool = false;
+  showPanoramaRestaurant2Function () {
+    //console.log("showPanoramaRestaurant2!");
+    this.showTablesFeuerstein = false;
+    this.showTablesPanoramaRestaurant1 = false;
+    this.showTablesSteakRestaurant = false;
+    this.showTablesPanoramaRestaurant2 = true;
+    this.showTablesAlle = false;
     this.showAbteilungen = false;
 
     if (this.buttonBgColor4 === "154846") {
@@ -190,7 +174,6 @@ export class DepartmentmenuComponent implements OnInit {
       this.buttonBgColor2 = "0a7a74";
       this.buttonBgColor3 = "0a7a74";
       this.buttonBgColor5 = "0a7a74";
-      this.buttonBgColor6 = "0a7a74";
     } else {
       this.buttonBgColor4 = "0a7a74";
     }
@@ -200,27 +183,23 @@ export class DepartmentmenuComponent implements OnInit {
       this.fontColor2 = "f3efe4";
       this.fontColor3 = "f3efe4";
       this.fontColor5 = "f3efe4";
-      this.fontColor6 = "f3efe4";
     } else {
       this.fontColor4 = "f3efe4";
     }
-    this.showBauernStubnBoolChange.emit(this.showBauernStubnBool);
-    this.showBerglerBoolChange.emit(this.showBerglerBool);
-    this.showEdelweissBoolChange.emit(this.showEdelweissBool);
-    this.showWaeldlerBoolChange.emit(this.showWaeldlerBool);
-    this.showTeeStubeBoolChange.emit(this.showTeeStubeBool);
-    this.showAlleBoolChange.emit(this.showAlleBool);
+    this.showFeuersteinBoolChange.emit(this.showTablesFeuerstein);
+    this.showPanoramaRestaurant1BoolChange.emit(this.showTablesPanoramaRestaurant1);
+    this.showPanoramaRestaurant2BoolChange.emit(this.showTablesPanoramaRestaurant2);
+    this.showSteakRestaurantBoolChange.emit(this.showTablesSteakRestaurant);
+    this.showAlleBoolChange.emit(this.showTablesAlle);
   }
 
-  showTeestube() {
-    //console.log("showTeeStube!");
-    this.showBauernStubnBool = false;
-    this.showBerglerBool = false;
-    this.showWaeldlerBool = false;
-    this.showEdelweissBool = false;
-    this.showTeeStubeBool = true;
-    this.showAlleBool = false;
-    this.showAbteilungen = false;
+  showAlleFunction () {
+    //console.log("showAlle!");
+    this.showTablesFeuerstein = false;
+    this.showTablesPanoramaRestaurant1 = false;
+    this.showTablesSteakRestaurant = false;
+    this.showTablesPanoramaRestaurant2 = false;
+    this.showTablesAlle = true;
 
     if (this.buttonBgColor5 === "154846") {
       this.buttonBgColor5 = "0d2f2e";
@@ -228,7 +207,6 @@ export class DepartmentmenuComponent implements OnInit {
       this.buttonBgColor2 = "0a7a74";
       this.buttonBgColor3 = "0a7a74";
       this.buttonBgColor4 = "0a7a74";
-      this.buttonBgColor6 = "0a7a74";
     } else {
       this.buttonBgColor5 = "0a7a74";
     }
@@ -238,53 +216,14 @@ export class DepartmentmenuComponent implements OnInit {
       this.fontColor1 = "f3efe4";
       this.fontColor2 = "f3efe4";
       this.fontColor3 = "f3efe4";
-      this.fontColor6 = "f3efe4"
     } else {
       this.fontColor5 = "f3efe4";
     }
-    this.showBauernStubnBoolChange.emit(this.showBauernStubnBool);
-    this.showBerglerBoolChange.emit(this.showBerglerBool);
-    this.showEdelweissBoolChange.emit(this.showEdelweissBool);
-    this.showWaeldlerBoolChange.emit(this.showWaeldlerBool);
-    this.showTeeStubeBoolChange.emit(this.showTeeStubeBool);
-    this.showAlleBoolChange.emit(this.showAlleBool);
-  }
-
-  showAlle() {
-    //console.log("showAlle!");
-    this.showBauernStubnBool = false;
-    this.showBerglerBool = false;
-    this.showWaeldlerBool = false;
-    this.showEdelweissBool = false;
-    this.showTeeStubeBool = false;
-    this.showAlleBool = true;
-
-    if (this.buttonBgColor6 === "154846") {
-      this.buttonBgColor6 = "0d2f2e";
-      this.buttonBgColor1 = "0a7a74";
-      this.buttonBgColor2 = "0a7a74";
-      this.buttonBgColor3 = "0a7a74";
-      this.buttonBgColor4 = "0a7a74";
-      this.buttonBgColor5 = "0a7a74";
-    } else {
-      this.buttonBgColor6 = "0a7a74";
-    }
-    if (this.fontColor6 === "f3efe4") {
-      this.fontColor6 = "0a7a74";
-      this.fontColor4 = "f3efe4";
-      this.fontColor1 = "f3efe4";
-      this.fontColor2 = "f3efe4";
-      this.fontColor3 = "f3efe4";
-      this.fontColor5 = "f3efe4";
-    } else {
-      this.fontColor6 = "f3efe4";
-    }
-    this.showBauernStubnBoolChange.emit(this.showBauernStubnBool);
-    this.showBerglerBoolChange.emit(this.showBerglerBool);
-    this.showEdelweissBoolChange.emit(this.showEdelweissBool);
-    this.showWaeldlerBoolChange.emit(this.showWaeldlerBool);
-    this.showTeeStubeBoolChange.emit(this.showTeeStubeBool);
-    this.showAlleBoolChange.emit(this.showAlleBool);
+    this.showFeuersteinBoolChange.emit(this.showTablesFeuerstein);
+    this.showPanoramaRestaurant1BoolChange.emit(this.showTablesPanoramaRestaurant1);
+    this.showPanoramaRestaurant2BoolChange.emit(this.showTablesPanoramaRestaurant2);
+    this.showSteakRestaurantBoolChange.emit(this.showTablesSteakRestaurant);
+    this.showAlleBoolChange.emit(this.showTablesAlle);
   }
 
   showInfoForm() {
@@ -435,43 +374,25 @@ export class DepartmentmenuComponent implements OnInit {
     }
   }
 
-  mouseEnterBauernStubn() {
-    //console.log("mouse enter mouseEnterBauernStubn: ");
+  mouseEnterFeuerstein() {
+    //console.log("mouse enter mouseEnterFeuerstein: ");
     if (this.buttonBgColor1 === "0a7a74") {
-      //console.log('mouse enter1 mouseEnterBauernStubn:');
+      //console.log('mouse enter1 mouseEnterFeuerstein:');
       this.buttonBgColor1 = "154846";
     }
   }
 
-  mouseLeaveBauernStubn() {
+  mouseLeaveFeuerstein() {
     if (this.buttonBgColor1 === "0a7a74") {
-      //console.log('mouse leave1 mouseLeaveBauernStubn:');
+      //console.log('mouse leave1 mouseLeaveFeuerstein:');
       this.buttonBgColor1 = "154846";
     } else if (this.buttonBgColor1 === "154846") {
-      //console.log('mouse leave2 mouseLeaveBauernStubn:');
+      //console.log('mouse leave2 mouseLeaveFeuerstein:');
       this.buttonBgColor1 = "0a7a74";
     }
   }
 
-  mouseEnterBergler() {
-    //console.log("mouse enter mouseEnterShowTablePlan: ");
-    if (this.buttonBgColor2 === "0a7a74") {
-      //console.log('mouse enter1 mouseEnterShowTablePlan:');
-      this.buttonBgColor2 = "154846";
-    }
-  }
-
-  mouseLeaveBergler() {
-    if (this.buttonBgColor2 === "0a7a74") {
-      //console.log('mouse leave1 mouseEnterShowTablePlan:');
-      this.buttonBgColor2 = "154846";
-    } else if (this.buttonBgColor2 === "154846") {
-      //console.log('mouse leave2 mouseEnterShowTablePlan:');
-      this.buttonBgColor2 = "0a7a74";
-    }
-  }
-
-  mouseEnterWaeldler() {
+  mouseEnterPanoramaRestaurant1() {
     //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor3 === "0a7a74") {
       //console.log('mouse enter1 mouseEnterShowTablePlan:');
@@ -479,7 +400,7 @@ export class DepartmentmenuComponent implements OnInit {
     }
   }
 
-  mouseLeaveWaeldler() {
+  mouseLeavePanoramaRestaurant1() {
     if (this.buttonBgColor3 === "0a7a74") {
       //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor3 = "154846";
@@ -489,7 +410,25 @@ export class DepartmentmenuComponent implements OnInit {
     }
   }
 
-  mouseEnterEdelweiss() {
+  mouseEnterSteakRestaurant() {
+    //console.log("mouse enter mouseEnterShowTablePlan: ");
+    if (this.buttonBgColor2 === "0a7a74") {
+      //console.log('mouse enter1 mouseEnterShowTablePlan:');
+      this.buttonBgColor2 = "154846";
+    }
+  }
+
+  mouseLeaveSteakRestaurant() {
+    if (this.buttonBgColor2 === "0a7a74") {
+      //console.log('mouse leave1 mouseEnterShowTablePlan:');
+      this.buttonBgColor2 = "154846";
+    } else if (this.buttonBgColor2 === "154846") {
+      //console.log('mouse leave2 mouseEnterShowTablePlan:');
+      this.buttonBgColor2 = "0a7a74";
+    }
+  }
+
+  mouseEnterPanoramaRestaurant2() {
     //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor4 === "0a7a74") {
       //console.log('mouse enter1 mouseEnterShowTablePlan:');
@@ -497,7 +436,7 @@ export class DepartmentmenuComponent implements OnInit {
     }
   }
 
-  mouseLeaveEdelweiss() {
+  mouseLeavePanoramaRestaurant2() {
     if (this.buttonBgColor4 === "0a7a74") {
       //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor4 = "154846";
@@ -507,7 +446,7 @@ export class DepartmentmenuComponent implements OnInit {
     }
   }
 
-  mouseEnterTeestube() {
+  mouseEnterAlle() {
     //console.log("mouse enter mouseEnterShowTablePlan: ");
     if (this.buttonBgColor5 === "0a7a74") {
       //console.log('mouse enter1 mouseEnterShowTablePlan:');
@@ -515,31 +454,13 @@ export class DepartmentmenuComponent implements OnInit {
     }
   }
 
-  mouseLeaveTeestube() {
+  mouseLeaveAlle() {
     if (this.buttonBgColor5 === "0a7a74") {
       //console.log('mouse leave1 mouseEnterShowTablePlan:');
       this.buttonBgColor5 = "154846";
     } else if (this.buttonBgColor5 === "154846") {
       //console.log('mouse leave2 mouseEnterShowTablePlan:');
       this.buttonBgColor5 = "0a7a74";
-    }
-  }
-
-  mouseEnterAlle() {
-    //console.log("mouse enter mouseEnterShowTablePlan: ");
-    if (this.buttonBgColor6 === "0a7a74") {
-      //console.log('mouse enter1 mouseEnterShowTablePlan:');
-      this.buttonBgColor6 = "154846";
-    }
-  }
-
-  mouseLeaveAlle() {
-    if (this.buttonBgColor6 === "0a7a74") {
-      //console.log('mouse leave1 mouseEnterShowTablePlan:');
-      this.buttonBgColor6 = "154846";
-    } else if (this.buttonBgColor6 === "154846") {
-      //console.log('mouse leave2 mouseEnterShowTablePlan:');
-      this.buttonBgColor6 = "0a7a74";
     }
   }
 

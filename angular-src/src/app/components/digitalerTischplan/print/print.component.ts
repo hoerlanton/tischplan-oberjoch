@@ -11,27 +11,23 @@ export class PrintComponent implements OnInit {
 
   @Input('tables') tables: Table[];
   @Input('dateGeneratedListe') dateGeneratedListe: string;
-  @Input('tablesBauernstube') tablesBauernstube: Table[];
-  @Input('showBauernStubnBool') showBauernStubnBool: boolean;
-  @Input('tablesEdelweissKaminStube') tablesEdelweissKaminStube: Table[];
-  @Input('showEdelweissBool') showEdelweissBool: boolean;
-  @Input('tablesBerglerStubeHubertusStube') tablesBerglerStubeHubertusStube: Table[];
-  @Input('showBerglerBool') showBerglerBool: boolean;
-  @Input('tablesTeestubeTeelounge') tablesTeestubeTeelounge: Table[];
-  @Input('showTeeStubeBool') showTeeStubeBool: boolean;
-  @Input('tablesWaeldlerStubeKristallStube') tablesWaeldlerStubeKristallStube: Table[];
-  @Input('showWaeldlerBool') showWaeldlerBool: boolean;
+  @Input('tablesFeuerstein') tablesFeuerstein: Table[];
+  @Input('showTablesFeuerstein') showTablesFeuerstein: boolean;
+  @Input('tablesPanoramaRestaurant1') tablesPanoramaRestaurant1: Table[];
+  @Input('showTablesPanoramaRestaurant1') showTablesPanoramaRestaurant1: boolean;
+  @Input('tablesPanoramaRestaurant2') tablesPanoramaRestaurant2: Table[];
+  @Input('showTablesPanoramaRestaurant2') showTablesPanoramaRestaurant2: boolean;
+  @Input('tablesSteakRestaurant') tablesSteakRestaurant: Table[];
+  @Input('showTablesSteakRestaurant') showTablesSteakRestaurant: boolean;
 
-  @Input('erwBerglerStubeHubertusStube') erwBerglerStubeHubertusStube: any;
-  @Input('kiBerglerStubeHubertusStube') kiBerglerStubeHubertusStube: any;
-  @Input('erwBauernstube') erwBauernstube: any;
-  @Input('kiBauernstube') kiBauernstube: any;
-  @Input('kiEdelweiss') kiEdelweiss: any;
-  @Input('erwTeestubeTeelounge') erwTeestubeTeelounge: any;
-  @Input('kiTeestubeTeelounge') kiTeestubeTeelounge: any;
-  @Input('erwWaeldlerStubeKristallStube') erwWaeldlerStubeKristallStube: any;
-  @Input('kiWaeldlerStubeKristallStube') kiWaeldlerStubeKristallStube: any;
-  @Input('erwEdelweiss') erwEdelweiss: any;
+  @Input('erwPanoramaRestaurant2') erwPanoramaRestaurant2: any;
+  @Input('kiPanoramaRestaurant2') kiPanoramaRestaurant2: any;
+  @Input('erwFeuerstein') erwFeuerstein: any;
+  @Input('kiFeuerstein') kiFeuerstein: any;
+  @Input('erwPanoramaRestaurant1') erwPanoramaRestaurant1: any;
+  @Input('kiPanoramaRestaurant1') kiPanoramaRestaurant1: any;
+  @Input('erwSteakRestaurant') erwSteakRestaurant: any;
+  @Input('kiSteakRestaurant') kiSteakRestaurant: any;
 
   @Output()
   getTablesOccupied:EventEmitter<number> = new EventEmitter();

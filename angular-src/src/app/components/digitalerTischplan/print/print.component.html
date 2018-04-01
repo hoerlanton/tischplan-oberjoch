@@ -36,13 +36,13 @@
   </table>
 </div>
 <div id="printSectionId1" class="section3">
-  <div *ngIf="showBauernStubnBool">
+  <div *ngIf="showFeuerstein">
     <table style="border: solid 1px black; border-collapse: collapse;">
       <tr>
         {{dateGeneratedListe}}
       </tr>
       <tr>
-        Bauernstube
+        Feuerstein
       </tr>
       <tr style="border: solid 1px black;">
         <th style="border: solid 1px black; border-collapse: collapse;">#</th>
@@ -57,7 +57,7 @@
         <th style="border: solid 1px black; border-collapse: collapse;">Notiz2</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
       </tr>
-      <div *ngFor="let table of tablesBauernstube">
+      <div *ngFor="let table of tablesFeuerstein">
         <div *ngFor="let group of table.groups">
         <tr style="border: solid 1px black;">
           <div *ngIf="group.nameValue">
@@ -91,13 +91,13 @@
       </div>
     </table>
   </div>
-  <div *ngIf="showWaeldlerBool">
+  <div *ngIf="showPanoramaRestaurant2">
     <table style="border: solid 1px black; border-collapse: collapse;">
       <tr>
         {{dateGeneratedListe}}
       </tr>
       <tr>
-        Wäldlerstube / Kristallstube
+        Panorama Restaurant 2
       </tr>
       <tr style="border: solid 1px black;">
         <th style="border: solid 1px black; border-collapse: collapse;">#</th>
@@ -112,7 +112,7 @@
         <th style="border: solid 1px black; border-collapse: collapse;">Notiz2</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
       </tr>
-      <div *ngFor="let table of tablesWaeldlerStubeKristallStube">
+      <div *ngFor="let table of tablesPanoramaRestaurant2">
         <div *ngFor="let group of table.groups">
           <tr style="border: solid 1px black;">
             <div *ngIf="group.nameValue">
@@ -146,13 +146,13 @@
       </div>
     </table>
   </div>
-  <div *ngIf="showBerglerBool">
+  <div *ngIf="showPanoramaRestaurant1">
     <table style="border: solid 1px black; border-collapse: collapse;">
       <tr>
         {{dateGeneratedListe}}
       </tr>
       <tr>
-        Berglerstube / HUBERTUS Stube
+        Panorama Restaurant 1
       </tr>
       <tr style="border: solid 1px black;">
         <th style="border: solid 1px black; border-collapse: collapse;">#</th>
@@ -167,7 +167,7 @@
         <th style="border: solid 1px black; border-collapse: collapse;">Notiz2</th>
         <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
       </tr>
-      <div *ngFor="let table of tablesBerglerStubeHubertusStube">
+      <div *ngFor="let table of tablesPanoramaRestaurant1">
         <div *ngFor="let group of table.groups">
           <tr style="border: solid 1px black;">
             <div *ngIf="group.nameValue">
@@ -201,13 +201,13 @@
       </div>
     </table>
   </div>
-  <div *ngIf="showEdelweissBool">
+  <div *ngIf="showSteakRestaurant">
     <table style="border: solid 1px black; border-collapse: collapse;">
       <tr>
         {{dateGeneratedListe}}
       </tr>
       <tr>
-        EDELWEISS / Kaminstube
+        Steak Restaurant
       </tr>
           <tr style="border: solid 1px black;">
             <th style="border: solid 1px black; border-collapse: collapse;">#</th>
@@ -222,7 +222,7 @@
             <th style="border: solid 1px black; border-collapse: collapse;">Notiz2</th>
             <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
           </tr>
-          <div *ngFor="let table of tablesEdelweissKaminStube">
+          <div *ngFor="let table of tablesSteakRestaurant">
             <div *ngFor="let group of table.groups">
               <tr style="border: solid 1px black;">
                 <div *ngIf="group.nameValue">
@@ -256,107 +256,43 @@
           </div>
         </table>
       </div>
-  <div *ngIf="showTeeStubeBool">
-    <table style="border: solid 1px black; border-collapse: collapse;">
-      <tr>
-        {{dateGeneratedListe}}
-      </tr>
-      <tr>
-        TeeStube / Teelounge
-      </tr>
-      <tr style="border: solid 1px black;">
-        <th style="border: solid 1px black; border-collapse: collapse;">#</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">Name</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">Tisch</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">PAX</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">Anreise</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">Abreise</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">GRP</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">Bemerkung</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">Notiz1</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">Notiz2</th>
-        <th style="border: solid 1px black; border-collapse: collapse;">Trace</th>
-      </tr>
-      <div *ngFor="let table of tablesTeestubeTeelounge">
-        <div *ngFor="let group of table.groups">
-          <tr style="border: solid 1px black;">
-            <div *ngIf="group.nameValue">
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.zimmernummerValue}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.nameValue}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{table.number}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.personenAnzahlValue}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.anreiseValue}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.abreiseValue}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;"></td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.bemerkungValue}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.notiz1Value}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.notiz2Value}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.traceValue}}</td>
-            </div>
-            <div *ngIf="group.newTraceText">
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceRoomNumber}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceName}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceTableNumber}}</td>
-              <td style="border: solid 1px black; border-collapse: collapse;"></td>
-              <td style="border: solid 1px black; border-collapse: collapse;"></td>
-              <td style="border: solid 1px black; border-collapse: collapse;"></td>
-              <td style="border: solid 1px black; border-collapse: collapse;"></td>
-              <td style="border: solid 1px black; border-collapse: collapse;"></td>
-              <td style="border: solid 1px black; border-collapse: collapse;"></td>
-              <td style="border: solid 1px black; border-collapse: collapse;"></td>
-              <td style="border: solid 1px black; border-collapse: collapse;">{{group.newTraceText}} {{group.newTraceDate}} {{table.newTraceEmployee}}</td>
-            </div>
-          </tr>
-        </div>
-      </div>
-    </table>
-  </div>
 </div>
 <div id="printSectionId2" class="section2">
   <div class="row" style=" border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;">
-    <div *ngIf="showBerglerBool">
-      <div *ngFor="let tableBerglerStubeHubertusStube of tablesBerglerStubeHubertusStube; let j = index;">
-        <div dropdownToggle type="button" class="t{{tableBerglerStubeHubertusStube.number}} table-item"
-             [ngStyle]="{'top': tableBerglerStubeHubertusStube.topValue + 'px', 'left': tableBerglerStubeHubertusStube.leftValue + 'px', 'background-color': + tableBerglerStubeHubertusStube.bgColor, 'height': + tableBerglerStubeHubertusStube.height + 'px', 'width': + tableBerglerStubeHubertusStube.width + 'px', 'border': + tableBerglerStubeHubertusStube.border}"
-             [style.border]="getStyle(tablesBerglerStubeHubertusStube[j].groups)" dropdown>
-          <div *ngIf="tablesBerglerStubeHubertusStube[j] !== tablesBerglerStubeHubertusStube[j+1]">
-            <p><b>{{tableBerglerStubeHubertusStube.number}} <br>{{erwBerglerStubeHubertusStube[j]}}/{{kiBerglerStubeHubertusStube[j]}}</b></p>
+    <div *ngIf="showPanoramaRestaurant1">
+      <div *ngFor="let tablePanoramaRestaurant1 of tablesPanoramaRestaurant1; let j = index;">
+        <div dropdownToggle type="button" class="t{{tablePanoramaRestaurant1.number}} table-item"
+             [ngStyle]="{'top': tablePanoramaRestaurant1.topValue + 'px', 'left': tablePanoramaRestaurant1.leftValue + 'px', 'background-color': + tablePanoramaRestaurant1.bgColor, 'height': + tablePanoramaRestaurant1.height + 'px', 'width': + tablePanoramaRestaurant1.width + 'px', 'border': + tablePanoramaRestaurant1.border}"
+             [style.border]="getStyle(tablesPanoramaRestaurant1[j].groups)" dropdown>
+          <div *ngIf="tablesPanoramaRestaurant1[j] !== tablesPanoramaRestaurant1[j+1]">
+            <p><b>{{tablePanoramaRestaurant1.number}} <br>{{erwPanoramaRestaurant1[j]}}/{{kiPanoramaRestaurant1[j]}}</b></p>
           </div>
         </div>
       </div>
     </div>
-    <div *ngIf="showBauernStubnBool">
-      <div *ngFor="let tableBauernstube of tablesBauernstube; let j = index;">
-        <div dropdownToggle type="button" class="t{{tableBauernstube.number}} table-item" [ngStyle]="{'top': tableBauernstube.topValue + 'px', 'left': tableBauernstube.leftValue + 'px', 'background-color': + tableBauernstube.bgColor, 'height': + tableBauernstube.height + 'px', 'width': + tableBauernstube.width + 'px', 'border': + tableBauernstube.border}" [style.border]="getStyle(tablesBauernstube[j].groups)" dropdown>
-          <div *ngIf="tablesBauernstube[j] !== tablesBauernstube[j+1]">
-            <p><b>{{tableBauernstube.number}} <br>{{erwBauernstube[j]}}/{{kiBauernstube[j]}}</b></p>
+    <div *ngIf="showFeuerstein">
+      <div *ngFor="let tableFeuerstein of tablesFeuerstein; let j = index;">
+        <div dropdownToggle type="button" class="t{{tableFeuerstein.number}} table-item" [ngStyle]="{'top': tableFeuerstein.topValue + 'px', 'left': tableFeuerstein.leftValue + 'px', 'background-color': + tableFeuerstein.bgColor, 'height': + tableFeuerstein.height + 'px', 'width': + tableFeuerstein.width + 'px', 'border': + tableFeuerstein.border}" [style.border]="getStyle(tablesFeuerstein[j].groups)" dropdown>
+          <div *ngIf="tablesFeuerstein[j] !== tablesFeuerstein[j+1]">
+            <p><b>{{tableFeuerstein.number}} <br>{{erwFeuerstein[j]}}/{{kiFeuerstein[j]}}</b></p>
           </div>
         </div>
       </div>
     </div>
-    <div *ngIf="showWaeldlerBool">
-      <div *ngFor="let tableWaeldlerStubeKristallStube of tablesWaeldlerStubeKristallStube; let j = index;">
-        <div dropdownToggle type="button" class="t{{tableWaeldlerStubeKristallStube.number}} table-item" [ngStyle]="{'top': tableWaeldlerStubeKristallStube.topValue + 'px', 'left': tableWaeldlerStubeKristallStube.leftValue + 'px', 'background-color': + tableWaeldlerStubeKristallStube.bgColor, 'height': + tableWaeldlerStubeKristallStube.height + 'px', 'width': + tableWaeldlerStubeKristallStube.width + 'px', 'border': + tableWaeldlerStubeKristallStube.border}" [style.border]="getStyle(tablesWaeldlerStubeKristallStube[j].groups)" dropdown>
-          <div *ngIf="tablesWaeldlerStubeKristallStube[j] !== tablesWaeldlerStubeKristallStube[j+1]">
-            <p><b>{{tableWaeldlerStubeKristallStube.number}} <br>{{erwWaeldlerStubeKristallStube[j]}}/{{kiWaeldlerStubeKristallStube[j]}}</b></p>
+    <div *ngIf="showPanoramaRestaurant2">
+      <div *ngFor="let tablePanoramaRestaurant2 of tablesPanoramaRestaurant2; let j = index;">
+        <div dropdownToggle type="button" class="t{{tablePanoramaRestaurant2.number}} table-item" [ngStyle]="{'top': tablePanoramaRestaurant2.topValue + 'px', 'left': tablePanoramaRestaurant2.leftValue + 'px', 'background-color': + tablePanoramaRestaurant2.bgColor, 'height': + tablePanoramaRestaurant2.height + 'px', 'width': + tablePanoramaRestaurant2.width + 'px', 'border': + tablePanoramaRestaurant2.border}" [style.border]="getStyle(tablesPanoramaRestaurant2[j].groups)" dropdown>
+          <div *ngIf="tablesPanoramaRestaurant2[j] !== tablesPanoramaRestaurant2[j+1]">
+            <p><b>{{tablePanoramaRestaurant2.number}} <br>{{erwPanoramaRestaurant2[j]}}/{{kiPanoramaRestaurant2[j]}}</b></p>
           </div>
         </div>
       </div>
     </div>
-    <div *ngIf="showEdelweissBool">
-      <div *ngFor="let tableEdelweissKaminStube of tablesEdelweissKaminStube; let j = index;">
-        <div dropdownToggle type="button" class="t{{tableEdelweissKaminStube.number}} table-item" [ngStyle]="{'top': tableEdelweissKaminStube.topValue + 'px', 'left': tableEdelweissKaminStube.leftValue + 'px', 'background-color': + tableEdelweissKaminStube.bgColor, 'height': + tableEdelweissKaminStube.height + 'px', 'width': + tableEdelweissKaminStube.width + 'px', 'border': + tableEdelweissKaminStube.border}" [style.border]="getStyle(tablesEdelweissKaminStube[j].groups)" dropdown>
-          <div *ngIf="tablesEdelweissKaminStube[j] !== tablesEdelweissKaminStube[j+1]">
-            <p><b>{{tableEdelweissKaminStube.number}} <br>{{erwEdelweiss[j]}}/{{kiEdelweiss[j]}}</b></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div *ngIf="showTeeStubeBool">
-      <div *ngFor="let tableTeestubeTeelounge of tablesTeestubeTeelounge; let j = index;">
-        <div dropdownToggle type="button" class="t{{tableTeestubeTeelounge.number}} table-item" [ngStyle]="{'top': tableTeestubeTeelounge.topValue + 'px', 'left': tableTeestubeTeelounge.leftValue + 'px', 'background-color': + tableTeestubeTeelounge.bgColor, 'height': + tableTeestubeTeelounge.height + 'px', 'width': + tableTeestubeTeelounge.width + 'px', 'border': + tableTeestubeTeelounge.border}" [style.border]="getStyle(tablesTeestubeTeelounge[j].groups)" dropdown>
-          <div *ngIf="tablesTeestubeTeelounge[j] !== tablesTeestubeTeelounge[j+1]">
-            <p><b>{{tableTeestubeTeelounge.number}} <br>{{erwTeestubeTeelounge[j]}}/{{kiTeestubeTeelounge[j]}}</b></p>
+    <div *ngIf="showSteakRestaurant">
+      <div *ngFor="let tableSteakRestaurant of tablesSteakRestaurant; let j = index;">
+        <div dropdownToggle type="button" class="t{{tableSteakRestaurant.number}} table-item" [ngStyle]="{'top': tableSteakRestaurant.topValue + 'px', 'left': tableSteakRestaurant.leftValue + 'px', 'background-color': + tableSteakRestaurant.bgColor, 'height': + tableSteakRestaurant.height + 'px', 'width': + tableSteakRestaurant.width + 'px', 'border': + tableSteakRestaurant.border}" [style.border]="getStyle(tablesSteakRestaurant[j].groups)" dropdown>
+          <div *ngIf="tablesSteakRestaurant[j] !== tablesSteakRestaurant[j+1]">
+            <p><b>{{tableSteakRestaurant.number}} <br>{{erwEdelweiss[j]}}/{{kiEdelweiss[j]}}</b></p>
           </div>
         </div>
       </div>

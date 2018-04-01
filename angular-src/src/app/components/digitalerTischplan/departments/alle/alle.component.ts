@@ -15,15 +15,14 @@ import {Pipe, PipeTransform} from "@angular/core";
 export class AlleComponent implements PipeTransform {
 
   @Input('tables') tables: any;
-  @Input('tablesBauernstube') tablesBauernstube: Table[];
-  @Input('tablesBerglerStubeHubertusStube') tablesBerglerStubeHubertusStube: Table[];
-  @Input('tablesEdelweissKaminStube') tablesEdelweissKaminStube: Table[];
-  @Input('tablesTeestubeTeelounge') tablesTeestubeTeelounge: Table[];
-  @Input('tablesWaeldlerStubeKristallStube') tablesWaeldlerStubeKristallStube: Table[];
+  @Input('tablesFeuerstein') tablesFeuerstein: Table[];
+  @Input('tablesPanoramaRestaurant1') tablesPanoramaRestaurant1: Table[];
+  @Input('tablesPanoramaRestaurant2') tablesPanoramaRestaurant2: Table[];
+  @Input('tablesSteakRestaurant') tablesSteakRestaurant: Table[];
   @Input('term') term: string;
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();
-  @Input('showAlleBool') showAlleBool: boolean;
+  @Input('showTablesAlleBool') showTablesAlleBool: boolean;
 
 
   constructor() { }

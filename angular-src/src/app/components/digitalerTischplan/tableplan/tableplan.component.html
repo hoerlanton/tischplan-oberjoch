@@ -1,24 +1,24 @@
 <div *ngIf="showTablePlanBool">
   <div class="col-xs-12 printTwo">
     <div class="row" style=" border-left: 5px solid #0a7a74; border-right: 5px solid #0a7a74;">
-      <div *ngIf="showBerglerBool">
-        <div *ngFor="let tableBerglerStubeHubertusStube of tablesBerglerStubeHubertusStube; let j = index;">
-          <div dropdownToggle type="button" class="t{{tableBerglerStubeHubertusStube.number}} table-item" [ngStyle]="{'top': tableBerglerStubeHubertusStube.topValue + 'px', 'left': tableBerglerStubeHubertusStube.leftValue + 'px', 'background-color': + tableBerglerStubeHubertusStube.bgColor, 'height': + tableBerglerStubeHubertusStube.height + 'px', 'width': + tableBerglerStubeHubertusStube.width + 'px', 'border': + tableBerglerStubeHubertusStube.border}" [style.border]="getStyle(tablesBerglerStubeHubertusStube[j].groups)" dropdown>
-            <div *ngIf="tablesBerglerStubeHubertusStube[j] !== tablesBerglerStubeHubertusStube[j+1]">
-              <p><b>{{tableBerglerStubeHubertusStube.number}} <br>{{erwBerglerStubeHubertusStube[j]}}/{{kiBerglerStubeHubertusStube[j]}}</b></p>
+      <div *ngIf="showTablesPanoramaRestaurant1">
+        <div *ngFor="let tablePanoramaRestaurant1 of tablesPanoramaRestaurant1; let j = index;">
+          <div dropdownToggle type="button" class="t{{tablePanoramaRestaurant1.number}} table-item" [ngStyle]="{'top': tablePanoramaRestaurant1.topValue + 'px', 'left': tablePanoramaRestaurant1.leftValue + 'px', 'background-color': + tablePanoramaRestaurant1.bgColor, 'height': + tablePanoramaRestaurant1.height + 'px', 'width': + tablePanoramaRestaurant1.width + 'px', 'border': + tablePanoramaRestaurant1.border, 'transform':  + tablePanoramaRestaurant1.transformValue}" [style.border]="getStyle(tablesPanoramaRestaurant1[j].groups)" dropdown>
+            <div *ngIf="tablesPanoramaRestaurant1[j] !== tablesPanoramaRestaurant1[j+1]">
+              <p><b>{{tablePanoramaRestaurant1.number}} <br>{{erwPanoramaRestaurant1[j]}}/{{kiPanoramaRestaurant1[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; margin: 0px;  padding: 0px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tableBerglerStubeHubertusStube, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
+                  <li class="dropdown-item" (click)="addTable(tablePanoramaRestaurant1, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0; "></li>
-                  <li class="dropdown-item" (click)="removeTable(tableBerglerStubeHubertusStube, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
+                  <li class="dropdown-item" (click)="removeTable(tablePanoramaRestaurant1, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
               <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; " (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}" class="dropdownShowinfo"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <div *ngFor="let group of tableBerglerStubeHubertusStube.groups">
+                  <div *ngFor="let group of tablePanoramaRestaurant1.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
                         <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
@@ -37,24 +37,24 @@
           </div>
         </div>
       </div>
-      <div *ngIf="showBauernStubnBool">
-        <div *ngFor="let tableBauernstube of tablesBauernstube; let j = index;">
-          <div dropdownToggle type="button" class="t{{tableBauernstube.number}} table-item" [ngStyle]="{'top': tableBauernstube.topValue + 'px', 'left': tableBauernstube.leftValue + 'px', 'background-color': + tableBauernstube.bgColor, 'height': + tableBauernstube.height + 'px', 'width': + tableBauernstube.width + 'px', 'border': + tableBauernstube.border}" [style.border]="getStyle(tablesBauernstube[j].groups)" dropdown>
-            <div *ngIf="tablesBauernstube[j] !== tablesBauernstube[j+1]">
-              <p><b>{{tableBauernstube.number}} <br>{{erwBauernstube[j]}}/{{kiBauernstube[j]}}</b></p>
+      <div *ngIf="showTablesFeuerstein">
+        <div *ngFor="let tableFeuerstein of tablesFeuerstein; let j = index;">
+          <div dropdownToggle type="button" class="t{{tableFeuerstein.number}} table-item" [ngStyle]="{'top': tableFeuerstein.topValue + 'px', 'left': tableFeuerstein.leftValue + 'px', 'background-color': + tableFeuerstein.bgColor, 'height': + tableFeuerstein.height + 'px', 'width': + tableFeuerstein.width + 'px', 'border': + tableFeuerstein.border, 'transform':  + tableFeuerstein.transformValue}" [style.border]="getStyle(tablesFeuerstein[j].groups)" dropdown>
+            <div *ngIf="tablesFeuerstein[j] !== tablesFeuerstein[j+1]">
+              <p><b>{{tableFeuerstein.number}} <br>{{erwFeuerstein[j]}}/{{kiFeuerstein[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; margin: 0px;  padding: 0px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tableBauernstube, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
+                  <li class="dropdown-item" (click)="addTable(tableFeuerstein, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0; "></li>
-                  <li class="dropdown-item" (click)="removeTable(tableBauernstube, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
+                  <li class="dropdown-item" (click)="removeTable(tableFeuerstein, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
               <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; " (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}" class="dropdownShowinfo"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <div *ngFor="let group of tableBauernstube.groups">
+                  <div *ngFor="let group of tableFeuerstein.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
                         <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
@@ -73,24 +73,24 @@
           </div>
         </div>
       </div>
-      <div *ngIf="showWaeldlerBool">
-        <div *ngFor="let tableWaeldlerStubeKristallStube of tablesWaeldlerStubeKristallStube; let j = index;">
-          <div dropdownToggle type="button" class="t{{tableWaeldlerStubeKristallStube.number}} table-item" [ngStyle]="{'top': tableWaeldlerStubeKristallStube.topValue + 'px', 'left': tableWaeldlerStubeKristallStube.leftValue + 'px', 'background-color': + tableWaeldlerStubeKristallStube.bgColor, 'height': + tableWaeldlerStubeKristallStube.height + 'px', 'width': + tableWaeldlerStubeKristallStube.width + 'px', 'border': + tableWaeldlerStubeKristallStube.border}" [style.border]="getStyle(tablesWaeldlerStubeKristallStube[j].groups)" dropdown>
-            <div *ngIf="tablesWaeldlerStubeKristallStube[j] !== tablesWaeldlerStubeKristallStube[j+1]">
-              <p><b>{{tableWaeldlerStubeKristallStube.number}} <br>{{erwWaeldlerStubeKristallStube[j]}}/{{kiWaeldlerStubeKristallStube[j]}}</b></p>
+      <div *ngIf="showTablesPanoramaRestaurant2">
+        <div *ngFor="let tablePanoramaRestaurant2 of tablesPanoramaRestaurant2; let j = index;">
+          <div dropdownToggle type="button" class="t{{tablePanoramaRestaurant2.number}} table-item" [ngStyle]="{'top': tablePanoramaRestaurant2.topValue + 'px', 'left': tablePanoramaRestaurant2.leftValue + 'px', 'background-color': + tablePanoramaRestaurant2.bgColor, 'height': + tablePanoramaRestaurant2.height + 'px', 'width': + tablePanoramaRestaurant2.width + 'px', 'border': + tablePanoramaRestaurant2.border, 'transform':  + tablePanoramaRestaurant2.transformValue}" [style.border]="getStyle(tablesPanoramaRestaurant2[j].groups)" dropdown>
+            <div *ngIf="tablesPanoramaRestaurant2[j] !== tablesPanoramaRestaurant2[j+1]">
+              <p><b>{{tablePanoramaRestaurant2.number}} <br>{{erwPanoramaRestaurant2[j]}}/{{kiPanoramaRestaurant2[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; margin: 0px;  padding: 0px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tableWaeldlerStubeKristallStube, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
+                  <li class="dropdown-item" (click)="addTable(tablePanoramaRestaurant2, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0; "></li>
-                  <li class="dropdown-item" (click)="removeTable(tableWaeldlerStubeKristallStube, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
+                  <li class="dropdown-item" (click)="removeTable(tablePanoramaRestaurant2, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
               <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; " (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}" class="dropdownShowinfo"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <div *ngFor="let group of tableWaeldlerStubeKristallStube.groups">
+                  <div *ngFor="let group of tablePanoramaRestaurant2.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
                         <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
@@ -109,24 +109,24 @@
           </div>
         </div>
       </div>
-      <div *ngIf="showEdelweissBool">
-        <div *ngFor="let tableEdelweissKaminStube of tablesEdelweissKaminStube; let j = index;">
-          <div dropdownToggle type="button" class="t{{tableEdelweissKaminStube.number}} table-item" [ngStyle]="{'top': tableEdelweissKaminStube.topValue + 'px', 'left': tableEdelweissKaminStube.leftValue + 'px', 'background-color': + tableEdelweissKaminStube.bgColor, 'height': + tableEdelweissKaminStube.height + 'px', 'width': + tableEdelweissKaminStube.width + 'px', 'border': + tableEdelweissKaminStube.border}" [style.border]="getStyle(tablesEdelweissKaminStube[j].groups)" dropdown>
-            <div *ngIf="tablesEdelweissKaminStube[j] !== tablesEdelweissKaminStube[j+1]">
-              <p><b>{{tableEdelweissKaminStube.number}} <br>{{erwEdelweiss[j]}}/{{kiEdelweiss[j]}}</b></p>
+      <div *ngIf="showTablesSteakRestaurant">
+        <div *ngFor="let tableSteakRestaurant of tablesSteakRestaurant; let j = index;">
+          <div dropdownToggle type="button" class="t{{tableSteakRestaurant.number}} table-item" [ngStyle]="{'top': tableSteakRestaurant.topValue + 'px', 'left': tableSteakRestaurant.leftValue + 'px', 'background-color': + tableSteakRestaurant.bgColor, 'height': + tableSteakRestaurant.height + 'px', 'width': + tableSteakRestaurant.width + 'px', 'border': + tableSteakRestaurant.border, 'transform':  + tableSteakRestaurant.transformValue}" [style.border]="getStyle(tablesSteakRestaurant[j].groups)" dropdown>
+            <div *ngIf="tablesSteakRestaurant[j] !== tablesSteakRestaurant[j+1]">
+              <p><b>{{tableSteakRestaurant.number}} <br>{{erwSteakRestaurant[j]}}/{{kiSteakRestaurant[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; margin: 0px;  padding: 0px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tableEdelweissKaminStube, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
+                  <li class="dropdown-item" (click)="addTable(tableSteakRestaurant, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
                   <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0; "></li>
-                  <li class="dropdown-item" (click)="removeTable(tableEdelweissKaminStube, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
+                  <li class="dropdown-item" (click)="removeTable(tableSteakRestaurant, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
                 </div>
               </div>
               <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
               <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; " (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}" class="dropdownShowinfo"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <div *ngFor="let group of tableEdelweissKaminStube.groups">
+                  <div *ngFor="let group of tableSteakRestaurant.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
                         <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
@@ -145,43 +145,7 @@
           </div>
         </div>
       </div>
-      <div *ngIf="showTeeStubeBool">
-        <div *ngFor="let tableTeestubeTeelounge of tablesTeestubeTeelounge; let j = index;">
-          <div dropdownToggle type="button" class="t{{tableTeestubeTeelounge.number}} table-item" [ngStyle]="{'top': tableTeestubeTeelounge.topValue + 'px', 'left': tableTeestubeTeelounge.leftValue + 'px', 'background-color': + tableTeestubeTeelounge.bgColor, 'height': + tableTeestubeTeelounge.height + 'px', 'width': + tableTeestubeTeelounge.width + 'px', 'border': + tableTeestubeTeelounge.border}" [style.border]="getStyle(tablesTeestubeTeelounge[j].groups)" dropdown>
-            <div *ngIf="tablesTeestubeTeelounge[j] !== tablesTeestubeTeelounge[j+1]">
-              <p><b>{{tableTeestubeTeelounge.number}} <br>{{erwTeestubeTeelounge[j]}}/{{kiTeestubeTeelounge[j]}}</b></p>
-            </div>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; margin: 0px;  padding: 0px; overflow: auto">
-                  <li class="dropdown-item" (click)="addTable(tableTeestubeTeelounge, j)" style="color: black; padding: 10px;" (mouseenter)="mouseEnterHinzufuegenButton()"  (mouseleave)="mouseLeaveHinzufuegenButton()" [ngStyle]="{'background-color': '#' + buttonHinzufuegen}" ><b>Tisch hinzufügen</b></li>
-                  <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0; "></li>
-                  <li class="dropdown-item" (click)="removeTable(tableTeestubeTeelounge, j)" (mouseenter)="mouseEnterEntfernenButton()"  (mouseleave)="mouseLeaveEntfernenButton()" [ngStyle]="{'background-color': '#' + buttonEntfernen}" style="color: black; padding: 10px"><b>Tisch entfernen</b></li>
-                </div>
-              </div>
-              <li class="divider dropdown-divider" style="padding: 0 0 0 0; margin: 0;"></li>
-              <div dropdownToggle type="button" (click)="none($event)" style="padding: 10px; " (mouseenter)="mouseEnterInfoButton()"  (mouseleave)="mouseLeaveInfoButton()" [ngStyle]="{'background-color': '#' + buttonInfo}" class="dropdownShowinfo"  class="dropdownShowinfo" dropdown><b>Infos anzeigen</b>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height: 240px; padding: 10px; overflow: auto">
-                  <div *ngFor="let group of tableTeestubeTeelounge.groups">
-                    <div *ngIf="group">
-                      <div *ngIf="group.nameValue">
-                        <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
-                        <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
-                      </div>
-                      <div *ngIf="group.newTraceText">
-                        <div class="dropdown-item"  style="background-color: #FFFFFF; border: solid 3px red">
-                          <b> Zimmernummer: </b>{{group.newTraceRoomNumber}}<br> <b> Neuer Trace: </b>{{group.newTraceText}} <br> <b> Tischnummer: </b>{{group.newTraceTableNumber}} <br> <b> Mitarbeiter: </b>{{group.newTraceEmployee}} <br> <b> Name: </b>{{group.newTraceName}} <br> <b> Datum: </b>{{group.newTraceDate}}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div *ngIf="showAlleBool">
+      <div *ngIf="showTablesAlle">
         <br>
         <br>
         <br>

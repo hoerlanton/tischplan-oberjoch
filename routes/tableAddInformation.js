@@ -85,23 +85,20 @@ module.exports = {
             console.log(tableValue + " " + departmentValue);
 
 
-            if (departmentValue === "BerglerStubeHubertusStube") {
-                departmentValueDB = "berglerStubeHubertusStube";
+            if (departmentValue === "SteakRestaurant") {
+                departmentValueDB = "steakRestaurant";
             }
-            else if (departmentValue === "Bauernstube") {
-                departmentValueDB = "Bauernstube";
+            else if (departmentValue === "PanoramaRestaurant1") {
+                departmentValueDB = "panoramaRestaurant1";
             }
-            else if (departmentValue === "WaeldlerStubeKristallStube") {
-                departmentValueDB = "waeldlerStubeKristallStube";
+            else if (departmentValue === "PanoramaRestaurant2") {
+                departmentValueDB = "panoramaRestaurant2";
             }
-            else if (departmentValue === "EdelweissKaminStube") {
-                departmentValueDB = "edelweissKaminStube";
-            }
-            else if (departmentValue === "TeestubeTeelounge") {
-                departmentValueDB = "teestubeTeelounge";
+            else if (departmentValue === "Feuerstein") {
+                departmentValueDB = "feuerstein";
             }
             setTimeout(function () {
-                db.hubertusTables.update(
+                db.oberjochTables.update(
                     {
                         department: departmentValueDB,
                         "tables.number": tableValue
@@ -170,7 +167,7 @@ module.exports = {
 
 
             setTimeout(function () {
-                db.hubertusTables.findOne(
+                db.oberjochTables.findOne(
                     {
                         department: departmentValueDB,
                         "tables.number": tableValue
@@ -190,7 +187,7 @@ module.exports = {
                         console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
                         for (let i = 0; i < umsetzen[0].groups.length; i++) {
                             if (nameValue[i]) {
-                                db.hubertusTables.update(
+                                db.oberjochTables.update(
                                     {
                                         department: departmentValueDB,
                                         "tables.number": tableValue
@@ -217,7 +214,7 @@ module.exports = {
                                         console.log("addInformationToTable updated successfully");
                                     });
                             } else {
-                                db.hubertusTables.update(
+                                db.oberjochTables.update(
                                     {
                                         department: departmentValueDB,
                                         "tables.number": tableValue
@@ -246,7 +243,7 @@ module.exports = {
             }, 200);
         }
         setTimeout(function () {
-            db.hubertusTables.find(
+            db.oberjochTables.find(
                 {
                     department: departmentValueDB,
                     "tables.number": tableValue

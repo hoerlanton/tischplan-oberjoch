@@ -37,10 +37,10 @@ module.exports = {
 
         console.log(anreiseListe);
 
-        db.hubertusAnreiseListe.remove({});
+        db.oberjochAnreiseListe.remove({});
 
         setTimeout(function() {
-            db.hubertusAnreiseListe.save(anreiseListe, function(err, anreiseListe) {
+            db.oberjochAnreiseListe.save(anreiseListe, function(err, anreiseListe) {
                 if (err) {
                     res.send(err);
                 }
@@ -65,7 +65,7 @@ module.exports = {
         console.log(zimmernummerValue);
 
 
-        db.hubertusAnreiseListe.update(
+        db.oberjochAnreiseListe.update(
             {name: nameValue,
                 "zimmernummer": zimmernummerValue},
             {$set: {
@@ -79,16 +79,16 @@ module.exports = {
 
 
         setTimeout(function() {
-            db.hubertusAnreiseListe.findOne(
+            db.oberjochAnreiseListe.findOne(
                 {name: nameValue,
                     "zimmernummer": zimmernummerValue},
-                function (err, hubertusAnreiseListe) {
+                function (err, oberjochAnreiseListe) {
                     if (err) {
                         res.send(err);
                     }
-                    res.json(hubertusAnreiseListe);
-                    console.log('hubertusAnreiseListe');
-                    console.log(JSON.stringify(hubertusAnreiseListe));
+                    res.json(oberjochAnreiseListe);
+                    console.log('oberjochAnreiseListe');
+                    console.log(JSON.stringify(oberjochAnreiseListe));
                 });
         }, 700);
     },
@@ -96,7 +96,7 @@ module.exports = {
 
         console.log("anreiseListe get called");
 //Get guests from Mongo DB
-        db.hubertusAnreiseListe.find(function (err, anreiseListe) {
+        db.oberjochAnreiseListe.find(function (err, anreiseListe) {
             if (err) {
                 res.send(err);
             }

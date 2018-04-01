@@ -207,9 +207,9 @@ module.exports = {
         //console.log('imHausListe' +  imHausListe);
         //imHausListe.data = req.body;
          */
-        db.hubertusImHausListe.remove({});
+        db.oberjochImHausListe.remove({});
         setTimeout(function () {
-            db.hubertusImHausListe.save(imHausListe, function (err, imHausListe) {
+            db.oberjochImHausListe.save(imHausListe, function (err, imHausListe) {
                 if (err) {
                     res.send(err);
                 }
@@ -240,7 +240,7 @@ module.exports = {
                  nameValueArray.push(informationElements.groups[i].nameValue);
                  zimmernummerValueArray.push(informationElements.groups[i].zimmernummerValue);
 
-                db.hubertusImHausListe.update(
+                db.oberjochImHausListe.update(
                     {
                         name: nameValueArray[i],
                         "zimmernummer": zimmernummerValueArray[i]
@@ -263,7 +263,7 @@ module.exports = {
             //console.log(nameValueArray[0]);
             //console.log(zimmernummerValueArray[0]);
 
-            db.hubertusImHausListe.update(
+            db.oberjochImHausListe.update(
                 {
                     name: nameValueArray[0],
                     "zimmernummer": zimmernummerValueArray[0]
@@ -281,15 +281,15 @@ module.exports = {
         }}
 
             setTimeout(function () {
-                db.hubertusImHausListe.find(
+                db.oberjochImHausListe.find(
                     {},
-                    function (err, hubertusImHausListe) {
+                    function (err, oberjochImHausListe) {
                         if (err) {
                             res.send(err);
                         }
-                        res.json(hubertusImHausListe);
-                        //console.log('hubertusImHausListe');
-                        //console.log(JSON.stringify(hubertusImHausListe));
+                        res.json(oberjochImHausListe);
+                        //console.log('oberjochImHausListe');
+                        //console.log(JSON.stringify(oberjochImHausListe));
                     });
             }, 700);
 
@@ -297,7 +297,7 @@ module.exports = {
     getImHausListe: function (req, res, db) {
         console.log("imHausListe get called");
     //Get guests from Mongo DB
-        db.hubertusImHausListe.find(function (err, imHausListe) {
+        db.oberjochImHausListe.find(function (err, imHausListe) {
             if (err) {
                 res.send(err);
             }

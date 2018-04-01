@@ -16,11 +16,10 @@ import { PrintComponent } from './components/digitalerTischplan/print/print.comp
 import { FormComponent } from './components/digitalerTischplan/form/form.component';
 import { DepartmentsComponent } from './components/digitalerTischplan/departments/departments.component';
 import { DepartmentmenuComponent } from './components/digitalerTischplan/departmentmenu/departmentmenu.component';
-import { BauernstubeComponent } from './components/digitalerTischplan/departments/bauernstube/bauernstube.component';
-import { BerglerStubeHubertusStubeComponent } from './components/digitalerTischplan/departments/bergler-stube-hubertus-stube/bergler-stube-hubertus-stube.component';
-import { WaeldlerStubeKristallStubeComponent } from './components/digitalerTischplan/departments/waeldler-stube-kristall-stube/waeldler-stube-kristall-stube.component';
-import { EdelweissKaminStubeComponent } from './components/digitalerTischplan/departments/edelweiss-kamin-stube/edelweiss-kamin-stube.component';
-import { TeestubeTeeloungeComponent } from './components/digitalerTischplan/departments/teestube-teelounge/teestube-teelounge.component';
+import { FeuersteinComponent } from './components/digitalerTischplan/departments/feuerstein/feuerstein.component';
+import { PanoramaRestaurant1Component } from './components/digitalerTischplan/departments/panoramaRestaurant1/panoramaRestaurant1.component';
+import { PanoramaRestaurant2Component } from './components/digitalerTischplan/departments/panoramaRestaurant2/panoramaRestaurant2.component';
+import { SteakRestaurantComponent } from './components/digitalerTischplan/departments/steakRestaurant/steakRestaurant.component';
 import { AlleComponent } from './components/digitalerTischplan/departments/alle/alle.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RouterModule, Routes } from '@angular/router';
@@ -54,11 +53,10 @@ const appRoutes: Routes =  [
     FormComponent,
     DepartmentsComponent,
     DepartmentmenuComponent,
-    BauernstubeComponent,
-    BerglerStubeHubertusStubeComponent,
-    WaeldlerStubeKristallStubeComponent,
-    EdelweissKaminStubeComponent,
-    TeestubeTeeloungeComponent,
+    FeuersteinComponent,
+    PanoramaRestaurant1Component,
+    PanoramaRestaurant2Component,
+    SteakRestaurantComponent,
     AlleComponent,
     LoginComponent,
     RegisterComponent,

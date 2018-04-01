@@ -17,7 +17,8 @@ const   bodyParser = require('body-parser'),
     configDatabase = require('./config/database'),
     users = require('./routes/users'),
     excel2Json = require('node-excel-to-json'),
-    node_xj = require("xls-to-json");
+    node_xj = require("xls-to-json"),
+    parseRTF = require('rtf-parser');
     let XLSX = require('xlsx');
 
 var xlstojson = require("xls-to-json-lc");
@@ -59,7 +60,7 @@ let storage = multer.diskStorage({
 });
 
 let upload = multer({ storage: storage });
-let imHausListe = "";
+let liste = "";
 
 // Passport Middleware
 app.use(passport.initialize());
@@ -103,7 +104,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
 
     //let workbook2 = XLSX.utils.sheet_to_json(String("./uploads/" + uploadedFileName));
 
-    if (uploadedFileName.indexOf("xls") != -1){
+    if (uploadedFileName.indexOf("xlsx") != -1){
 
         let workbook = XLSX.readFile(String("./uploads/" + uploadedFileName));
 
@@ -113,12 +114,29 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
         //console.log(JSON.stringify(workbook.vbaraw));
         //console.log(JSON.stringify(workbook.Workbook));
         /* DO SOMETHING WITH workbook HERE */
-        imHausListe = JSON.stringify(workbook.Sheets[workbook.SheetNames[0]]);
+        liste = JSON.stringify(workbook.Sheets[workbook.SheetNames[0]]);
         //console.log(JSON.stringify(workbook2));
-        postImHausListeToDB();
+
+        if (liste.indexOf("Anreise-Übersicht") != -1) {
+            postAnreiseListeToDB();
+        } else {
+            postImHausListeToDB();
+        }
         res.send(req.files);
     } else {
-        res.send(JSON.stringify("Error, falscher Datentyp"));
+
+
+        parseRTF.string('{\\rtf1\\ansi\\b hi there\\b0}', (err, doc) => {
+            console.log(JSON.stringify(doc));
+        });
+
+        parseRTF.stream(fs.createReadStream(String("./uploads/" + uploadedFileName)), (err, doc) => {
+            console.log(JSON.stringify(doc));
+        });
+
+        const parser = parseRTF((err, doc) => {
+         console.log(doc);
+        });
     }
 });
     //data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header:1});
@@ -196,6 +214,33 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
 
 
 
+function postAnreiseListeToDB() {
+    // An object of options to indicate where to post to
+    let post_options = {
+        //Change URL to hotelmessengertagbag.herokuapp.com if deploying
+        host: HOST_URL,
+        port: '80',
+        path: '/anreiseListe',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    // Set up the request
+    let post_req = http.request(post_options, function (res) {
+        res.setEncoding('utf8');
+        res.on('data', function (chunk) {
+            console.log('Response: ' + "chunk as string");
+        });
+    });
+
+    // post the data
+    post_req.write(liste);
+    post_req.end();
+}
+
+
 function postImHausListeToDB() {
     // An object of options to indicate where to post to
     let post_options = {
@@ -218,7 +263,7 @@ function postImHausListeToDB() {
     });
 
     // post the data
-    post_req.write(imHausListe);
+    post_req.write(liste);
     post_req.end();
 }
 
