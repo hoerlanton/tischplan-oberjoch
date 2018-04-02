@@ -46,15 +46,6 @@ imHausListe.updateImHausListe(req, res, db)});
 //Get imHausListe
 router.get('/imHausListe', function(req, res, next) {
 imHausListe.getImHausListe(req, res, db)});
-//Save TracesListe
-router.post('/tracesListe', function(req, res, next) {
-traceListe.saveTraceListe(req, res, db)});
-//Update TraceListe
-router.post('/updateTracesListeElement', function(req, res, next) {
-traceListe.updateTraceListe(req, res, db)});
-//Get TracesListe
-router.get('/tracesListe', function(req, res, next) {
-traceListe.getTraceListe(req, res, db)});
 //Get Information
 router.get('/information', function(req, res, next) {
 information.getInformation(req, res, db)});

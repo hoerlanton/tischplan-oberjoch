@@ -109,10 +109,10 @@ module.exports = {
 
         console.log('height: ' + height);
         console.log('width: ' + width);
-        console.log('tableNumber' + tableNumber);
-        console.log('departmentValue' + departmentValue);
-        console.log('topValue' + topValue);
-        console.log('leftValue' + leftValue);
+        console.log('tableNumber: ' + tableNumber);
+        console.log('departmentValue: ' + departmentValue);
+        console.log('topValue: ' + topValue);
+        console.log('leftValue: ' + leftValue);
 
         addTablesFeuerstein.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         addTablesPanoramaRestaurant1.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);

@@ -76,20 +76,20 @@ export class TableplanComponent implements AfterViewChecked {
   addTable(table, j) {
 
     console.log("moveTable clicked");
-    console.log('table :' + table.number + 'j' + j);
+    console.log('table : ' + table.number + ' j ' + j);
     this.tischplanService.addTable(table).subscribe(response => {
       console.log('Response:' + JSON.stringify(response));
       //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
-      console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
-      console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
+      //console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
+      //console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
 
-      if (response[0].tables[j].department === "panoramaRestaurant2") {
+      if (response[0].department === "panoramaRestaurant2") {
         this.movedPanoramaRestaurant2.emit(response[0].tables);
-      } else if (response[0].tables[j].department === "feuerstein") {
+      } else if (response[0].department === "feuerstein") {
         this.movedFeuerstein.emit(response[0].tables);
-      } else if (response[0].tables[j].department === "steakRestaurant") {
+      } else if (response[0].department === "steakRestaurant") {
         this.movedSteakRestaurant.emit(response[0].tables);
-      } else if (response[0].tables[j].department === "panoramaRestaurant1") {
+      } else if (response[0].department === "panoramaRestaurant1") {
         this.movedPanoramaRestaurant1.emit(response[0].tables);
       }
       this.changeBgColorIfAnreise.emit();
@@ -104,13 +104,13 @@ export class TableplanComponent implements AfterViewChecked {
         //console.log("topValue:" + JSON.stringify(response[0].tables[0].topValue));
         console.log("topValue:" + JSON.stringify(response[0].tables[j].topValue));
         console.log("leftValue:" + JSON.stringify(response[0].tables[j].leftValue));
-        if (response[0].tables[j].department === "panoramaRestaurant2") {
+        if (response[0].department === "panoramaRestaurant2") {
           this.movedPanoramaRestaurant2.emit(response[0].tables);
-        } else if (response[0].tables[j].department === "feuerstein") {
+        } else if (response[0].department === "feuerstein") {
           this.movedFeuerstein.emit(response[0].tables);
-        } else if (response[0].tables[j].department === "steakRestaurant") {
+        } else if (response[0].department === "steakRestaurant") {
           this.movedSteakRestaurant.emit(response[0].tables);
-        } else if (response[0].tables[j].department === "panoramaRestaurant1") {
+        } else if (response[0].department === "panoramaRestaurant1") {
           this.movedPanoramaRestaurant1.emit(response[0].tables);
         }
         this.changeBgColorIfAnreise.emit();
