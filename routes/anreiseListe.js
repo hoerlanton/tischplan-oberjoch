@@ -42,6 +42,7 @@ module.exports = {
             for (row; row < 10000; row++) {
                 let accessorNameB = "B" + row;
                 let accessorNameC = "C" + row;
+                let accessorNameD = "D" + row;
                 let accessorNameH = "H" + row;
                 let accessorNameK = "K" + row;
                 let accessorNameM = "M" + row;
@@ -52,7 +53,7 @@ module.exports = {
                 //console.log(accessorNameA);
                 //console.log(accessorNameC);
 
-                if (anreiseListeData.data[accessorNameB] == null && anreiseListeData.data[accessorNameC] == null && anreiseListeData.data[accessorNameH] == null && anreiseListeData.data[accessorNameK] == null) {
+                if (anreiseListeData.data[accessorNameD] == 'Warteliste') {
                     console.log("BREAK!!");
                     console.log(accessorNameB);
                     console.log(accessorNameC);
