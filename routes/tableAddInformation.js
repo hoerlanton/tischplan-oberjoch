@@ -14,29 +14,23 @@ module.exports = {
             departmentValueDB = "",
             nameValue = [],
             zimmernummerValue = [],
-            //kategorieValue = [],
-            //preisTypValue = [],
             anreiseValue = [],
             abreiseValue = [],
             personenAnzahlValue = [],
-            notiz2Value = [],
-            notiz1Value = [],
+            kategorieValue = [],
+            wiederkehrerValue = [],
             departmentValue = "",
             tableValue = "",
             tableValueArray = [],
-            traceValue = [],
             bemerkungValue = [],
-            preisValue = [],
             newTraceText = [],
             newTraceRoomNumber = [],
             newTraceName = [],
             newTraceEmployee = [],
             newTraceDate = [],
             newTraceTableNumber = [],
-            teeString = "Tee";
-            //vipValue = [],
-            //resStatusValue = [];
-
+            teeString = "Tee",
+            bemerkungValueTemp = "";
 
         for (let s = 0; s < splitted.length; s++) {
             informationElements2.push(splitted[s].split(/:(.+)/)[1]);
@@ -58,25 +52,26 @@ module.exports = {
             //preisTypValue.push(informationElements2[3].substring(1, informationElements2[3].length));
             anreiseValue.push(informationElements2[3].substring(1, informationElements2[3].length));
             abreiseValue.push(informationElements2[4].substring(1, informationElements2[4].length));
-            notiz1Value.push(informationElements2[5].substring(1, informationElements2[5].length));
-            notiz2Value.push(informationElements2[6].substring(1, informationElements2[6].length));
-            traceValue.push(informationElements2[7].substring(1, informationElements2[7].length));
-            bemerkungValue.push(informationElements2[8].substring(1, informationElements2[8].length));
+            kategorieValue.push(informationElements2[5].substring(1, informationElements2[5].length));
+            wiederkehrerValue.push(informationElements2[6].substring(1, informationElements2[6].length));
+            for (let z = 7; z < informationElements2.length - 1; z++) {
+                bemerkungValueTemp += informationElements2[z].substring(1, informationElements2[z].length);
+            }
+            bemerkungValue.push(bemerkungValueTemp);
+
             //preisValue.push(informationElements2[11].substring(1, informationElements2[11].length));
             //vipValue.push(informationElements2[informationElements2.length - 3].substring(1, informationElements2[informationElements2.length - 3].length));
             //resStatusValue.push(informationElements2[informationElements2.length - 2].substring(1, informationElements2[informationElements2.length - 2].length));
             departmentValue = informationElements2[informationElements2.length - 1].substring(1, informationElements2[informationElements2.length - 1].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2.length - 1].toString().match(/\d+/g);
-            if (tableValueArray[0] === "1" || tableValueArray[0] === "2" || tableValueArray[0] === "3" || tableValueArray[0] === "4" || tableValueArray[0] === "5" || tableValueArray[0] === "6") {
-                console.log("TEE ---------------------");
-                console.log(teeString);
-                console.log(tableValueArray[0]);
-                tableValue =  teeString + tableValueArray[0];
-            } else if (tableValueArray[1] === "1" || tableValueArray[1] === "2" || tableValueArray[1] === "3" || tableValueArray[1] === "4") {
-                tableValue = tableValueArray.join(".");
-            } else {
-                tableValue = tableValueArray[0];
-            }
+
+            console.log(tableValueArray);
+
+           if (tableValueArray.length > 1) {
+               tableValue = tableValueArray.join(".");
+           } else {
+               tableValue = tableValueArray[0];
+           }
 
             console.log(tableValueArray);
             console.log(tableValue);
@@ -111,9 +106,8 @@ module.exports = {
                                 "anreiseValue": anreiseValue[0],
                                 "abreiseValue": abreiseValue[0],
                                 "personenAnzahlValue": personenAnzahlValue[0],
-                                "notiz2Value": notiz2Value[0],
-                                "notiz1Value": notiz1Value[0],
-                                "traceValue": traceValue[0],
+                                "wiederkehrerValue": wiederkehrerValue[0],
+                                "kategorieValue": kategorieValue[0],
                                 "bemerkungValue": bemerkungValue[0],
                             }
                         }
@@ -136,9 +130,8 @@ module.exports = {
                 personenAnzahlValue.push(umsetzen[0].groups[i].personenAnzahlValue);
                 anreiseValue.push(umsetzen[0].groups[i].anreiseValue);
                 abreiseValue.push(umsetzen[0].groups[i].abreiseValue);
-                traceValue.push(umsetzen[0].groups[i].traceValue);
-                notiz2Value.push(umsetzen[0].groups[i].notiz2Value);
-                notiz1Value.push(umsetzen[0].groups[i].notiz1Value);
+                kategorieValue.push(umsetzen[0].groups[i].kategorieValue);
+                wiederkehrerValue.push(umsetzen[0].groups[i].wiederkehrerValue);
                 bemerkungValue.push(umsetzen[0].groups[i].bemerkungValue);
                 //vipValue.push(umsetzen[0].groups[i].vipValue);
                 //resStatusValue.push(umsetzen[0].groups[i].resStatusValue);
@@ -152,15 +145,6 @@ module.exports = {
                 departmentValueDB = umsetzen[1].targetDepartment;
                 tableValue = umsetzen[1].targetTable;
                 umsetzen[0].department = umsetzen[1].targetDepartment;
-            }
-
-
-            if (tableValue === "1" || tableValue === "2" || tableValue === "3" || tableValue === "4" || tableValue === "5" || tableValue === "6") {
-                console.log("TEE ---------------------");
-                console.log(teeString);
-                console.log(umsetzen.targetTable);
-                tableValue = teeString + tableValue;
-                console.log(tableValue);
             }
 
             //console.log(" nameValue " + nameValue + " zimmernummerValue " + zimmernummerValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " notiz1Value " + notiz1Value + " notiz2Value " + notiz2Value + " bemerkungValue " + bemerkungValue + "tableValue" + tableValue + "departmentvalue" + departmentValue);
@@ -200,10 +184,8 @@ module.exports = {
                                                 "anreiseValue": anreiseValue[i],
                                                 "abreiseValue": abreiseValue[i],
                                                 "personenAnzahlValue": personenAnzahlValue[i],
-                                                "notiz2Value": notiz2Value[i],
-                                                "notiz1Value": notiz1Value[i],
-                                                "preisValue": preisValue[i],
-                                                "traceValue": traceValue[i],
+                                                "wiederkehrerValue": wiederkehrerValue[i],
+                                                "kategorieValue": kategorieValue[i],
                                                 "bemerkungValue": bemerkungValue[i],
                                             }
                                         }

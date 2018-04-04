@@ -2,37 +2,37 @@
   <div *ngIf="showTablesAlle === false">
     <div class="notiz">
       <div *ngIf="showTablesFeuerstein">
-        <div *ngFor="let notizElement of notizElements" >
+        <div *ngFor="let notizElement of notizElements">
           <div *ngIf="notizElement.departmentNotizInput === 'Feuerstein'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
-              <p  style="color: white"> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
+              <p  style="color: white"> <b> Notiz: </b>{{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
             </div>
           </div>
         </div>
       </div>
       <div *ngIf="showTablesPanoramaRestaurant1">
         <div *ngFor="let notizElement of notizElements">
-          <div *ngIf="notizElement.departmentNotizInput === 'PanoramaRestaurant1'">
+          <div *ngIf="notizElement.departmentNotizInput === 'Panorama Restaurant 1'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
-              <p  style="color: white"> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
+              <p  style="color: white"> <b> Notiz: </b>{{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
             </div>
           </div>
         </div>
       </div>
       <div *ngIf="showTablesPanoramaRestaurant2">
         <div *ngFor="let notizElement of notizElements">
-          <div *ngIf="notizElement.departmentNotizInput === 'PanoramaRestaurant2'">
+          <div *ngIf="notizElement.departmentNotizInput === 'Panorama Restaurant 2'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
-              <p  style="color: white"> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
+              <p  style="color: white"> <b> Notiz: </b>{{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
             </div>
           </div>
         </div>
       </div>
       <div *ngIf="showTablesSteakRestaurant">
         <div *ngFor="let notizElement of notizElements">
-          <div *ngIf="notizElement.departmentNotizInput === 'SteakRestaurant'">
+          <div *ngIf="notizElement.departmentNotizInput === 'Steak Restaurant'">
             <div style="border: solid 3px greenyellow; padding: 10px; margin: 20px;">
-              <p  style="color: white"> {{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
+              <p  style="color: white"> <b> Notiz: </b>{{notizElement.notizInput === '' ? "Keine Notiz" : notizElement.notizInput}} <br><b>  Datum: </b> {{notizElement.notizInput === '' ? "" : notizElement.date}}</p>
             </div>
           </div>
         </div>

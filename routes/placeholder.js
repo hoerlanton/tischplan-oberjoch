@@ -41,26 +41,23 @@ module.exports = {
             tableValue = tableValueArray[0];
         }
 
-        if(departmentValue === "BerglerStubeHubertusStube" || departmentValue === "berglerStubeHubertusStube") {
-            departmentValueDB = "berglerStubeHubertusStube";
+        if (departmentValue === "SteakRestaurant") {
+            departmentValueDB = "steakRestaurant";
         }
-        else if(departmentValue === "Bauernstube" || departmentValue === "Bauernstube") {
-            departmentValueDB = "Bauernstube";
+        else if (departmentValue === "PanoramaRestaurant1") {
+            departmentValueDB = "panoramaRestaurant1";
         }
-        else if(departmentValue === "WaeldlerStubeKristallStube" || departmentValue === "waeldlerStubeKristallStube") {
-            departmentValueDB = "waeldlerStubeKristallStube";
+        else if (departmentValue === "PanoramaRestaurant2") {
+            departmentValueDB = "panoramaRestaurant2";
         }
-        else if(departmentValue === "EdelweissKaminStube" || departmentValue === "edelweissKaminStube") {
-            departmentValueDB = "edelweissKaminStube";
-        }
-        else if(departmentValue === "TeestubeTeelounge" || departmentValue === "teestubeTeelounge") {
-            departmentValueDB = "teestubeTeelounge";
+        else if (departmentValue === "Feuerstein") {
+            departmentValueDB = "feuerstein";
         }
 
         console.log('removePlaceholder:' + departmentValue);
         console.log('removePlaceholder:' + tableValue);
 
-        db.hubertusTables.update(
+        db.oberjochTables.update(
             {
                 department: departmentValueDB,
                 "tables.number": tableValue
@@ -75,7 +72,7 @@ module.exports = {
             });
 
         setTimeout(function() {
-            db.hubertusTables.findOne(
+            db.oberjochTables.findOne(
                 {
                     department: departmentValueDB,
                     "tables.number": tableValue
@@ -101,7 +98,7 @@ module.exports = {
             let tableNumber = addPlaceholder[1];
             console.log("department: " + department + ' ' + tableNumber);
             setTimeout(function () {
-                db.hubertusTables.update(
+                db.oberjochTables.update(
                     {
                         department: department,
                         "tables.number": tableNumber
@@ -118,7 +115,7 @@ module.exports = {
                     });
             }, 100);
             setTimeout(function () {
-                db.hubertusTables.find(
+                db.oberjochTables.find(
                     {
                     }, function (err, tables) {
                         if (err) {
@@ -129,7 +126,7 @@ module.exports = {
                     });
             }, 200);
         } else {
-            db.hubertusTables.update(
+            db.oberjochTables.update(
                 {
                     department: addPlaceholder.department,
                     "tables.number": addPlaceholder.number
@@ -145,7 +142,7 @@ module.exports = {
                     console.log("No Error");
                 });
             setTimeout(function () {
-                db.hubertusTables.find(
+                db.oberjochTables.find(
                     {
                     }, function (err, tables) {
                         if (err) {

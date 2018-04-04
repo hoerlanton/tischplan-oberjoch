@@ -173,12 +173,8 @@ module.exports = {
             departmentValue = informationElements2[informationElements2Length - 1][0].substring(1, informationElements2[informationElements2Length - 1][0].length - 1).replace(new RegExp("[0-9]", "g"), "").replace(/\W/g, '');
             tableValueArray = informationElements2[informationElements2Length - 1][0].toString().match(/\d+/g);
             tableValue = tableValueArray[0];
-            if (tableValueArray[0] === "1" || tableValueArray[0] === "2" || tableValueArray[0] === "3" || tableValueArray[0] === "4" || tableValueArray[0] === "5" || tableValueArray[0] === "6") {
-                console.log("TEE ---------------------");
-                console.log(teeString);
-                console.log(tableValueArray[0]);
-                tableValue =  teeString + tableValueArray[0];
-            } else if (tableValueArray[1] === "1" || tableValueArray[1] === "2" || tableValueArray[1] === "3" || tableValueArray[1] === "4") {
+
+            if (tableValueArray.length > 1) {
                 tableValue = tableValueArray.join(".");
             } else {
                 tableValue = tableValueArray[0];
@@ -187,15 +183,15 @@ module.exports = {
         } else {
             let umsetzen = JSON.parse(data);
             console.log(umsetzen.targetTable);
-            if (umsetzen.targetTable === "1" || umsetzen.targetTable === "2" || umsetzen.targetTable === "3" || umsetzen.targetTable === "4" || umsetzen.targetTable === "5" || umsetzen.targetTable === "6") {
-                console.log("TEE ---------------------");
-                console.log(teeString);
-                console.log(umsetzen.targetTable);
-                tableValue =  teeString + umsetzen.targetTable;
-                console.log(tableValue);
-            } else {
+            //if (umsetzen.targetTable === "1" || umsetzen.targetTable === "2" || umsetzen.targetTable === "3" || umsetzen.targetTable === "4" || umsetzen.targetTable === "5" || umsetzen.targetTable === "6") {
+            //    console.log("TEE ---------------------");
+            //    console.log(teeString);
+            //    console.log(umsetzen.targetTable);
+            //    tableValue =  teeString + umsetzen.targetTable;
+            //    console.log(tableValue);
+            // } else {
                 tableValue = umsetzen.targetTable;
-            }
+            // }
 
             console.log("Umsetzen in occupyTable function");
             console.log(umsetzen);
@@ -278,8 +274,15 @@ module.exports = {
                     }
                 });
             }).then(function () { // (**)
-                let today = dateFns.format(dispenseTable[0].date, 'DD.MM.YYYY');
+                let today = dateFns.format(dispenseTable[0].date, 'DD/MM/YY');
                 console.log(today);
+                let todayArray = today.split('/');
+                for (let q = 0; q < todayArray.length; q++) {
+                    if (todayArray[q].charAt(0) == 0) {
+                        todayArray[q] = todayArray[q].slice(1,2);
+                    }
+                }
+                today = todayArray.join('/');
                 console.log(JSON.stringify(tablesTemp3[0]));
                 for (let i = tablesTemp3[0].length - 1; i >= 0; i--) {
                     for (let k = tablesTemp3[0][i].tables.length - 1; k >= 0; k--) {
@@ -287,7 +290,7 @@ module.exports = {
                             console.log(tablesTemp3[0][i].tables[k].groups);
                             for (let j = tablesTemp3[0][i].tables[k].groups.length - 1; j >= 0; j--) {
                                 console.log("+");
-                                //console.log(tablesTemp2[0].tables[i]);
+                                console.log(tablesTemp3[0][i].tables[k].groups[j].abreiseValue);
                                 if (tablesTemp3[0][i].tables[k].groups[j].abreiseValue === String(today)) {
                                     //console.log(tablesTemp2[0].tables[i].groups[j].abreiseValue);
                                     console.log(tablesTemp3[0][i].tables[k].groups[j].abreiseValue);
@@ -327,7 +330,6 @@ module.exports = {
                             db.oberjochTables.save(tablesTemp3[0][1]);
                             db.oberjochTables.save(tablesTemp3[0][2]);
                             db.oberjochTables.save(tablesTemp3[0][3]);
-                            db.oberjochTables.save(tablesTemp3[0][4]);
                         }
                     });
             });

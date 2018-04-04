@@ -52,7 +52,7 @@ export class TableplanComponent implements AfterViewChecked {
   buttonInfo: string;
   buttonHinzufuegen: string;
   buttonEntfernen: string;
-  trace: boolean;
+  bemerkung: boolean;
   erwFeuerstein: any[] = [];
   kiFeuerstein: any[] = [];
   erwPanoramaRestaurant1: any[] = [];
@@ -67,7 +67,7 @@ export class TableplanComponent implements AfterViewChecked {
     this.buttonInfo = "ffffff";
     this.buttonHinzufuegen = "ffffff";
     this.buttonEntfernen = "ffffff";
-    this.trace = false;
+    this.bemerkung = false;
   }
 
   ngAfterViewChecked() {
@@ -127,13 +127,13 @@ export class TableplanComponent implements AfterViewChecked {
         //console.log("LOOOOOOOOOOOOOOP");
         //console.log(a[b].traceValue);
         if (typeof a[b] != null) {
-          if (a[b].traceValue != "-" || a[b].newTraceText) {
-            this.trace = true;
+          if (a[b].bemerkungValue != "-") {
+            this.bemerkung = true;
           }
         }
       }
-      if (this.trace) {
-        this.trace = false;
+      if (this.bemerkung) {
+        this.bemerkung = false;
         return "solid 3px red";
       } else {
         return "solid 3px rgb(243, 239, 228)";

@@ -19,15 +19,10 @@ export class Table {
     anreiseValue: string;
     abreiseValue: string;
     personenAnzahlValue: string;
-    preisTypValue: string;
     preisValue: string;
-    vipValue: string;
-    resStatusValue: string;
-    notiz1Value: string;
-    notiz2Value: string;
+    wiederkehrerValue: string;
     bemerkungValue: string;
     departmentValue: string;
-    traceValue: string;
     newTraceText: string;
     newTraceRoomNumber: string;
     newTraceTableNumber: string;

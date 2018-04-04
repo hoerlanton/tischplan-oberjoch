@@ -1,19 +1,18 @@
-<h3 style="margin-top: 0;margin-bottom: 0;color: #0a7a74;">Im-Haus</h3>
+<h3 style="margin-top: 0;margin-bottom: 0;color: #0a7a74;">Anreisen</h3>
 <div class="row1">
   <div class='wrapper'>
     <div *ngFor="let imHausListeElement of imHausListeElemente">
-          <div *ngIf="imHausListeElement.trace === '-' && !imHausListeElement.isAnreise">
+          <div *ngIf="imHausListeElement.bemerkung === '-'">
             <div class='cards-container' id='container1' [dragula]='"evented-bag"'>
               <div class="card" id="card1" [ngStyle]="{'background-color': '#' + imHausListeElement.bgColor}">
             <p>
               <b>Name:</b> {{imHausListeElement.name}}<br>
-              <b>Personen Anzahl:</b> {{imHausListeElement.erwKi}}<br>
+              <b>Personen Anzahl:</b> {{imHausListeElement.personenAnzahl}}<br>
               <b>Zimmernummer:</b> {{imHausListeElement.zimmernummer}}<br>
               <b>Anreise:</b> {{imHausListeElement.anreise}}<br>
               <b>Abreise:</b> {{imHausListeElement.abreise}}<br>
-              <b>Notiz1:</b> {{imHausListeElement.notiz1}}<br>
-              <b>Notiz2:</b> {{imHausListeElement.notiz2}}<br>
-              <b>Trace:</b> {{imHausListeElement.trace}}<br>
+              <b>Kategorie:</b> {{imHausListeElement.kat}}<br>
+              <b>Wiederkehrer:</b> {{imHausListeElement.wiederkehrer}}<br>
               <b>Bemerkung:</b> {{imHausListeElement.bemerkung}}<br>
             </p>
             <div *ngIf="imHausListeElement.bgColor === '0a7a74'">
@@ -25,57 +24,21 @@
     </div>
   </div>
 </div>
-<div class="anreiseTextButton" style="height: 45px">
-  <h3 style="margin-top: 0;margin-bottom: 0;color: #0a7a74; max-width: 50%; float: left">Anreisen</h3><div class="btn-group" style="float: right" dropdown>
-  <button style="margin: 10px 0 0 0" dropdownToggle class="btn btn-primary dropdown-toggle" type="button">Heute/Morgen<span class="caret"></span></button>
-  <ul *dropdownMenu class="dropdown-menu" style="padding: 0px; height: auto" role="menu">
-    <div style="margin: 0 0 0 0; padding: 10px" class="changeToday" (mouseenter)="mouseEnterChangeTodayButton()"  (mouseleave)="mouseLeaveChangeTodayButton()" (click)="changeDayToToday($event); sortList($event)" [ngStyle]="{'background-color': '#' + bgColorToday}"><p >Heute</p></div>
-    <div style="margin: 0 0 0 0; padding: 10px" class="changeTomorrow" (mouseenter)="mouseEnterChangeTomorrowButton()"  (mouseleave)="mouseLeaveChangeTomorrowButton()" (click)="changeDayToTomorrow($event); sortList($event)" [ngStyle]="{'background-color': '#' + bgColorTomorrow}"><p >Morgen</p></div>
-  </ul>
-</div>
-</div>
+<h3 style="margin-top: 0;margin-bottom: 0;color: #0a7a74;">Gäste mit Bemerkungen</h3>
 <div class="row1">
   <div class='wrapper'>
     <div *ngFor="let imHausListeElement of imHausListeElemente">
-          <div *ngIf="imHausListeElement.trace === '-' && imHausListeElement.isAnreise">
-            <div class='cards-container' id='container2' [dragula]='"evented-bag"'>
-              <div class="card" id="card2" [ngStyle]="{'background-color': '#' + imHausListeElement.bgColor}">
-            <p>
-              <b>Name:</b> {{imHausListeElement.name}}<br>
-              <b>Personen Anzahl:</b> {{imHausListeElement.erwKi}}<br>
-              <b>Zimmernummer:</b> {{imHausListeElement.zimmernummer}}<br>
-              <b>Anreise:</b> {{imHausListeElement.anreise}}<br>
-              <b>Abreise:</b> {{imHausListeElement.abreise}}<br>
-              <b>Notiz1:</b> {{imHausListeElement.notiz1}}<br>
-              <b>Notiz2:</b> {{imHausListeElement.notiz2}}<br>
-              <b>Trace:</b> {{imHausListeElement.trace}}<br>
-              <b>Bemerkung:</b> {{imHausListeElement.bemerkung}}<br>
-            </p>
-            <div *ngIf="imHausListeElement.bgColor === '0a7a74'">
-              <i class="fa fa-check" style="float: right; color: white"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<h3 style="margin-top: 0;margin-bottom: 0;color: #0a7a74;">Traces</h3>
-<div class="row1">
-  <div class='wrapper'>
-    <div *ngFor="let imHausListeElement of imHausListeElemente">
-          <div *ngIf="imHausListeElement.trace != '-'">
+          <div *ngIf="imHausListeElement.bemerkung != '-'">
             <div class='cards-container' id='container3' [dragula]='"evented-bag"'>
               <div class="card" id="card3" [ngStyle]="{'background-color': '#' + imHausListeElement.bgColor}">
             <p>
               <b>Name:</b> {{imHausListeElement.name}}<br>
-              <b>Personen Anzahl:</b> {{imHausListeElement.erwKi}}<br>
+              <b>Personen Anzahl:</b> {{imHausListeElement.personenAnzahl}}<br>
               <b>Zimmernummer:</b> {{imHausListeElement.zimmernummer}}<br>
               <b>Anreise:</b> {{imHausListeElement.anreise}}<br>
               <b>Abreise:</b> {{imHausListeElement.abreise}}<br>
-              <b>Notiz1:</b> {{imHausListeElement.notiz1}}<br>
-              <b>Notiz2:</b> {{imHausListeElement.notiz2}}<br>
-              <b>Trace:</b> {{imHausListeElement.trace}}<br>
+              <b>Kategorie:</b> {{imHausListeElement.kat}}<br>
+              <b>Wiederkehrer:</b> {{imHausListeElement.wiederkehrer}}<br>
               <b>Bemerkung:</b> {{imHausListeElement.bemerkung}}<br>
             </p>
             <div *ngIf="imHausListeElement.bgColor === '0a7a74'">

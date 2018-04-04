@@ -29,7 +29,7 @@ export class FormComponent implements OnInit {
   @Input('showTablesPanoramaRestaurant1') showTablesPanoramaRestaurant1: boolean;
   @Input('showTablesPanoramaRestaurant2') showTablesPanoramaRestaurant2: boolean;
   @Input('showTablesSteakRestaurant') showTablesSteakRestaurant: boolean;
-  @Input('showTablesAlle') showAlle: boolean;
+  @Input('showTablesAlle') showTablesAlle: boolean;
   @Output()
   notizResponse:EventEmitter<any> = new EventEmitter();
   @Output()
@@ -41,7 +41,7 @@ export class FormComponent implements OnInit {
   notizDate: any;
 
   constructor(private tischplanService: TischplanService, private _flashMessagesService: FlashMessagesService) {
-    this.departments = ["Feuerstein", "PanoramaRestaurant1", "PanoramaRestaurant2", "SteakResaurant" ];
+    this.departments = ["Feuerstein", "Panorama Restaurant 1", "Panorama Restaurant 2", "Steak Restaurant" ];
   }
 
   ngOnInit() {
@@ -84,7 +84,7 @@ export class FormComponent implements OnInit {
                     this.tablesFeuerstein[i] = Information.tables[0];
                   }
                 }
-              } else if (Information.tables[0].department === "steakResaurant") {
+              } else if (Information.tables[0].department === "steakRestaurant") {
                 for (let i = 0; i < this.tablesSteakRestaurant.length; i++) {
                   if (this.tablesSteakRestaurant[i].number === Information.tables[0].number) {
                     this.tablesSteakRestaurant[i] = Information.tables[0];

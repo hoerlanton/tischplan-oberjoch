@@ -185,17 +185,17 @@ export class DepartmentsComponent  {
         if (response === null) {
           return;
         } else {
-          if (response[0].department === "panoramaRestaurant1") {
-            this.dispensedPanoramaRestaurant1.emit(response[0].tables);
+          if (response.tables[0].department === "panoramaRestaurant1") {
+            this.tablesPanoramaRestaurant1[arrayIndex] = response.tables[0];
           }
-          else if (response[0].department === "feuerstein") {
-            this.dispensedFeuerstein.emit(response[0].tables);
+          else if (response.tables[0].department === "feuerstein") {
+            this.tablesFeuerstein[arrayIndex] = response.tables[0];
           }
-          else if (response[0].department === "steakRestaurant") {
-            this.dispensedSteakRestaurant.emit(response[0].tables);
+          else if (response.tables[0].department === "steakRestaurant") {
+            this.tablesSteakRestaurant[arrayIndex] = response.tables[0];
           }
-          else if (response[0].department === "panoramaRestaurant2") {
-            this.dispensedPanoramaRestaurant2.emit(response[0].tables);
+          else if (response.tables[0].department === "panoramaRestaurant2") {
+            this.tablesPanoramaRestaurant2[arrayIndex] = response.tables[0];
           }
         }
 
@@ -229,6 +229,8 @@ export class DepartmentsComponent  {
                 if (this.parts[0]) {
                   this.date[0] = new Date(2018, this.parts[0][1] - 1, this.parts[0][0]);
                   this.parsedDate[0] = String(this.date[0]).substring(0, 15);
+                  console.log('changeBgColorIfAnreise this.parsedDate[0]');
+                  console.log(this.parsedDate[0]);
                 }
                 // note parts[1]-1
                 // console.log('parts[2]' + parts[2] + 'parts[1]' + (parts[1] - 1) + 'parts[0]' + parts[0]);

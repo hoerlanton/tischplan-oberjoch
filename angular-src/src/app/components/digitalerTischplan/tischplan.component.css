@@ -99,7 +99,7 @@ span {
 
 
 .row1 {
-  height: calc((100vh - 195px) / 3);
+  height: calc((100vh - 195px) / 2);
   overflow: auto;
 }
 
@@ -110,6 +110,7 @@ span {
 .cards-container {
   margin: 10px 0px 10px 0px;
   padding: 10px 10px 40px 10px;
+
 }
 
 
@@ -120,7 +121,7 @@ span {
 
 }
 
-#containerRestaurant, #containerPanorama, #containerWintergarten, #containerSonnbergZirbn {
+#containerFeuerstein, #containerPanoramaRestaurant1, #containerPanoramaRestaurant2, #containerSteakRestaurant {
   border-radius: 3px;
   border: solid 1px grey;
 }

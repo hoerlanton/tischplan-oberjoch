@@ -7,7 +7,7 @@
         <div class="table" [ngStyle]="{'background-color': '#' + tablePanoramaRestaurant1.bgColor}">
           <div *ngIf="tablePanoramaRestaurant1.isBesetzt === 'true'">
             <div *ngFor="let group of tablePanoramaRestaurant1.groups; let j = index;">
-              <div [style.border]="getStyle(group.traceValue)">
+              <div [style.border]="getStyle(group.bemerkungValue)">
                 <div *ngIf="group">
                   <div *ngIf="group.nameValue">
                     <p style="background-color: #FFFFFF; padding: 10px">
@@ -16,9 +16,8 @@
                       <b> Anreise Datum:</b> {{group.anreiseValue}}<br>
                       <b> Abreise Datum:</b> {{group.abreiseValue}}<br>
                       <b> Personenanzahl:</b> {{group.personenAnzahlValue}}<br>
-                      <b> Notiz1:</b> {{group.notiz1Value}}<br>
-                      <b> Notiz2:</b> {{group.notiz2Value}}<br>
-                      <b> Trace:</b> {{group.traceValue}}<br>
+                      <b> Wiederkehrer:</b> {{group.wiederkehrerValue}}<br>
+                      <b> Kategorie:</b> {{group.kategorieValue}}<br>
                       <b> Bemerkung:</b> {{group.bemerkungValue}}<br>
                     </p>
                   </div>

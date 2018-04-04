@@ -22,7 +22,7 @@ export class AlleComponent implements PipeTransform {
   @Input('term') term: string;
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();
-  @Input('showTablesAlleBool') showTablesAlleBool: boolean;
+  @Input('showTablesAlle') showTablesAlle: boolean;
 
 
   constructor() { }

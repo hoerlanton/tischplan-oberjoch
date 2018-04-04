@@ -146,7 +146,7 @@ export class TischplanComponent {
           return;
         } else {
           this.notizElements = informationElemente;
-          //console.log(this.notizElements);
+          console.log(this.notizElements);
         }
       });
 
@@ -221,7 +221,7 @@ export class TischplanComponent {
     let numbers = innerText.match(/\d+/g);
     let arrayIndex = [];
     //console.log(innerText.substring(33, 34));
-    if (innerText.substring(33, 34) === ".") {
+    if (innerText.substring(33, 34) === "." || innerText.substring(32, 33) === ".") {
       arrayIndex = numbers[2];
       tableNumberSubstring = numbers[0] + "." + numbers[1];
     } else {
@@ -305,6 +305,7 @@ export class TischplanComponent {
   abreisenRemoval() {
     this.departmentsComponent.occupy(this.abreiseTablePlusIndex.abreisenExport, this.abreiseTablePlusIndex.a);
   }
+
   umsetzen() {
     this.departmentsComponent.addInformationToTable(this.umsetzenInfoVar.tableInformationExport, this.umsetzenInfoVar.indexZiel);
     this.departmentsComponent.occupyTableOnDrop(this.umsetzenInfoVar.tableToMove, this.umsetzenInfoVar.indexZiel);
@@ -317,7 +318,7 @@ export class TischplanComponent {
   }
 
   reloadLists(){
-    this.tischplanService.getImHausListe()
+    this.tischplanService.getAnreiseListe()
       .subscribe(imHausListeElemente => {
         //console.log('IM-HAUS-LISTE before:');
         //console.log(imHausListeElemente);
@@ -355,6 +356,21 @@ export class TischplanComponent {
         if (typeof tables == null) {
           return;
         } else {
+
+          for (let x = 0; x < tables.length; x++){
+            //console.log("tables[x].department");
+            //console.log(tables[x].department);
+              tables[x].tables.sort(function (a, b) {
+                //console.log(a.number);
+                //console.log(b.number);
+                if (Number(a.number) < Number(b.number))
+                  return -1;
+                if (Number(a.number) > Number(b.number))
+                  return 1;
+                return 0;
+              });
+          }
+
           for (let a = 0; a < tables.length; a++) {
             if (tables[a].department === "feuerstein") {
               this.tablesFeuerstein = tables[a].tables;

@@ -5,7 +5,7 @@
         <div *ngFor="let tablePanoramaRestaurant1 of tablesPanoramaRestaurant1; let j = index;">
           <div dropdownToggle type="button" class="t{{tablePanoramaRestaurant1.number}} table-item" [ngStyle]="{'top': tablePanoramaRestaurant1.topValue + 'px', 'left': tablePanoramaRestaurant1.leftValue + 'px', 'background-color': + tablePanoramaRestaurant1.bgColor, 'height': + tablePanoramaRestaurant1.height + 'px', 'width': + tablePanoramaRestaurant1.width + 'px', 'border': + tablePanoramaRestaurant1.border, 'transform':  + tablePanoramaRestaurant1.transformValue}" [style.border]="getStyle(tablesPanoramaRestaurant1[j].groups)" dropdown>
             <div *ngIf="tablesPanoramaRestaurant1[j] !== tablesPanoramaRestaurant1[j+1]">
-              <p><b>{{tablePanoramaRestaurant1.number}} <br>{{erwPanoramaRestaurant1[j]}}/{{kiPanoramaRestaurant1[j]}}</b></p>
+              <p><b>{{tablePanoramaRestaurant1.number}} <br>{{erwPanoramaRestaurant1[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
@@ -21,7 +21,7 @@
                   <div *ngFor="let group of tablePanoramaRestaurant1.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
-                        <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
+                        <div class="dropdown-item" [style.border]="getStyleTrace(group.bemerkungValue)"><b>Name:</b> {{group.nameValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Wiederkehrer:</b> {{group.wiederkehrerValue}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br></div>
                         <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
                       </div>
                       <div *ngIf="group.newTraceText">
@@ -41,7 +41,7 @@
         <div *ngFor="let tableFeuerstein of tablesFeuerstein; let j = index;">
           <div dropdownToggle type="button" class="t{{tableFeuerstein.number}} table-item" [ngStyle]="{'top': tableFeuerstein.topValue + 'px', 'left': tableFeuerstein.leftValue + 'px', 'background-color': + tableFeuerstein.bgColor, 'height': + tableFeuerstein.height + 'px', 'width': + tableFeuerstein.width + 'px', 'border': + tableFeuerstein.border, 'transform':  + tableFeuerstein.transformValue}" [style.border]="getStyle(tablesFeuerstein[j].groups)" dropdown>
             <div *ngIf="tablesFeuerstein[j] !== tablesFeuerstein[j+1]">
-              <p><b>{{tableFeuerstein.number}} <br>{{erwFeuerstein[j]}}/{{kiFeuerstein[j]}}</b></p>
+              <p><b>{{tableFeuerstein.number}} <br>{{erwFeuerstein[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
@@ -57,7 +57,7 @@
                   <div *ngFor="let group of tableFeuerstein.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
-                        <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
+                        <div class="dropdown-item" [style.border]="getStyleTrace(group.bemerkungValue)"><b>Name:</b> {{group.nameValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Wiederkehrer:</b> {{group.wiederkehrerValue}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br></div>
                         <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
                       </div>
                       <div *ngIf="group.newTraceText">
@@ -77,7 +77,8 @@
         <div *ngFor="let tablePanoramaRestaurant2 of tablesPanoramaRestaurant2; let j = index;">
           <div dropdownToggle type="button" class="t{{tablePanoramaRestaurant2.number}} table-item" [ngStyle]="{'top': tablePanoramaRestaurant2.topValue + 'px', 'left': tablePanoramaRestaurant2.leftValue + 'px', 'background-color': + tablePanoramaRestaurant2.bgColor, 'height': + tablePanoramaRestaurant2.height + 'px', 'width': + tablePanoramaRestaurant2.width + 'px', 'border': + tablePanoramaRestaurant2.border, 'transform':  + tablePanoramaRestaurant2.transformValue}" [style.border]="getStyle(tablesPanoramaRestaurant2[j].groups)" dropdown>
             <div *ngIf="tablesPanoramaRestaurant2[j] !== tablesPanoramaRestaurant2[j+1]">
-              <p><b>{{tablePanoramaRestaurant2.number}} <br>{{erwPanoramaRestaurant2[j]}}/{{kiPanoramaRestaurant2[j]}}</b></p>
+              <p><b>{{tablePanoramaRestaurant2.number}} <br>{{erwPanoramaRestaurant2[j]}}
+              </b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
@@ -93,7 +94,7 @@
                   <div *ngFor="let group of tablePanoramaRestaurant2.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
-                        <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
+                        <div class="dropdown-item" [style.border]="getStyleTrace(group.bemerkungValue)"><b>Name:</b> {{group.nameValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Wiederkehrer:</b> {{group.wiederkehrerValue}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br></div>
                         <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
                       </div>
                       <div *ngIf="group.newTraceText">
@@ -113,7 +114,7 @@
         <div *ngFor="let tableSteakRestaurant of tablesSteakRestaurant; let j = index;">
           <div dropdownToggle type="button" class="t{{tableSteakRestaurant.number}} table-item" [ngStyle]="{'top': tableSteakRestaurant.topValue + 'px', 'left': tableSteakRestaurant.leftValue + 'px', 'background-color': + tableSteakRestaurant.bgColor, 'height': + tableSteakRestaurant.height + 'px', 'width': + tableSteakRestaurant.width + 'px', 'border': + tableSteakRestaurant.border, 'transform':  + tableSteakRestaurant.transformValue}" [style.border]="getStyle(tablesSteakRestaurant[j].groups)" dropdown>
             <div *ngIf="tablesSteakRestaurant[j] !== tablesSteakRestaurant[j+1]">
-              <p><b>{{tableSteakRestaurant.number}} <br>{{erwSteakRestaurant[j]}}/{{kiSteakRestaurant[j]}}</b></p>
+              <p><b>{{tableSteakRestaurant.number}} <br>{{erwSteakRestaurant[j]}}</b></p>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div dropdownToggle type="button" style="color: white; padding: 10px;" (mouseenter)="mouseEnterMoveTableButton()"  (mouseleave)="mouseLeaveMoveTableButton()" [ngStyle]="{'background-color': '#' + buttonMoveTable}" (click)="none($event)" class="dropdownMoveTable" dropdown><b>Tisch verschieben</b>
@@ -129,7 +130,7 @@
                   <div *ngFor="let group of tableSteakRestaurant.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
-                        <div class="dropdown-item" [style.border]="getStyleTrace(group.traceValue)"><b>Name:</b> {{group.nameValue}}<br><b>Nation:</b> {{group.nationValue}}<br><b>Sprache:</b> {{group.spracheValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Preistyp: </b>{{group.preistypValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Reisebüro: </b>{{group.reisebueroValue}}<br><b>Notiz1:</b> {{group.notiz1Value}}<br><b>Notiz2:</b> {{group.notiz2Value}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br><b>Trace:</b> {{group.traceValue}}</div>
+                        <div class="dropdown-item" [style.border]="getStyleTrace(group.bemerkungValue)"><b>Name:</b> {{group.nameValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Wiederkehrer:</b> {{group.wiederkehrerValue}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br></div>
                         <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
                       </div>
                       <div *ngIf="group.newTraceText">

@@ -229,7 +229,7 @@ module.exports = {
         let zimmernummerValueArray = [];
 
         let informationElements = req.body;
-        //console.log(informationElements);
+        console.log(informationElements);
 
         let informationElementsString = JSON.stringify(informationElements);
         if (informationElementsString.indexOf("targetTable") != -1 && informationElementsString.indexOf("nameValue") === -1) {
@@ -240,7 +240,7 @@ module.exports = {
                  nameValueArray.push(informationElements.groups[i].nameValue);
                  zimmernummerValueArray.push(informationElements.groups[i].zimmernummerValue);
 
-                db.oberjochImHausListe.update(
+                db.oberjochAnreiseListe.update(
                     {
                         name: nameValueArray[i],
                         "zimmernummer": zimmernummerValueArray[i]
@@ -263,7 +263,7 @@ module.exports = {
             //console.log(nameValueArray[0]);
             //console.log(zimmernummerValueArray[0]);
 
-            db.oberjochImHausListe.update(
+            db.oberjochAnreiseListe.update(
                 {
                     name: nameValueArray[0],
                     "zimmernummer": zimmernummerValueArray[0]
@@ -281,13 +281,13 @@ module.exports = {
         }}
 
             setTimeout(function () {
-                db.oberjochImHausListe.find(
+                db.oberjochAnreiseListe.find(
                     {},
-                    function (err, oberjochImHausListe) {
+                    function (err, oberjochAnreiseListe) {
                         if (err) {
                             res.send(err);
                         }
-                        res.json(oberjochImHausListe);
+                        res.json(oberjochAnreiseListe);
                         //console.log('oberjochImHausListe');
                         //console.log(JSON.stringify(oberjochImHausListe));
                     });
