@@ -221,7 +221,7 @@ export class TischplanComponent {
     let numbers = innerText.match(/\d+/g);
     let arrayIndex = [];
     //console.log(innerText.substring(33, 34));
-    if (innerText.substring(33, 34) === "." || innerText.substring(32, 33) === ".") {
+    if (innerText.substring(33, 34) === "." || innerText.substring(32, 33) === "." || innerText.substring(34, 35) === ".") {
       arrayIndex = numbers[2];
       tableNumberSubstring = numbers[0] + "." + numbers[1];
     } else {

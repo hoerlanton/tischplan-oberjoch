@@ -183,7 +183,7 @@ module.exports = {
 
             if (tableValue.length > 3) {
                 restaurant = tableValue.charAt(0);
-                tableValue = tableValue.slice(1,4);
+                tableValue = tableValue.slice(1, tableValue.length);
             }
             console.log(tableValue);
 
