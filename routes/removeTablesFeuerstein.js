@@ -382,6 +382,52 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
+        }  else if (tableNumber === '7.1' && topValue === '210' && leftValue === '110' && width === '120')  {
+            db.oberjochTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "60",
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.oberjochTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [ {
+                                "arrayIndex": "7",
+                                "department": "feuerstein",
+                                "number": "8",
+                                "topValue": "210",
+                                "leftValue": "200",
+                                "bgColor": "#ffffff",
+                                "isBesetzt": "false",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "95",
+                                "height": "50"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {multi: true},
+                function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
         }  else if (tableNumber === '9' && topValue === '110' && leftValue === '25' && width === '180')  {
             db.oberjochTables.update(
                 {

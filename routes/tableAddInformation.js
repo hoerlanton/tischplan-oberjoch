@@ -30,7 +30,8 @@ module.exports = {
             newTraceDate = [],
             newTraceTableNumber = [],
             teeString = "Tee",
-            bemerkungValueTemp = "";
+            bemerkungValueTemp = "",
+            restaurant = 0;
 
         for (let s = 0; s < splitted.length; s++) {
             informationElements2.push(splitted[s].split(/:(.+)/)[1]);
@@ -73,6 +74,13 @@ module.exports = {
                tableValue = tableValueArray[0];
            }
 
+           if (tableValue.length > 3) {
+               restaurant = tableValue.charAt(0);
+               tableValue = tableValue.slice(1,4);
+           }
+
+
+
             console.log(tableValueArray);
             console.log(tableValue);
 
@@ -83,11 +91,11 @@ module.exports = {
             if (departmentValue === "SteakRestaurant") {
                 departmentValueDB = "steakRestaurant";
             }
-            else if (departmentValue === "PanoramaRestaurant1") {
-                departmentValueDB = "panoramaRestaurant1";
+            else if (departmentValue === "PanoramaRestaurant") {
+                departmentValueDB = "panoramaRestaurant" + restaurant;
             }
-            else if (departmentValue === "PanoramaRestaurant2") {
-                departmentValueDB = "panoramaRestaurant2";
+            else if (departmentValue === "PanoramaRestaurant") {
+                departmentValueDB = "panoramaRestaurant" + restaurant;
             }
             else if (departmentValue === "Feuerstein") {
                 departmentValueDB = "feuerstein";
