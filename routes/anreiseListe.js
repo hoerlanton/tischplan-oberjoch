@@ -53,7 +53,7 @@ module.exports = {
                 //console.log(accessorNameA);
                 //console.log(accessorNameC);
 
-                if (anreiseListeData.data[accessorNameD] == 'Warteliste') {
+                if (anreiseListeData.data[accessorNameB] == null && anreiseListeData.data[accessorNameC] == null && anreiseListeData.data[accessorNameH] == null && anreiseListeData.data[accessorNameK] == null) {
                     console.log("BREAK!!");
                     console.log(accessorNameB);
                     console.log(accessorNameC);
@@ -64,7 +64,7 @@ module.exports = {
                     console.log(anreiseListeData.data[accessorNameK]);
                     break;
                 }
-                if (anreiseListeData.data[accessorNameB] == null && anreiseListeData.data[accessorNameH] == null) {continue;}
+                if (anreiseListeData.data[accessorNameD].w == "Warteliste") {continue;}
                 if (anreiseListeData.data[accessorNameB]) {
                     zimmerNummer.push(anreiseListeData.data[accessorNameB].w);
                 } else {
