@@ -155,80 +155,58 @@ module.exports = {
 
             //console.log(" nameValue " + nameValue + " zimmernummerValue " + zimmernummerValue + " anreiseValue " + anreiseValue + " abreiseValue " + abreiseValue + " personenAnzahlValue " + personenAnzahlValue + " notiz1Value " + notiz1Value + " notiz2Value " + notiz2Value + " bemerkungValue " + bemerkungValue + "tableValue" + tableValue + "departmentvalue" + departmentValue);
 
-
-            setTimeout(function () {
-                db.oberjochTables.findOne(
-                    {
-                        department: departmentValueDB,
-                        "tables.number": tableValue
-                    },
-                    {
-                        "tables.$": 1,
-                    },
-                    function (err, tablesfirst) {
-                        if (err) {
-                            res.send(err);
-                        }
-                        if (tablesfirst === null) {
-                            console.log("tablesfirst is null");
-                            console.log(tablesfirst);
-                            return;
-                        }
-                        console.log("Länge tables firstplace" + JSON.stringify(tablesfirst.tables[0]).length);
-                        for (let i = 0; i < umsetzen[0].groups.length; i++) {
-                            if (nameValue[i]) {
-                                db.oberjochTables.update(
-                                    {
-                                        department: departmentValueDB,
-                                        "tables.number": tableValue
-                                    },
-                                    {
-                                        $push: {
-                                            "tables.$.groups": {
-                                                "nameValue": nameValue[i],
-                                                "zimmernummerValue": zimmernummerValue[i],
-                                                "anreiseValue": anreiseValue[i],
-                                                "abreiseValue": abreiseValue[i],
-                                                "personenAnzahlValue": personenAnzahlValue[i],
-                                                "wiederkehrerValue": wiederkehrerValue[i],
-                                                "kategorieValue": kategorieValue[i],
-                                                "bemerkungValue": bemerkungValue[i],
-                                            }
-                                        }
-                                    }, function (err, tables) {
-                                        if (err) {
-                                            console.log("Error");
-                                        }
-                                        console.log("addInformationToTable updated successfully");
-                                    });
-                            } else {
-                                db.oberjochTables.update(
-                                    {
-                                        department: departmentValueDB,
-                                        "tables.number": tableValue
-                                    },
-                                    {
-                                        $push: {
-                                            "tables.$.groups": {
-                                                "newTraceText" : newTraceText[i],
-                                                "newTraceRoomNumber": newTraceRoomNumber[i],
-                                                "newTraceName": newTraceName[i],
-                                                "newTraceEmployee": newTraceEmployee[i],
-                                                "newTraceDate": newTraceDate[i],
-                                                "newTraceTableNumber": newTraceTableNumber[i]
-                                            }
-                                        }
-                                    }, function (err, tables) {
-                                        if (err) {
-                                            console.log("Error");
-                                        }
-                                        console.log("addInformationToTable updated successfully");
-                                    });
+            for (let i = 0; i < umsetzen[0].groups.length; i++) {
+                if (nameValue[i]) {
+                    db.oberjochTables.update(
+                        {
+                            department: departmentValueDB,
+                            "tables.number": tableValue
+                        },
+                        {
+                            $push: {
+                                "tables.$.groups": {
+                                    "nameValue": nameValue[i],
+                                    "zimmernummerValue": zimmernummerValue[i],
+                                    "anreiseValue": anreiseValue[i],
+                                    "abreiseValue": abreiseValue[i],
+                                    "personenAnzahlValue": personenAnzahlValue[i],
+                                    "wiederkehrerValue": wiederkehrerValue[i],
+                                    "kategorieValue": kategorieValue[i],
+                                    "bemerkungValue": bemerkungValue[i],
+                                }
                             }
+                        }, function (err, tables) {
+                            if (err) {
+                                console.log("Error");
+                            }
+                            console.log("addInformationToTable updated successfully");
+                        });
+                } else {
+                    db.oberjochTables.update(
+                        {
+                            department: departmentValueDB,
+                            "tables.number": tableValue
+                        },
+                        {
+                            $push: {
+                                "tables.$.groups": {
+                                    "newTraceText" : newTraceText[i],
+                                    "newTraceRoomNumber": newTraceRoomNumber[i],
+                                    "newTraceName": newTraceName[i],
+                                    "newTraceEmployee": newTraceEmployee[i],
+                                    "newTraceDate": newTraceDate[i],
+                                    "newTraceTableNumber": newTraceTableNumber[i]
+                                }
+                            }
+                        }, function (err, tables) {
+                            if (err) {
+                                console.log("Error");
+                            }
+                            console.log("addInformationToTable updated successfully");
+                        });
+                }
 
-                        }
-                    });
-            }, 200);
+            }
         }
         setTimeout(function () {
             db.oberjochTables.find(

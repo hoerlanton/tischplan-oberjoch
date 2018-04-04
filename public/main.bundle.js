@@ -2382,32 +2382,32 @@ var NavigationComponent = (function () {
         var indexZiel = 0;
         var indexQuell = 0;
         if (Number(quellTisch) >= 201 && Number(quellTisch) <= 319) {
-            tableToMove.department = "panoramaRestaurant1";
-            indexQuell = 3;
+            tableToMove.department = "panoramaRestaurant2";
+            indexQuell = 1;
         }
         else if (Number(quellTisch) >= 1 && Number(quellTisch) <= 21) {
             tableToMove.department = "feuerstein";
             indexQuell = 2;
         }
-        else if ((Number(quellTisch) >= 101 && Number(quellTisch) <= 104) && (Number(quellTisch) >= 401 && Number(quellTisch) <= 508)) {
-            tableToMove.department = "panoramaRestaurant2";
-            indexQuell = 1;
+        else if ((Number(quellTisch) >= 101 && Number(quellTisch) <= 104) || (Number(quellTisch) >= 401 && Number(quellTisch) <= 508)) {
+            tableToMove.department = "panoramaRestaurant1";
+            indexQuell = 3;
         }
         else if (Number(quellTisch) >= 701 && Number(quellTisch) <= 714) {
             tableToMove.department = "steakRestaurant";
             indexQuell = 4;
         }
         if (Number(zielTisch) >= 201 && Number(zielTisch) <= 319) {
-            tableToMove.targetDepartment = "panoramaRestaurant1";
-            indexZiel = 3;
+            tableToMove.targetDepartment = "panoramaRestaurant2";
+            indexZiel = 1;
         }
         else if (Number(zielTisch) >= 1 && Number(zielTisch) <= 21) {
             tableToMove.targetDepartment = "feuerstein";
             indexZiel = 2;
         }
-        else if ((Number(zielTisch) >= 101 && Number(zielTisch) <= 104) && (Number(zielTisch) >= 401 && Number(zielTisch) <= 508)) {
-            tableToMove.targetDepartment = "panoramaRestaurant2";
-            indexZiel = 1;
+        else if ((Number(zielTisch) >= 101 && Number(zielTisch) <= 104) || (Number(zielTisch) >= 401 && Number(zielTisch) <= 508)) {
+            tableToMove.targetDepartment = "panoramaRestaurant1";
+            indexZiel = 3;
         }
         else if (Number(zielTisch) >= 701 && Number(zielTisch) <= 714) {
             tableToMove.targetDepartment = "steakRestaurant";
