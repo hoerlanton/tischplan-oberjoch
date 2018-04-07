@@ -181,7 +181,7 @@ module.exports = {
                 tableValue = tableValueArray[0];
             }
 
-            if (tableValue.length > 3) {
+            if (tableValue.length > 4) {
                 restaurant = tableValue.charAt(0);
                 tableValue = tableValue.slice(1, tableValue.length);
             }
