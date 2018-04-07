@@ -1000,7 +1000,13 @@ var DepartmentsComponent = (function () {
                 }
             }
             else {
-                _this.updateImHausListeElement.emit(table);
+                if (table.constructor === Array) {
+                    console.log("isarray");
+                    _this.updateImHausListeElement.emit(table[0].table);
+                }
+                else {
+                    _this.updateImHausListeElement.emit(table);
+                }
             }
         });
         this.tischplanService.addPlaceholder(table).subscribe(function (response) {
@@ -3885,7 +3891,7 @@ var TischplanComponent = (function () {
         var _this = this;
         this.tischplanService.getAnreiseListe()
             .subscribe(function (imHausListeElemente) {
-            //console.log('IM-HAUS-LISTE before:');
+            console.log('reloadLists called');
             //console.log(imHausListeElemente);
             imHausListeElemente.sort(function (a, b) {
                 if (a.name < b.name)

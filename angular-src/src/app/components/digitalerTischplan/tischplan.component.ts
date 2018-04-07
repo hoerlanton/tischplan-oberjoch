@@ -320,7 +320,7 @@ export class TischplanComponent {
   reloadLists(){
     this.tischplanService.getAnreiseListe()
       .subscribe(imHausListeElemente => {
-        //console.log('IM-HAUS-LISTE before:');
+        console.log('reloadLists called');
         //console.log(imHausListeElemente);
 
         imHausListeElemente.sort(function (a, b) {
