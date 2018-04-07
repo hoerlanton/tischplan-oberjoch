@@ -127,7 +127,7 @@ export class NavigationComponent implements OnInit {
     } else if ((Number(quellTisch) >= 101 && Number(quellTisch) <= 104) || (Number(quellTisch) >= 401 && Number(quellTisch) <= 508)) {
       tableToMove.department = "panoramaRestaurant1";
       indexQuell = 3;
-    } else if (Number(quellTisch) >= 701 && Number(quellTisch) <= 714) {
+    } else if (Number(quellTisch) >= 701 && Number(quellTisch) <= 715) {
       tableToMove.department = "steakRestaurant";
       indexQuell = 4;
     }
@@ -141,7 +141,7 @@ export class NavigationComponent implements OnInit {
     } else if ((Number(zielTisch) >= 101 && Number(zielTisch) <= 104) || (Number(zielTisch) >= 401 && Number(zielTisch) <= 508)) {
       tableToMove.targetDepartment = "panoramaRestaurant1";
       indexZiel = 3;
-    } else if (Number(zielTisch) >= 701 && Number(zielTisch) <= 714) {
+    } else if (Number(zielTisch) >= 701 && Number(zielTisch) <= 715) {
       tableToMove.targetDepartment = "steakRestaurant";
       indexZiel = 4;
     }

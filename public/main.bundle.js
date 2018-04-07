@@ -2399,7 +2399,7 @@ var NavigationComponent = (function () {
             tableToMove.department = "panoramaRestaurant1";
             indexQuell = 3;
         }
-        else if (Number(quellTisch) >= 701 && Number(quellTisch) <= 714) {
+        else if (Number(quellTisch) >= 701 && Number(quellTisch) <= 715) {
             tableToMove.department = "steakRestaurant";
             indexQuell = 4;
         }
@@ -2415,7 +2415,7 @@ var NavigationComponent = (function () {
             tableToMove.targetDepartment = "panoramaRestaurant1";
             indexZiel = 3;
         }
-        else if (Number(zielTisch) >= 701 && Number(zielTisch) <= 714) {
+        else if (Number(zielTisch) >= 701 && Number(zielTisch) <= 715) {
             tableToMove.targetDepartment = "steakRestaurant";
             indexZiel = 4;
         }
