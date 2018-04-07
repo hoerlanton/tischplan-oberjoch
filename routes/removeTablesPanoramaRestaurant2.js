@@ -599,9 +599,9 @@ module.exports = {
                             $each: [{
                                 "arrayIndex": "11",
                                 "department": "panoramaRestaurant2",
-                                "number": "208",
+                                "number": "209",
                                 "topValue": "610",
-                                "leftValue": "75",
+                                "leftValue": "140",
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",

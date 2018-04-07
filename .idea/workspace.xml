@@ -96,21 +96,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addTablesPanoramaRestaurant2.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="addTablesPanoramaRestaurant2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/addTablesPanoramaRestaurant2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1440">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="320">
+              <caret line="431" column="21" lean-forward="true" selection-start-line="431" selection-start-column="21" selection-end-line="431" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="removeTablesPanoramaRestaurant2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="removeTablesPanoramaRestaurant2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state relative-caret-position="300">
+              <caret line="597" column="33" lean-forward="true" selection-start-line="597" selection-start-column="33" selection-end-line="597" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -537,12 +537,12 @@
       <workItem from="1522738403544" duration="31703000" />
       <workItem from="1523083620222" duration="724000" />
       <workItem from="1523097656237" duration="1643000" />
-      <workItem from="1523106705304" duration="2243000" />
+      <workItem from="1523106705304" duration="2792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1261322000" />
+    <option name="totallyTimeSpent" value="1261871000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -973,18 +973,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/addTablesPanoramaRestaurant2.js">
+    <entry file="file://$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1440">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="597" column="33" lean-forward="true" selection-start-line="597" selection-start-column="33" selection-end-line="597" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js">
+    <entry file="file://$PROJECT_DIR$/routes/addTablesPanoramaRestaurant2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        <state relative-caret-position="320">
+          <caret line="431" column="21" lean-forward="true" selection-start-line="431" selection-start-column="21" selection-end-line="431" selection-end-column="21" />
           <folding />
         </state>
       </provider>
