@@ -87,22 +87,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tableAddInformation.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tableAddInformation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/tableAddInformation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+            <state relative-caret-position="313">
+              <caret line="77" column="49" lean-forward="true" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="table.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/table.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="186" column="13" lean-forward="true" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="360">
+              <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="64" />
+              <folding>
+                <marker date="1523108163521" expanded="true" signature="7862:8060" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,8 +234,8 @@
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/navigation/navigation.component.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.ts" />
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/departments/departments.component.ts" />
-        <option value="$PROJECT_DIR$/routes/tableAddInformation.js" />
         <option value="$PROJECT_DIR$/routes/table.js" />
+        <option value="$PROJECT_DIR$/routes/tableAddInformation.js" />
       </list>
     </option>
   </component>
@@ -538,12 +540,12 @@
       <workItem from="1522738403544" duration="31703000" />
       <workItem from="1523083620222" duration="724000" />
       <workItem from="1523097656237" duration="1643000" />
-      <workItem from="1523106705304" duration="960000" />
+      <workItem from="1523106705304" duration="1373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1260039000" />
+    <option name="totallyTimeSpent" value="1260452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -969,18 +971,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/tableAddInformation.js">
+    <entry file="file://$PROJECT_DIR$/routes/table.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="64" />
+          <folding>
+            <marker date="1523108163521" expanded="true" signature="7862:8060" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/table.js">
+    <entry file="file://$PROJECT_DIR$/routes/tableAddInformation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="186" column="13" lean-forward="true" selection-start-line="186" selection-start-column="13" selection-end-line="186" selection-end-column="13" />
+        <state relative-caret-position="313">
+          <caret line="77" column="49" lean-forward="true" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
           <folding />
         </state>
       </provider>
