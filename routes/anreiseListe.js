@@ -44,7 +44,7 @@ module.exports = {
                 let accessorNameC = "C" + row;
                 let accessorNameD = "D" + row;
                 let accessorNameH = "H" + row;
-                let accessorNameK = "K" + row;
+                let accessorNameL = "L" + row;
                 let accessorNameM = "M" + row;
                 let accessorNameN = "N" + row;
                 let accessorNameP = "P" + row;
@@ -53,15 +53,15 @@ module.exports = {
                 //console.log(accessorNameA);
                 //console.log(accessorNameC);
 
-                if (anreiseListeData.data[accessorNameB] == null && anreiseListeData.data[accessorNameC] == null && anreiseListeData.data[accessorNameH] == null && anreiseListeData.data[accessorNameK] == null) {
+                if (anreiseListeData.data[accessorNameB] == null && anreiseListeData.data[accessorNameC] == null && anreiseListeData.data[accessorNameH] == null && anreiseListeData.data[accessorNameL] == null) {
                     console.log("BREAK!!");
                     console.log(accessorNameB);
                     console.log(accessorNameC);
                     console.log(accessorNameH);
-                    console.log(accessorNameK);
+                    console.log(accessorNameL);
                     console.log(anreiseListeData.data[accessorNameB]);
                     console.log(anreiseListeData.data[accessorNameC]);
-                    console.log(anreiseListeData.data[accessorNameK]);
+                    console.log(anreiseListeData.data[accessorNameL]);
                     break;
                 }
                 if (anreiseListeData.data[accessorNameD].w == "Warteliste") {continue;}
@@ -80,8 +80,8 @@ module.exports = {
                 } else {
                     name.push("-");
                 }
-                if (anreiseListeData.data[accessorNameK]) {
-                    personenAnzahl.push(anreiseListeData.data[accessorNameK].w);
+                if (anreiseListeData.data[accessorNameL]) {
+                    personenAnzahl.push(anreiseListeData.data[accessorNameL].w);
                 } else {
                     personenAnzahl.push("-");
                 }
