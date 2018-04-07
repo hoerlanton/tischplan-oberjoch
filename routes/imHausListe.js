@@ -244,7 +244,8 @@ module.exports = {
                 db.oberjochAnreiseListe.update(
                     {
                         name: nameValueArray[i],
-                        "zimmernummer": zimmernummerValueArray[i]
+                        "zimmernummer": zimmernummerValueArray[i],
+                        "bgColor": "0a7a74"
                     },
                     {
                         $set: {
