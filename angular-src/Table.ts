@@ -13,6 +13,7 @@ export class Table {
   borderRadius: string;
   transformValue: string;
   groups: [{
+    bestellerValue: string;
     nameValue: string;
     zimmernummerValue: string;
     kategorieValue: string;

@@ -21,7 +21,7 @@
                   <div *ngFor="let group of tablePanoramaRestaurant1.groups">
                     <div *ngIf="group">
                       <div *ngIf="group.nameValue">
-                        <div class="dropdown-item" [style.border]="getStyleTrace(group.bemerkungValue)"><b>Name:</b> {{group.nameValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Wiederkehrer:</b> {{group.wiederkehrerValue}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br></div>
+                        <div class="dropdown-item" [style.border]="getStyleTrace(group.bemerkungValue)"><b>Besteller:</b> {{group.nameValue}}<br><b>Gast:</b> {{group.nameValue}}<br><b>Zimmer Nummer: </b>{{group.zimmernummerValue}}<br><b>Anreise: </b>{{group.anreiseValue}}<br><b>Abreise:</b> {{group.abreiseValue}}<br><b>Personen Anzahl:</b>{{group.personenAnzahlValue}}<br><b>Kategorie: </b>{{group.kategorieValue}}<br><b>Wiederkehrer:</b> {{group.wiederkehrerValue}}<br><b>Bemerkung:</b> {{group.bemerkungValue}}<br></div>
                         <li class="divider dropdown-divider" style="padding: 0 0 0 0"></li>
                       </div>
                       <div *ngIf="group.newTraceText">

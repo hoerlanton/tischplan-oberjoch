@@ -27,6 +27,7 @@ module.exports = {
             //  "wiederkehrer": anreiseListeData.data[i][16],
             //  "bemerkung": anreiseListeData.data[i][55],
 
+            let besteller = [];
             let name = [];
             let zimmerNummer = [];
             let kat = [];
@@ -43,6 +44,7 @@ module.exports = {
                 let accessorNameB = "B" + row;
                 let accessorNameC = "C" + row;
                 let accessorNameD = "D" + row;
+                let accessorNameG = "G" + row;
                 let accessorNameH = "H" + row;
                 let accessorNameL = "L" + row;
                 let accessorNameM = "M" + row;
@@ -74,6 +76,11 @@ module.exports = {
                     kat.push(anreiseListeData.data[accessorNameC].w);
                 } else {
                     kat.push("-");
+                }
+                if (anreiseListeData.data[accessorNameG]) {
+                    besteller.push(anreiseListeData.data[accessorNameG].w);
+                } else {
+                    besteller.push("-");
                 }
                 if (anreiseListeData.data[accessorNameH]) {
                     name.push(anreiseListeData.data[accessorNameH].w);
@@ -121,11 +128,13 @@ module.exports = {
                   "zimmernummer": zimmerNummer[i],
                   "kat": kat[i],
                   "name": name[i],
+                  "besteller": besteller[i],
                   "personenAnzahl": personenAnzahl[i],
                   "anreise": anreise[i],
                   "abreise": abreise[i],
                   "wiederkehrer": wiederkehrer[i],
                   "bemerkung": bemerkung[i],
+                    "bgColor": 'ffffff'
                 });
             };
 
@@ -189,7 +198,9 @@ module.exports = {
 
         db.oberjochAnreiseListe.update(
             {name: nameValue,
-                "zimmernummer": zimmernummerValue},
+                "zimmernummer": zimmernummerValue
+
+            },
             {$set: {
                 "bgColor": "0a7a74",
             }}, function (err, tables) {

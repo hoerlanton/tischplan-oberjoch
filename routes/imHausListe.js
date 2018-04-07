@@ -185,7 +185,8 @@ module.exports = {
                 "notiz1": notiz1[i],
                 "notiz2": notiz2[i],
                 "bemerkung": bemerkung[i],
-                "trace": trace[i]
+                "trace": trace[i],
+                "bgColor": 'ffffff'
             });
         };
 
@@ -257,8 +258,8 @@ module.exports = {
                     });
             }
         } else {
-            nameValueArray.push(informationElements[0].substring(1, informationElements[0].length));
-            zimmernummerValueArray.push(informationElements[2].substring(1, informationElements[2].length));
+            nameValueArray.push(informationElements[1].substring(1, informationElements[1].length));
+            zimmernummerValueArray.push(informationElements[3].substring(1, informationElements[3].length));
 
             //console.log(nameValueArray[0]);
             //console.log(zimmernummerValueArray[0]);
@@ -266,7 +267,8 @@ module.exports = {
             db.oberjochAnreiseListe.update(
                 {
                     name: nameValueArray[0],
-                    "zimmernummer": zimmernummerValueArray[0]
+                    "zimmernummer": zimmernummerValueArray[0],
+                    "bgColor": "ffffff"
                 },
                 {
                     $set: {
