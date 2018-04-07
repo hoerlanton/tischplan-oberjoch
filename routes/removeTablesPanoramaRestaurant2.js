@@ -12,7 +12,7 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.width": "40",
+                        "tables.$.width": "70",
                         "tables.$.leftValue": "450",
                         "tables.$.topValue": "730",
                     }

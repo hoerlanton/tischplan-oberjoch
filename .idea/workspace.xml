@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b12636d-0934-43d0-9e11-bbac60639e35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/anreiseListe.js" afterPath="$PROJECT_DIR$/routes/anreiseListe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js" afterPath="$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,28 +54,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navigation.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/navigation/navigation.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="76" column="13" lean-forward="false" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navigation.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/navigation/navigation.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1875">
-              <caret line="130" column="49" lean-forward="false" selection-start-line="130" selection-start-column="49" selection-end-line="130" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#90#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="tableAddInformation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/tableAddInformation.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,11 +86,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="anreiseListe.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="anreiseListe.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/anreiseListe.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
               <caret line="66" column="87" lean-forward="true" selection-start-line="66" selection-start-column="87" selection-end-line="66" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addTablesPanoramaRestaurant2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/addTablesPanoramaRestaurant2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1440">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="removeTablesPanoramaRestaurant2.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -140,7 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>erwPanoramaRestaurant2</find>
       <find>}</find>
       <find>&quot;ext-align: center&quot; [ngStyle]=&quot;{'color': '#' + fontColorShowTablePlan</find>
       <find>fontcolorshow</find>
@@ -170,6 +168,7 @@
       <find>7</find>
       <find>'7'</find>
       <find>tablesfirst</find>
+      <find>accessorNameK</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/angular-src/src</dir>
@@ -199,7 +198,6 @@
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/departmentmenu/departmentmenu.component.html" />
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/tischplan.component.html" />
         <option value="$PROJECT_DIR$/routes/addTablesPanoramaRestaurant2.js" />
-        <option value="$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js" />
         <option value="$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant1.js" />
         <option value="$PROJECT_DIR$/routes/addTablesPanoramaRestaurant1.js" />
         <option value="$PROJECT_DIR$/angular-src/src/app/components/digitalerTischplan/navigation/navigation.component.html" />
@@ -234,6 +232,7 @@
         <option value="$PROJECT_DIR$/routes/table.js" />
         <option value="$PROJECT_DIR$/routes/tableAddInformation.js" />
         <option value="$PROJECT_DIR$/routes/anreiseListe.js" />
+        <option value="$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js" />
       </list>
     </option>
   </component>
@@ -538,12 +537,12 @@
       <workItem from="1522738403544" duration="31703000" />
       <workItem from="1523083620222" duration="724000" />
       <workItem from="1523097656237" duration="1643000" />
-      <workItem from="1523106705304" duration="2016000" />
+      <workItem from="1523106705304" duration="2243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1261095000" />
+    <option name="totallyTimeSpent" value="1261322000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,13 +615,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/tischplan.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -861,13 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="1186" column="45" lean-forward="false" selection-start-line="1186" selection-start-column="45" selection-end-line="1186" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/removeTablesSteakRestaurant.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -984,6 +969,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="66" column="87" lean-forward="true" selection-start-line="66" selection-start-column="87" selection-end-line="66" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/addTablesPanoramaRestaurant2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1440">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/removeTablesPanoramaRestaurant2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding />
         </state>
       </provider>
