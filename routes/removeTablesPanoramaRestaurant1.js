@@ -756,7 +756,7 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.height": "55",
+                        "tables.$.height": "30",
                     }
                 }, function (err, tables) {
                     if (err) {
@@ -1452,7 +1452,7 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.width": "65",
+                        "tables.$.width": "80",
                         "tables.$.leftValue": "225",
                         "tables.$.height": "40",
                     }

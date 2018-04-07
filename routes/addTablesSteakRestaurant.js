@@ -338,6 +338,40 @@ module.exports = {
                     console.log("removeTable Update successful");
                     console.log(tables);
                 });
+        } else if (tableNumber === '714' && topValue === '425' && leftValue === '530' && width === '105') {
+            db.oberjochTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "210",
+                        "tables.$.leftValue": "400"
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.oberjochTables.update(
+                {}, {
+                    $pull: {
+                        tables: {
+                            "number": "715",
+                        }
+                    }
+                },
+                {
+                    multi: true
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("removeTable Update successful");
+                    console.log(tables);
+                });
         }
     }
 };

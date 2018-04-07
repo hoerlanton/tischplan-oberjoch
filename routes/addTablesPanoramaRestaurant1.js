@@ -1073,7 +1073,7 @@ module.exports = {
                     console.log("removeTable Update successful");
                     console.log(tables);
                 });
-        } else if (tableNumber === '507' && topValue === '590' && leftValue === '225' && width === '65') {
+        } else if (tableNumber === '507' && topValue === '590' && leftValue === '225' && width === '80') {
             db.oberjochTables.update(
                 {
                     department: departmentValue,

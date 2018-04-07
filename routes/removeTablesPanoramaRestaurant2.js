@@ -1080,7 +1080,7 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
-        } else if (tableNumber === '317' && topValue === '220' && leftValue === '525' && height === '105')  {
+        } else if (tableNumber === '317' && topValue === '220' && leftValue === '525' && height === '115')  {
             db.oberjochTables.update(
                 {
                     department: departmentValue,
@@ -1134,7 +1134,7 @@ module.exports = {
                 },
                 {
                     $set: {
-                        "tables.$.height": "105",
+                        "tables.$.height": "115",
                     }
                 }, function (err, tables) {
                     if (err) {

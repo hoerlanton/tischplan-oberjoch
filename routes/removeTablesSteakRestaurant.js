@@ -284,7 +284,7 @@ module.exports = {
                     }
                     console.log("addTable Update successful");
                 });
-        } else if (tableNumber === '707' && topValue === '100' && leftValue === '50' && width === '130') {
+        } else if (tableNumber === '707' && topValue === '100' && leftValue === '150' && width === '130') {
             db.oberjochTables.update(
                 {
                     department: departmentValue,
@@ -450,6 +450,53 @@ module.exports = {
                                 "number": "714",
                                 "topValue": "425",
                                 "leftValue": "530",
+                                "bgColor": "#ffffff",
+                                "isBesetzt": "false",
+                                "placeholder": "true",
+                                "border": "solid 3px #f3efe4",
+                                "width": "105",
+                                "height": "60"
+                            }],
+                            $sort: {number: 1}
+                        }
+                    }
+                },
+                {multi: true},
+                function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("addTable Update successful");
+                });
+        } else if (tableNumber === '714' && topValue === '425' && leftValue === '400' && width === '210') {
+            db.oberjochTables.update(
+                {
+                    department: departmentValue,
+                    "tables.number": tableNumber
+                },
+                {
+                    $set: {
+                        "tables.$.width": "105",
+                        "tables.$.leftValue": "530"
+                    }
+                }, function (err, tables) {
+                    if (err) {
+                        console.log("Error");
+                    }
+                    console.log("moveTable Update successful");
+                });
+            db.oberjochTables.update(
+                {
+                    department: departmentValue,
+                }, {
+                    $push: {
+                        tables: {
+                            $each: [{
+                                "arrayIndex": "15",
+                                "department": "steakRestaurant",
+                                "number": "715",
+                                "topValue": "425",
+                                "leftValue": "400",
                                 "bgColor": "#ffffff",
                                 "isBesetzt": "false",
                                 "placeholder": "true",
