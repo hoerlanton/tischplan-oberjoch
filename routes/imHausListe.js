@@ -5,8 +5,8 @@
 module.exports = {
     saveImHausListe: function (req, res, db) {
 
-//JSON string is parsed to a JSON object
-
+    //JSON string is parsed to a JSON object
+        /*
         console.log("JSON.stringify(req.body)");
         console.log(JSON.stringify(req.body));
 
@@ -208,8 +208,19 @@ module.exports = {
         //console.log('imHausListe' +  imHausListe);
         //imHausListe.data = req.body;
          */
-        db.oberjochImHausListe.remove({});
-        setTimeout(function () {
+        //console.log(req.body);
+        let imHausListe = req.body;
+        new Promise(function (resolve, reject) {
+            db.oberjochImHausListe.remove(function (err, imHausListe) {
+                if (err) {
+                    //res.send(err);
+                    reject();
+                }
+                //res.json(imHausListe);
+                resolve();
+                console.log("imHausListe save called");
+            });
+        }).then(function () { // (**)
             db.oberjochImHausListe.save(imHausListe, function (err, imHausListe) {
                 if (err) {
                     res.send(err);
@@ -217,10 +228,8 @@ module.exports = {
                 res.json(imHausListe);
                 console.log("imHausListe save called");
             });
-        }, 500);
-
+        });
     },
-
     updateImHausListe: function (req, res, db) {
 
         console.log("Post request made to /updateImHausListeElement");

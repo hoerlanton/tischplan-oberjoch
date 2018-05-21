@@ -318,7 +318,7 @@ export class TischplanComponent {
   }
 
   reloadLists(){
-    this.tischplanService.getAnreiseListe()
+    this.tischplanService.getImHausListe()
       .subscribe(imHausListeElemente => {
         console.log('reloadLists called');
         //console.log(imHausListeElemente);
