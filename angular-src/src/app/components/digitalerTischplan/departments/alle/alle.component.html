@@ -4,17 +4,17 @@
       <div class='cards-container' id='containerTables' [ngStyle]="{'background-color': + table.bgColor}">
         <div class="table" [ngStyle]="{'background-color': '#' + table.bgColor}">
           <div *ngIf="table.isBesetzt === 'true'">
-            <div [style.border]="getStyle(table.traceValue)">
+            <div [style.border]="getStyle(table.bemerkungValue)">
               <div *ngIf="table.nameValue">
                 <p style="background-color: #FFFFFF; padding: 10px">
-                  <b> Gast: </b> {{group.nameValue}}<br>
-                  <b> Zimmernummer: </b> {{group.zimmernummerValue}}<br>
-                  <b> Anreise Datum: </b> {{group.anreiseValue}}<br>
-                  <b> Abreise Datum: </b> {{group.abreiseValue}}<br>
-                  <b> Personenanzahl: </b> {{group.personenAnzahlValue}}<br>
-                  <b> HP/F: </b> {{group.preisTypValue}}<br>
-                  <b> Kategorie: </b> {{group.kategorieValue}}<br>
-                  <b> Bemerkung: </b> {{group.bemerkungValue}}<br>
+                  <b> Gast: </b> {{table.nameValue}}<br>
+                  <b> Zimmernummer: </b> {{table.zimmernummerValue}}<br>
+                  <b> Anreise Datum: </b> {{table.anreiseValue}}<br>
+                  <b> Abreise Datum: </b> {{table.abreiseValue}}<br>
+                  <b> Personenanzahl: </b> {{table.personenAnzahlValue}}<br>
+                  <b> HP/F: </b> {{table.preisTypValue}}<br>
+                  <b> Kategorie: </b> {{table.kategorieValue}}<br>
+                  <b> Bemerkung: </b> {{table.bemerkungValue}}<br>
                 </p>
               </div>
             </div>

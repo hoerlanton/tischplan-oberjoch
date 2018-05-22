@@ -343,7 +343,7 @@ export class TischplanComponent {
       setTimeout(() => {
         this.tables = this.tablesFeuerstein.concat(this.tablesPanoramaRestaurant1).concat(this.tablesPanoramaRestaurant2).concat(this.tablesSteakRestaurant);
         //console.log('this.tables: in updateAzList');
-        //console.log(this.tables);
+        console.log(this.tables);
         this.printComponent.formatAzListe(this.tables);
       }, 3000);
     }, 1000);
