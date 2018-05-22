@@ -84,8 +84,8 @@ module.exports = {
             console.log(tableValue + " " + departmentValue);
 
 
-            if (departmentValue === "SteakRestaurant") {
-                departmentValueDB = "steakRestaurant";
+            if (departmentValue === "IselerRestaurant") {
+                departmentValueDB = "iselerRestaurant";
             }
             else if (departmentValue === "PanoramaRestaurant") {
                 departmentValueDB = "panoramaRestaurant" + restaurant;

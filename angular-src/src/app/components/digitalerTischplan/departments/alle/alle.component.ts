@@ -18,7 +18,8 @@ export class AlleComponent implements PipeTransform {
   @Input('tablesFeuerstein') tablesFeuerstein: Table[];
   @Input('tablesPanoramaRestaurant1') tablesPanoramaRestaurant1: Table[];
   @Input('tablesPanoramaRestaurant2') tablesPanoramaRestaurant2: Table[];
-  @Input('tablesSteakRestaurant') tablesSteakRestaurant: Table[];
+  @Input('tablesPanoramaRestaurant3') tablesPanoramaRestaurant3: Table[];
+  @Input('tablesIselerRestaurant') tablesIselerRestaurant: Table[];
   @Input('term') term: string;
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();

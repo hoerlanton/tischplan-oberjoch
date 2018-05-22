@@ -41,8 +41,8 @@ module.exports = {
             tableValue = tableValueArray[0];
         }
 
-        if (departmentValue === "SteakRestaurant") {
-            departmentValueDB = "steakRestaurant";
+        if (departmentValue === "IselerRestaurant") {
+            departmentValueDB = "iselerRestaurant";
         }
         else if (departmentValue === "PanoramaRestaurant1") {
             departmentValueDB = "panoramaRestaurant1";

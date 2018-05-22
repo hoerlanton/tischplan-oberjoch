@@ -17,28 +17,36 @@ export class TableplanComponent implements AfterViewChecked {
   @Input('showTablesPanoramaRestaurant1') showTablesPanoramaRestaurant1: boolean;
   @Input('tablesPanoramaRestaurant2') tablesPanoramaRestaurant2: Table[];
   @Input('showTablesPanoramaRestaurant2') showTablesPanoramaRestaurant2: boolean;
-  @Input('tablesSteakRestaurant') tablesSteakRestaurant: Table[];
-  @Input('showTablesSteakRestaurant') showTablesSteakRestaurant: boolean;
+  @Input('tablesPanoramaRestaurant3') tablesPanoramaRestaurant3: Table[];
+  @Input('showTablesPanoramaRestaurant3') showTablesPanoramaRestaurant3: boolean;
+  @Input('tablesIselerRestaurant') tablesIselerRestaurant: Table[];
+  @Input('showTablesIselerRestaurant') showTablesIselerRestaurant: boolean;
   @Input('showTablesAlle') showTablesAlle: boolean;
   @Input('showTablePlanBool') showTablePlanBool: boolean;
   @Output()
   movedPanoramaRestaurant2:EventEmitter<any> = new EventEmitter();
   @Output()
+  movedPanoramaRestaurant3:EventEmitter<any> = new EventEmitter();
+  @Output()
   movedFeuerstein:EventEmitter<any> = new EventEmitter();
   @Output()
-  movedSteakRestaurant:EventEmitter<any> = new EventEmitter();
+  movedIselerRestaurant:EventEmitter<any> = new EventEmitter();
   @Output()
   movedPanoramaRestaurant1:EventEmitter<any> = new EventEmitter();
   @Output()
   changeBgColorIfAnreise:EventEmitter<any> = new EventEmitter();
   @Output()
-  exportKiSteakRestaurant:EventEmitter<any> = new EventEmitter();
+  exportKiIselerRestaurant:EventEmitter<any> = new EventEmitter();
   @Output()
-  exportErwSteakRestaurant:EventEmitter<any> = new EventEmitter();
+  exportErwIselerRestaurant:EventEmitter<any> = new EventEmitter();
   @Output()
   exportKiPanoramaRestaurant2:EventEmitter<any> = new EventEmitter();
   @Output()
   exportErwPanoramaRestaurant2:EventEmitter<any> = new EventEmitter();
+  @Output()
+  exportKiPanoramaRestaurant3:EventEmitter<any> = new EventEmitter();
+  @Output()
+  exportErwPanoramaRestaurant3:EventEmitter<any> = new EventEmitter();
   @Output()
   exportKiPanoramaRestaurant1:EventEmitter<any> = new EventEmitter();
   @Output()
@@ -57,10 +65,12 @@ export class TableplanComponent implements AfterViewChecked {
   kiFeuerstein: any[] = [];
   erwPanoramaRestaurant1: any[] = [];
   kiPanoramaRestaurant1: any[] = [];
-  erwSteakRestaurant: any[] = [];
-  kiSteakRestaurant: any[] = [];
+  erwIselerRestaurant: any[] = [];
+  kiIselerRestaurant: any[] = [];
   erwPanoramaRestaurant2: any[] = [];
   kiPanoramaRestaurant2: any[] = [];
+  erwPanoramaRestaurant3: any[] = [];
+  kiPanoramaRestaurant3: any[] = [];
 
   constructor(private tischplanService: TischplanService) {
     this.buttonMoveTable = "ff0000";
@@ -87,12 +97,13 @@ export class TableplanComponent implements AfterViewChecked {
         this.movedPanoramaRestaurant2.emit(response[0].tables);
       } else if (response[0].department === "feuerstein") {
         this.movedFeuerstein.emit(response[0].tables);
-      } else if (response[0].department === "steakRestaurant") {
-        this.movedSteakRestaurant.emit(response[0].tables);
+      } else if (response[0].department === "iselerRestaurant") {
+        this.movedIselerRestaurant.emit(response[0].tables);
       } else if (response[0].department === "panoramaRestaurant1") {
         this.movedPanoramaRestaurant1.emit(response[0].tables);
-      }
-      this.changeBgColorIfAnreise.emit();
+      } else if (response[0].department === "panoramaRestaurant3") {
+        this.movedPanoramaRestaurant3.emit(response[0].tables);
+      }      this.changeBgColorIfAnreise.emit();
     });
   }
     removeTable(table, j) {
@@ -108,10 +119,12 @@ export class TableplanComponent implements AfterViewChecked {
           this.movedPanoramaRestaurant2.emit(response[0].tables);
         } else if (response[0].department === "feuerstein") {
           this.movedFeuerstein.emit(response[0].tables);
-        } else if (response[0].department === "steakRestaurant") {
-          this.movedSteakRestaurant.emit(response[0].tables);
+        } else if (response[0].department === "iselerRestaurant") {
+          this.movedIselerRestaurant.emit(response[0].tables);
         } else if (response[0].department === "panoramaRestaurant1") {
           this.movedPanoramaRestaurant1.emit(response[0].tables);
+        } else if (response[0].department === "panoramaRestaurant3") {
+          this.movedPanoramaRestaurant3.emit(response[0].tables);
         }
         this.changeBgColorIfAnreise.emit();
       });
@@ -284,22 +297,22 @@ export class TableplanComponent implements AfterViewChecked {
         }
       }
     }
-    if (this.tablesSteakRestaurant) {
-      for (let p = 0; p < this.tablesSteakRestaurant.length; p++) {
-        this.erwSteakRestaurant[p] = 0;
-        this.kiSteakRestaurant[p] = 0;
-        if (this.tablesSteakRestaurant[p].groups) {
-          for (let g = 0; g < this.tablesSteakRestaurant[p].groups.length; g++) {
-            if (this.tablesSteakRestaurant[p].groups[g].personenAnzahlValue) {
-              let erwKi = this.tablesSteakRestaurant[p].groups[g].personenAnzahlValue.match(/\d+/g);
+    if (this.tablesPanoramaRestaurant3) {
+      for (let p = 0; p < this.tablesPanoramaRestaurant3.length; p++) {
+        this.erwPanoramaRestaurant3[p] = 0;
+        this.kiPanoramaRestaurant3[p] = 0;
+        if (this.tablesPanoramaRestaurant3[p].groups) {
+          for (let g = 0; g < this.tablesPanoramaRestaurant3[p].groups.length; g++) {
+            if (this.tablesPanoramaRestaurant3[p].groups[g].personenAnzahlValue) {
+              let erwKi = this.tablesPanoramaRestaurant3[p].groups[g].personenAnzahlValue.match(/\d+/g);
               if (erwKi != null) {
                 //console.log(erwKi);
-                this.erwSteakRestaurant[p] = this.erwSteakRestaurant[p] + Number(erwKi[0]);
+                this.erwPanoramaRestaurant3[p] = this.erwPanoramaRestaurant3[p] + Number(erwKi[0]);
                 //console.log(this.erw[p]);
               }
               if (erwKi != null) {
                 //console.log(erwKi);
-                this.kiSteakRestaurant[p] = this.kiSteakRestaurant[p] + Number(erwKi[1]);
+                this.kiPanoramaRestaurant3[p] = this.kiPanoramaRestaurant3[p] + Number(erwKi[1]);
                 //console.log(this.ki[p]);
               }
             }
@@ -307,10 +320,35 @@ export class TableplanComponent implements AfterViewChecked {
         }
       }
     }
-    this.exportKiSteakRestaurant.emit(this.kiSteakRestaurant);
-    this.exportErwSteakRestaurant.emit(this.erwSteakRestaurant);
+    if (this.tablesIselerRestaurant) {
+      for (let p = 0; p < this.tablesIselerRestaurant.length; p++) {
+        this.erwIselerRestaurant[p] = 0;
+        this.kiIselerRestaurant[p] = 0;
+        if (this.tablesIselerRestaurant[p].groups) {
+          for (let g = 0; g < this.tablesIselerRestaurant[p].groups.length; g++) {
+            if (this.tablesIselerRestaurant[p].groups[g].personenAnzahlValue) {
+              let erwKi = this.tablesIselerRestaurant[p].groups[g].personenAnzahlValue.match(/\d+/g);
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.erwIselerRestaurant[p] = this.erwIselerRestaurant[p] + Number(erwKi[0]);
+                //console.log(this.erw[p]);
+              }
+              if (erwKi != null) {
+                //console.log(erwKi);
+                this.kiIselerRestaurant[p] = this.kiIselerRestaurant[p] + Number(erwKi[1]);
+                //console.log(this.ki[p]);
+              }
+            }
+          }
+        }
+      }
+    }
+    this.exportKiIselerRestaurant.emit(this.kiIselerRestaurant);
+    this.exportErwIselerRestaurant.emit(this.erwIselerRestaurant);
     this.exportKiPanoramaRestaurant2.emit(this.kiPanoramaRestaurant2);
     this.exportErwPanoramaRestaurant2.emit(this.erwPanoramaRestaurant2);
+    this.exportKiPanoramaRestaurant3.emit(this.kiPanoramaRestaurant3);
+    this.exportErwPanoramaRestaurant3.emit(this.erwPanoramaRestaurant3);
     this.exportKiPanoramaRestaurant1.emit(this.kiPanoramaRestaurant1);
     this.exportErwPanoramaRestaurant1.emit(this.erwPanoramaRestaurant1);
     this.exportKiFeuerstein.emit(this.kiFeuerstein);

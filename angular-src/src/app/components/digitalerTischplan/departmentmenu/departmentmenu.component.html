@@ -17,8 +17,11 @@
         <div *ngIf="showTablesPanoramaRestaurant2">
           Panorama <br>Restaurant 2<br><i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
         </div>
-        <div *ngIf="showTablesSteakRestaurant">
-          Steak<br>Restaurant<br><i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+        <div *ngIf="showTablesPanoramaRestaurant3">
+          Panorama <br>Restaurant 3<br><i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
+        </div>
+        <div *ngIf="showTablesIselerRestaurant">
+          Iseler<br>Restaurant<br><i class="fa fa-th-large" aria-hidden="true"></i><span class="caret"></span>
         </div>
       </button>
       <ul *dropdownMenu class="dropdown-menu"  role="menu" style="overflow: auto; margin: 0 0 0 20px; width: 200px;">
@@ -26,8 +29,8 @@
           <p [ngStyle]="{'color': '#' + fontColor1}">Feuerstein</p>
         </li>
         <li style="margin: 0px" class="divider dropdown-divider"></li>
-        <li role="menuitem" class="tablesSteakRestaurant" style="padding: 10px"  (click)="showSteakRestaurantFunction()" (mouseenter)="mouseEnterSteakRestaurant()"  (mouseleave)="mouseLeaveSteakRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
-          <p [ngStyle]="{'color': '#' + fontColor2}">Steak<br>Restaurant <br></p>
+        <li role="menuitem" class="tablesIselerRestaurant" style="padding: 10px"  (click)="showIselerRestaurantFunction()" (mouseenter)="mouseEnterIselerRestaurant()"  (mouseleave)="mouseLeaveIselerRestaurant()" [ngStyle]="{'background-color': '#' + buttonBgColor2}">
+          <p [ngStyle]="{'color': '#' + fontColor2}">Iseler<br>Restaurant <br></p>
         </li>
         <li style="margin: 0px" class="divider dropdown-divider"></li>
         <li role="menuitem" class="tablesPanoramaRestaurant2" style="padding: 10px"  (click)="showPanoramaRestaurant2Function()" (mouseenter)="mouseEnterPanoramaRestaurant2()"  (mouseleave)="mouseLeavePanoramaRestaurant2()" [ngStyle]="{'background-color': '#' + buttonBgColor4}">
@@ -36,6 +39,10 @@
         <li style="margin: 0px" class="divider dropdown-divider"></li>
         <li role="menuitem" class="tablesPanoramaRestaurant1" style="padding: 10px" (click)="showPanoramaRestaurant1Function()" (mouseenter)="mouseEnterPanoramaRestaurant1()"  (mouseleave)="mouseLeavePanoramaRestaurant1()" [ngStyle]="{'background-color': '#' + buttonBgColor3}">
           <p [ngStyle]="{'color': '#' + fontColor3}">Panorama<br>Restaurant 1</p>
+        </li>
+        <li style="margin: 0px" class="divider dropdown-divider"></li>
+        <li role="menuitem" class="tablesPanoramaRestaurant3" style="padding: 10px" (click)="showPanoramaRestaurant3Function()" (mouseenter)="mouseEnterPanoramaRestaurant3()"  (mouseleave)="mouseLeavePanoramaRestaurant3()" [ngStyle]="{'background-color': '#' + buttonBgColor6}">
+          <p [ngStyle]="{'color': '#' + fontColor6}">Panorama<br>Restaurant 3</p>
         </li>
         <li style="margin: 0px" class="divider dropdown-divider"></li>
         <li role="menuitem" class="tablesAlle" style="padding: 10px"  (click)="showAlleFunction()" (mouseenter)="mouseEnterAlle()"  (mouseleave)="mouseLeaveAlle()" [ngStyle]="{'background-color': '#' + buttonBgColor5}">

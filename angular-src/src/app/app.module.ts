@@ -19,7 +19,8 @@ import { DepartmentmenuComponent } from './components/digitalerTischplan/departm
 import { FeuersteinComponent } from './components/digitalerTischplan/departments/feuerstein/feuerstein.component';
 import { PanoramaRestaurant1Component } from './components/digitalerTischplan/departments/panoramaRestaurant1/panoramaRestaurant1.component';
 import { PanoramaRestaurant2Component } from './components/digitalerTischplan/departments/panoramaRestaurant2/panoramaRestaurant2.component';
-import { SteakRestaurantComponent } from './components/digitalerTischplan/departments/steakRestaurant/steakRestaurant.component';
+import { PanoramaRestaurant3Component } from './components/digitalerTischplan/departments/panoramaRestaurant3/panoramaRestaurant3.component';
+import { IselerRestaurantComponent } from './components/digitalerTischplan/departments/iselerRestaurant/iselerRestaurant.component';
 import { AlleComponent } from './components/digitalerTischplan/departments/alle/alle.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RouterModule, Routes } from '@angular/router';
@@ -56,7 +57,8 @@ const appRoutes: Routes =  [
     FeuersteinComponent,
     PanoramaRestaurant1Component,
     PanoramaRestaurant2Component,
-    SteakRestaurantComponent,
+    PanoramaRestaurant3Component,
+    IselerRestaurantComponent,
     AlleComponent,
     LoginComponent,
     RegisterComponent,

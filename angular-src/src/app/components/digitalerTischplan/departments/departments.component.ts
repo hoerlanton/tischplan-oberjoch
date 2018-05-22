@@ -3,7 +3,8 @@ import { Table } from '../../../../../Table';
 import { TischplanService } from '../../../services/tischplan.service';
 import {PanoramaRestaurant1Component} from "./panoramaRestaurant1/panoramaRestaurant1.component";
 import {PanoramaRestaurant2Component} from "./panoramaRestaurant2/panoramaRestaurant2.component";
-import {SteakRestaurantComponent} from "./steakRestaurant/steakRestaurant.component";
+import {PanoramaRestaurant3Component} from "./panoramaRestaurant3/panoramaRestaurant3.component";
+import {IselerRestaurantComponent} from "./iselerRestaurant/iselerRestaurant.component";
 import {FeuersteinComponent} from "./feuerstein/feuerstein.component";
 import {AlleComponent} from "./alle/alle.component";
 
@@ -17,8 +18,10 @@ export class DepartmentsComponent  {
   @Input('showTablesFeuerstein') showTablesFeuerstein: boolean;
   @Input('tablesPanoramaRestaurant2') tablesPanoramaRestaurant2: Table[];
   @Input('showTablesPanoramaRestaurant2') showTablesPanoramaRestaurant2: boolean;
-  @Input('tablesSteakRestaurant') tablesSteakRestaurant: Table[];
-  @Input('showTablesSteakRestaurant') showTablesSteakRestaurant: boolean;
+  @Input('tablesPanoramaRestaurant3') tablesPanoramaRestaurant3: Table[];
+  @Input('showTablesPanoramaRestaurant3') showTablesPanoramaRestaurant3: boolean;
+  @Input('tablesIselerRestaurant') tablesIselerRestaurant: Table[];
+  @Input('showTablesIselerRestaurant') showTablesIselerRestaurant: boolean;
   @Input('tablesPanoramaRestaurant1') tablesPanoramaRestaurant1: Table[];
   @Input('showTablesPanoramaRestaurant1') showTablesPanoramaRestaurant1: boolean;
   @Input('tables') tables: any;
@@ -28,9 +31,11 @@ export class DepartmentsComponent  {
   @Output()
   dispensedFeuerstein:EventEmitter<any> = new EventEmitter();
   @Output()
-  dispensedSteakRestaurant:EventEmitter<any> = new EventEmitter();
+  dispensedIselerRestaurant:EventEmitter<any> = new EventEmitter();
   @Output()
   dispensedPanoramaRestaurant2:EventEmitter<any> = new EventEmitter();
+  @Output()
+  dispensedPanoramaRestaurant3:EventEmitter<any> = new EventEmitter();
   @Output()
   dispensedPanoramaRestaurant1:EventEmitter<any> = new EventEmitter();
   @Output()
@@ -54,8 +59,11 @@ export class DepartmentsComponent  {
   @ViewChild(PanoramaRestaurant2Component)
   private panoramaRestaurant2Component: PanoramaRestaurant2Component;
 
-  @ViewChild(SteakRestaurantComponent)
-  private steakRestaurantComponent: SteakRestaurantComponent;
+  @ViewChild(PanoramaRestaurant3Component)
+  private panoramaRestaurant3Component: PanoramaRestaurant3Component;
+
+  @ViewChild(IselerRestaurantComponent)
+  private iselerRestaurantComponent: IselerRestaurantComponent;
 
   @ViewChild(FeuersteinComponent)
   private feuersteinComponent: FeuersteinComponent;
@@ -88,8 +96,8 @@ export class DepartmentsComponent  {
       if (typeof response == null || typeof response[j] == null) {
         return;
       } else {
-        if (response[j].department === "steakRestaurant") {
-          this.dispensedSteakRestaurant.emit(response[j].tables);
+        if (response[j].department === "iselerRestaurant") {
+          this.dispensedIselerRestaurant.emit(response[j].tables);
         }
         else if (response[j].department === "feuerstein") {
           this.dispensedFeuerstein.emit(response[j].tables);
@@ -99,6 +107,9 @@ export class DepartmentsComponent  {
         }
         else if (response[j].department === "panoramaRestaurant2") {
           this.dispensedPanoramaRestaurant2.emit(response[j].tables);
+        }
+        else if (response[j].department === "panoramaRestaurant3") {
+          this.dispensedPanoramaRestaurant3.emit(response[j].tables);
         }
 
       }
@@ -130,7 +141,7 @@ export class DepartmentsComponent  {
         return;
       } else {
         if (response[j].department === "panoramaRestaurant1") {
-          this.dispensedSteakRestaurant.emit(response[j].tables);
+          this.dispensedIselerRestaurant.emit(response[j].tables);
         }
         else if (response[j].department === "Feuerstein") {
           this.dispensedFeuerstein.emit(response[j].tables);
@@ -165,14 +176,17 @@ export class DepartmentsComponent  {
           else if (response[0].department === "feuerstein") {
             this.dispensedFeuerstein.emit(response[0].tables);
           }
-          else if (response[0].department === "steakRestaurant") {
-            this.dispensedSteakRestaurant.emit(response[0].tables);
+          else if (response[0].department === "iselerRestaurant") {
+            this.dispensedIselerRestaurant.emit(response[0].tables);
           }
           else if (response[0].department === "panoramaRestaurant2") {
             this.dispensedPanoramaRestaurant2.emit(response[0].tables);
           }
+          else if (response[0].department === "panoramaRestaurant3") {
+            this.dispensedPanoramaRestaurant3.emit(response[0].tables);
+          }
         }
-        // //console.log(this.tablesSteakRestaurant[arrayIndex]);
+        // //console.log(this.tablesIselerRestaurant[arrayIndex]);
       });
     this.updateAzList.emit();
   }
@@ -195,17 +209,20 @@ export class DepartmentsComponent  {
           else if (response.tables[0].department === "feuerstein") {
             this.tablesFeuerstein[arrayIndex] = response.tables[0];
           }
-          else if (response.tables[0].department === "steakRestaurant") {
-            this.tablesSteakRestaurant[arrayIndex] = response.tables[0];
+          else if (response.tables[0].department === "iselerRestaurant") {
+            this.tablesIselerRestaurant[arrayIndex] = response.tables[0];
           }
           else if (response.tables[0].department === "panoramaRestaurant2") {
             this.tablesPanoramaRestaurant2[arrayIndex] = response.tables[0];
           }
+          else if (response.tables[0].department === "panoramaRestaurant3") {
+            this.tablesPanoramaRestaurant3[arrayIndex] = response.tables[0];
+          }
         }
 
-        //console.log("bgColor:" + JSON.stringify(this.tablesSteakRestaurant[arrayIndex]));
+        //console.log("bgColor:" + JSON.stringify(this.tablesIselerRestaurant[arrayIndex]));
       });
-    //console.log("placeholder:" + JSON.stringify(this.tablesSteakRestaurant[arrayIndex]));
+    //console.log("placeholder:" + JSON.stringify(this.tablesIselerRestaurant[arrayIndex]));
   }
 
   changeBgColorIfAnreise() {
@@ -244,9 +261,9 @@ export class DepartmentsComponent  {
                 //console.log('Parsed Date --->: ' + this.parsedDate[0]);
                 //console.log('this.dateGenerated --->: ' + dateToday);
                 if (dateToday.indexOf(this.parsedDate[0]) !== -1) {
-                  if (this.tablesChangeBgColorIfAnreise[a].department === "steakRestaurant") {
-                    if (this.tablesSteakRestaurant[b]) {
-                      this.tablesSteakRestaurant[b].bgColor = "#0a7a74";
+                  if (this.tablesChangeBgColorIfAnreise[a].department === "iselerRestaurant") {
+                    if (this.tablesIselerRestaurant[b]) {
+                      this.tablesIselerRestaurant[b].bgColor = "#0a7a74";
                     }
                   }
                   else if (this.tablesChangeBgColorIfAnreise[a].department === "feuerstein") {
@@ -262,6 +279,11 @@ export class DepartmentsComponent  {
                   else if (this.tablesChangeBgColorIfAnreise[a].department === "panoramaRestaurant2") {
                     if (this.tablesPanoramaRestaurant2[b]) {
                       this.tablesPanoramaRestaurant2[b].bgColor = "#0a7a74";
+                    }
+                  }
+                  else if (this.tablesChangeBgColorIfAnreise[a].department === "panoramaRestaurant3") {
+                    if (this.tablesPanoramaRestaurant3[b]) {
+                      this.tablesPanoramaRestaurant3[b].bgColor = "#0a7a74";
                     }
                   }
                 }
@@ -282,9 +304,10 @@ export class DepartmentsComponent  {
       this.panoramaRestaurant1Component.transform(this.tablesPanoramaRestaurant1, term);
     } else if (this.showTablesPanoramaRestaurant2) {
       this.panoramaRestaurant2Component.transform(this.tablesPanoramaRestaurant2, term);
-    } else if (this.showTablesSteakRestaurant) {
-      this.steakRestaurantComponent.transform(this.tablesSteakRestaurant, term);
-
+    } else if (this.showTablesPanoramaRestaurant3) {
+      this.panoramaRestaurant3Component.transform(this.tablesPanoramaRestaurant3, term);
+    } else if (this.showTablesIselerRestaurant) {
+      this.iselerRestaurantComponent.transform(this.tablesIselerRestaurant, term);
     }
   }
 }

@@ -6,11 +6,13 @@ const
     removeTablesFeuerstein = require('./removeTablesFeuerstein.js'),
     removeTablesPanoramaRestaurant1 = require('./removeTablesPanoramaRestaurant1.js'),
     removeTablesPanoramaRestaurant2 = require('./removeTablesPanoramaRestaurant2.js'),
-    removeTablesSteakRestaurant = require('./removeTablesSteakRestaurant.js'),
+    removeTablesPanoramaRestaurant3 = require('./removeTablesPanoramaRestaurant3.js'),
+    removeTablesIselerRestaurant = require('./removeTablesIselerRestaurant.js'),
     addTablesFeuerstein = require('./addTablesFeuerstein.js'),
     addTablesPanoramaRestaurant1 = require('./addTablesPanoramaRestaurant1.js'),
     addTablesPanoramaRestaurant2 = require('./addTablesPanoramaRestaurant2.js'),
-    addTablesSteakRestaurant = require('./addTablesSteakRestaurant.js'),
+    addTablesPanoramaRestaurant3 = require('./addTablesPanoramaRestaurant3.js'),
+    addTablesIselerRestaurant = require('./addTablesIselerRestaurant.js'),
     Promise = require('promise'),
     dateFns = require('date-fns');
 
@@ -56,10 +58,11 @@ module.exports = {
         console.log('topValue' + topValue);
         console.log('leftValue' + leftValue);
 
+        removeTablesPanoramaRestaurant3.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         removeTablesPanoramaRestaurant2.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         removeTablesPanoramaRestaurant1.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         removeTablesFeuerstein.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        removeTablesSteakRestaurant.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        removeTablesIselerRestaurant.removeTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
 
         setTimeout(function () {
             db.oberjochTables.find(
@@ -117,7 +120,8 @@ module.exports = {
         addTablesFeuerstein.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         addTablesPanoramaRestaurant1.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
         addTablesPanoramaRestaurant2.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
-        addTablesSteakRestaurant.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesPanoramaRestaurant3.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
+        addTablesIselerRestaurant.addTable(db, tableNumber, departmentValue, topValue, leftValue, height, width);
 
         setTimeout(function () {
             db.oberjochTables.find(
@@ -210,8 +214,8 @@ module.exports = {
             console.log(departmentValueDB);
         }
 
-        if (departmentValue === "SteakRestaurant") {
-            departmentValueDB = "steakRestaurant";
+        if (departmentValue === "IselerRestaurant") {
+            departmentValueDB = "iselerRestaurant";
         }
         else if (departmentValue === "PanoramaRestaurant") {
             departmentValueDB = "panoramaRestaurant" + restaurant;
@@ -263,7 +267,7 @@ module.exports = {
         let dispenseTable = req.body;
         console.log(dispenseTable);
         let tablesTemp3 = [];
-        let departments = [ "panoramaRestaurant1", "feuerstein", "panoramaRestaurant2", "steakRestaurant"];
+        let departments = [ "panoramaRestaurant1", "feuerstein", "panoramaRestaurant2", "iselerRestaurant"];
         new Promise(function (resolve, reject) {
             if (dispenseTable.constructor === Array) {
             console.log("dispenseTable[h].table.groups.length > dispenseTable[h].group.length");

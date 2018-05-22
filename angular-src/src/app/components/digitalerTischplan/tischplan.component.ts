@@ -44,11 +44,13 @@ export class TischplanComponent {
   buttonBgColor3: string;
   buttonBgColor4: string;
   buttonBgColor5: string;
+  buttonBgColor6: string;
   fontColor1: string;
   fontColor2: string;
   fontColor3: string;
   fontColor4: string;
   fontColor5: string;
+  fontColor6: string;
   leftValues: LeftValue[];
   topValues: any[] = [];
   dateGenerated: any;
@@ -64,17 +66,19 @@ export class TischplanComponent {
   tempTablesArray2: any[] = [];
   tempTablesArray1: any[] = [];
   tempTablesArray3: any[] = [];
-  tablesSteakRestaurant: Table[] = [];
+  tablesIselerRestaurant: Table[] = [];
   tablesFeuerstein: Table[] = [];
   tablesPanoramaRestaurant1: Table[] = [];
   tablesPanoramaRestaurant2: Table[] = [];
+  tablesPanoramaRestaurant3: Table[] = [];
   title: string;
   filesToUpload: Array<File> = [];
   isDropped: any[] = [];
-  showTablesSteakRestaurant: boolean;
+  showTablesIselerRestaurant: boolean;
   showTablesFeuerstein: boolean;
   showTablesPanoramaRestaurant1: boolean;
   showTablesPanoramaRestaurant2: boolean;
+  showTablesPanoramaRestaurant3: boolean;
   showTablesAlle: boolean;
   roomNumber: string;
   tableNumber: string;
@@ -106,10 +110,12 @@ export class TischplanComponent {
   kiFeuerstein: any[] = [];
   erwPanoramaRestaurant2: any[] = [];
   kiPanoramaRestaurant2: any[] = [];
-  erwSteakRestaurant: any[] = [];
-  kiSteakRestaurant: any[] = [];
+  erwIselerRestaurant: any[] = [];
+  kiIselerRestaurant: any[] = [];
   erwPanoramaRestaurant1: any[] = [];
   kiPanoramaRestaurant1: any[] = [];
+  erwPanoramaRestaurant3: any[] = [];
+  kiPanoramaRestaurant3: any[] = [];
 
 
   constructor(private tischplanService: TischplanService, private http: Http, private _flashMessagesService: FlashMessagesService, private dragulaService: DragulaService) {
@@ -126,16 +132,19 @@ export class TischplanComponent {
     this.buttonBgColor3 = "0a7a74";
     this.buttonBgColor4 = "0a7a74";
     this.buttonBgColor5 = "0a7a74";
+    this.buttonBgColor6 = "0a7a74";
     this.fontColor1 = "f3efe4";
     this.fontColor2 = "f3efe4";
     this.fontColor3 = "f3efe4";
     this.fontColor4 = "f3efe4";
     this.fontColor5 = "f3efe4";
+    this.fontColor6 = "f3efe4";
     this.tablesOccupied = 0;
     this.backgroundColor = "ffffff";
     this.showTablesPanoramaRestaurant1 = false;
     this.showTablesPanoramaRestaurant2 = false;
-    this.showTablesSteakRestaurant = false;
+    this.showTablesPanoramaRestaurant3 = false;
+    this.showTablesIselerRestaurant = false;
     this.showTablesFeuerstein = false;
     this.showTablesAlle = false;
     this.term = "";
@@ -268,8 +277,8 @@ export class TischplanComponent {
     this.departmentmenuComponent.showFeuersteinFunction();
   }
 
-  showSteakRestaurant() {
-    this.departmentmenuComponent.showSteakRestaurantFunction();
+  showIselerRestaurant() {
+    this.departmentmenuComponent.showIselerRestaurantFunction();
   }
 
   showPanoramaRestaurant1() {
@@ -278,6 +287,9 @@ export class TischplanComponent {
 
   showPanoramaRestaurant2() {
     this.departmentmenuComponent.showPanoramaRestaurant2Function();
+  }
+  showPanoramaRestaurant3() {
+    this.departmentmenuComponent.showPanoramaRestaurant3Function();
   }
 
   updateImHausListeElement(x) {
@@ -341,7 +353,7 @@ export class TischplanComponent {
       console.log("gettables in updateAzList");
       this.getTables();
       setTimeout(() => {
-        this.tables = this.tablesFeuerstein.concat(this.tablesPanoramaRestaurant1).concat(this.tablesPanoramaRestaurant2).concat(this.tablesSteakRestaurant);
+        this.tables = this.tablesFeuerstein.concat(this.tablesPanoramaRestaurant1).concat(this.tablesPanoramaRestaurant2).concat(this.tablesPanoramaRestaurant3).concat(this.tablesIselerRestaurant);
         //console.log('this.tables: in updateAzList');
         console.log(this.tables);
         this.printComponent.formatAzListe(this.tables);
@@ -382,8 +394,11 @@ export class TischplanComponent {
             else if (tables[a].department === "panoramaRestaurant2") {
               this.tablesPanoramaRestaurant2 = tables[a].tables;
             }
-            else if (tables[a].department === "steakRestaurant") {
-              this.tablesSteakRestaurant = tables[a].tables;
+            else if (tables[a].department === "panoramaRestaurant3") {
+              this.tablesPanoramaRestaurant3 = tables[a].tables;
+            }
+            else if (tables[a].department === "iselerRestaurant") {
+              this.tablesIselerRestaurant = tables[a].tables;
             }
           }
         }
@@ -392,10 +407,11 @@ export class TischplanComponent {
         console.log(this.tablesFeuerstein);
         console.log(this.tablesPanoramaRestaurant1);
         console.log(this.tablesPanoramaRestaurant2);
-        console.log(this.tablesSteakRestaurant);
+        console.log(this.tablesPanoramaRestaurant3);
+        console.log(this.tablesIselerRestaurant);
         this.tablesTempAbreise = tables;
 
-        this.tables = this.tablesFeuerstein.concat(this.tablesPanoramaRestaurant1).concat(this.tablesPanoramaRestaurant2).concat(this.tablesSteakRestaurant);
+        this.tables = this.tablesFeuerstein.concat(this.tablesPanoramaRestaurant1).concat(this.tablesPanoramaRestaurant2).concat(this.tablesPanoramaRestaurant3).concat(this.tablesIselerRestaurant);
         //console.log(this.tables);
         this.changeBgColorIfAnreise();
         this.printComponent.formatAzListe(this.tables);

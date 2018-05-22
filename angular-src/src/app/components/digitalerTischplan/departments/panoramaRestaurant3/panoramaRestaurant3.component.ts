@@ -2,21 +2,21 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Table } from '../../../../../../Table';
 
 @Component({
-  selector: 'app-steak-restaurant',
-  templateUrl: 'steakRestaurant.component.html',
+  selector: 'app-panorama-restaurant-3',
+  templateUrl: 'panoramaRestaurant3.component.html',
   styleUrls: ['../../tischplan.component.css']
 })
-export class SteakRestaurantComponent implements OnInit {
+export class PanoramaRestaurant3Component implements OnInit {
 
-  @Input('tablesSteakRestaurant') tablesSteakRestaurant: Table[];
-  @Input('showTablesSteakRestaurant') showTablesSteakRestaurant: boolean;
+  @Input('tablesPanoramaRestaurant3') tablesPanoramaRestaurant3: Table[];
+  @Input('showTablesPanoramaRestaurant3') showTablesPanoramaRestaurant3: boolean;
   @Input('term') term: string;
   @Output()
   occupied:EventEmitter<any> = new EventEmitter();
   t: any;
 
   constructor() {
-   this.t = 3;
+    this.t = 4;
   }
 
   ngOnInit() {
@@ -39,10 +39,10 @@ export class SteakRestaurantComponent implements OnInit {
     console.log("term");
     console.log(term);
     if (term == "") {
-      this.tablesSteakRestaurant = tables;
+      this.tablesPanoramaRestaurant3 = tables;
     } else {
       if (Array.isArray(tables) && tables.length && term && term.length) {
-        this.tablesSteakRestaurant = tables.filter(item => {
+        this.tablesPanoramaRestaurant3 = tables.filter(item => {
           console.log(item);
           let keys = Object.keys(item);
           if (item.groups) {

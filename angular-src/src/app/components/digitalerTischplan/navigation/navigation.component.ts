@@ -128,7 +128,7 @@ export class NavigationComponent implements OnInit {
       tableToMove.department = "panoramaRestaurant1";
       indexQuell = 3;
     } else if (Number(quellTisch) >= 701 && Number(quellTisch) <= 715) {
-      tableToMove.department = "steakRestaurant";
+      tableToMove.department = "iselerRestaurant";
       indexQuell = 4;
     }
 
@@ -142,7 +142,7 @@ export class NavigationComponent implements OnInit {
       tableToMove.targetDepartment = "panoramaRestaurant1";
       indexZiel = 3;
     } else if (Number(zielTisch) >= 701 && Number(zielTisch) <= 715) {
-      tableToMove.targetDepartment = "steakRestaurant";
+      tableToMove.targetDepartment = "iselerRestaurant";
       indexZiel = 4;
     }
 

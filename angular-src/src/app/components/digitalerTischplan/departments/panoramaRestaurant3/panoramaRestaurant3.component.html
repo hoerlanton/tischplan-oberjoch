@@ -1,12 +1,12 @@
-<div *ngIf="showTablesSteakRestaurant">
-  <div *ngFor="let tableSteakRestaurant of tablesSteakRestaurant; let j = index;">
-    <div *ngIf="tablesSteakRestaurant[j] !== tablesSteakRestaurant[j+1]">
-      <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tableSteakRestaurant)">{{tableSteakRestaurant.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
-      <h4><b> Tisch:</b>{{tableSteakRestaurant.number}} </h4><br>
-      <div class='cards-container' id='containerSteakRestaurant' [ngStyle]="{'background-color': + tableSteakRestaurant.bgColor}">
-        <div class="table" [ngStyle]="{'background-color': '#' + tableSteakRestaurant.bgColor}">
-          <div *ngIf="tableSteakRestaurant.isBesetzt === 'true'">
-            <div *ngFor="let group of tableSteakRestaurant.groups; let j = index;">
+<div *ngIf="showTablesPanoramaRestaurant3">
+  <div *ngFor="let tablePanoramaRestaurant3 of tablesPanoramaRestaurant3; let j = index;">
+    <div *ngIf="tablesPanoramaRestaurant3[j] !== tablesPanoramaRestaurant3[j+1]">
+      <button style="float: right; margin: 20px 0px 20px 0px; background-color: #0a7a74; color: #FFFFFF" type="button" class="btn btn-send" (click)="occupy(tablePanoramaRestaurant3)">{{tablePanoramaRestaurant3.isBesetzt === 'true' ? 'FREI MACHEN' : ''}}</button>
+      <h4><b> Tisch:</b>{{tablePanoramaRestaurant3.number}} </h4><br>
+      <div class='cards-container' id='containerPanoramaRestaurant3' [ngStyle]="{'background-color': + tablePanoramaRestaurant3.bgColor}">
+        <div class="table" [ngStyle]="{'background-color': '#' + tablePanoramaRestaurant3.bgColor}">
+          <div *ngIf="tablePanoramaRestaurant3.isBesetzt === 'true'">
+            <div *ngFor="let group of tablePanoramaRestaurant3.groups; let j = index;">
               <div [style.border]="getStyle(group.bemerkungValue)">
                 <div *ngIf="group.nameValue">
                   <p style="background-color: #FFFFFF; padding: 10px">
@@ -27,9 +27,11 @@
                 </p>
               </div>
             </div>
+
+          </div>
         </div>
-        <div *ngIf="tableSteakRestaurant.placeholder === 'true'">
-          <p [dragula]='"evented-bag"' id="SteakRestaurant" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen! {{tableSteakRestaurant.number}} {{tableSteakRestaurant.department}} {{j}}</p>
+        <div *ngIf="tablePanoramaRestaurant3.placeholder === 'true'">
+          <p [dragula]='"evented-bag"' id="PanoramaRestaurant3" style="background-color: #9d9d9d; border: dashed 3px black; margin-top: 50px; opacity: 0.4; padding: 10px 10px 10px 10px">Listen-Element hier hin ziehen!{{tablePanoramaRestaurant3.number}} {{tablePanoramaRestaurant3.department}} {{j}}</p>
         </div>
       </div>
     </div>

@@ -20,15 +20,17 @@ export class FormComponent implements OnInit {
   @Input('tablesFeuerstein') tablesFeuerstein: Table[];
   @Input('tablesPanoramaRestaurant1') tablesPanoramaRestaurant1: Table[];
   @Input('tablesPanoramaRestaurant2') tablesPanoramaRestaurant2: Table[];
+  @Input('tablesPanoramaRestaurant3') tablesPanoramaRestaurant3: Table[];
   @Input('tablesTeestubeTeelounge') tablesTeestubeTeelounge: Table[];
-  @Input('tablesSteakRestaurant') tablesSteakRestaurant: Table[];
+  @Input('tablesIselerRestaurant') tablesIselerRestaurant: Table[];
   @Input('showInfoFormBool') showInfoFormBool: boolean;
   @Input('showNotizFormBool') showNotizFormBool: boolean;
   @Input('notizElements') notizElements: any;
   @Input('showTablesFeuerstein') showTablesFeuerstein: boolean;
   @Input('showTablesPanoramaRestaurant1') showTablesPanoramaRestaurant1: boolean;
   @Input('showTablesPanoramaRestaurant2') showTablesPanoramaRestaurant2: boolean;
-  @Input('showTablesSteakRestaurant') showTablesSteakRestaurant: boolean;
+  @Input('showTablesPanoramaRestaurant3') showTablesPanoramaRestaurant3: boolean;
+  @Input('showTablesIselerRestaurant') showTablesIselerRestaurant: boolean;
   @Input('showTablesAlle') showTablesAlle: boolean;
   @Output()
   notizResponse:EventEmitter<any> = new EventEmitter();
@@ -41,7 +43,7 @@ export class FormComponent implements OnInit {
   notizDate: any;
 
   constructor(private tischplanService: TischplanService, private _flashMessagesService: FlashMessagesService) {
-    this.departments = ["Feuerstein", "Panorama Restaurant 1", "Panorama Restaurant 2", "Steak Restaurant" ];
+    this.departments = ["Feuerstein", "Panorama Restaurant 1", "Panorama Restaurant 2", "Panorama Restaurant 3", "Iseler Restaurant" ];
   }
 
   ngOnInit() {
@@ -84,10 +86,10 @@ export class FormComponent implements OnInit {
                     this.tablesFeuerstein[i] = Information.tables[0];
                   }
                 }
-              } else if (Information.tables[0].department === "steakRestaurant") {
-                for (let i = 0; i < this.tablesSteakRestaurant.length; i++) {
-                  if (this.tablesSteakRestaurant[i].number === Information.tables[0].number) {
-                    this.tablesSteakRestaurant[i] = Information.tables[0];
+              } else if (Information.tables[0].department === "iselerRestaurant") {
+                for (let i = 0; i < this.tablesIselerRestaurant.length; i++) {
+                  if (this.tablesIselerRestaurant[i].number === Information.tables[0].number) {
+                    this.tablesIselerRestaurant[i] = Information.tables[0];
                   }
                 }
               } else if (Information.tables[0].department === "panoramaRestaurant1") {
@@ -102,8 +104,13 @@ export class FormComponent implements OnInit {
                     this.tablesPanoramaRestaurant2[i] = Information.tables[0];
                   }
                 }
-              }
-            }
+              } else if (Information.tables[0].department === "panoramaRestaurant3") {
+                for (let i = 0; i < this.tablesPanoramaRestaurant3.length; i++) {
+                  if (this.tablesPanoramaRestaurant3[i].number === Information.tables[0].number) {
+                    this.tablesPanoramaRestaurant3[i] = Information.tables[0];
+                  }
+                }
+              }            }
           });
         this.changeColorIfAnreiseExport.emit();
       }

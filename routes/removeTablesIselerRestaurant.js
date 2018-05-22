@@ -30,7 +30,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "10",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "702",
                                 "topValue": "380",
                                 "leftValue": "140",
@@ -77,7 +77,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "11",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "703",
                                 "topValue": "380",
                                 "leftValue": "50",
@@ -124,7 +124,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "11",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "703",
                                 "topValue": "380",
                                 "leftValue": "50",
@@ -170,7 +170,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "13",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "705",
                                 "topValue": "240",
                                 "leftValue": "190",
@@ -216,7 +216,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "707",
                                 "topValue": "100",
                                 "leftValue": "150",
@@ -262,7 +262,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "708",
                                 "topValue": "100",
                                 "leftValue": "240",
@@ -308,7 +308,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "708",
                                 "topValue": "100",
                                 "leftValue": "240",
@@ -354,7 +354,7 @@ module.exports = {
                         tables: {
                             $each: [     {
                                 "arrayIndex": "12",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "711",
                                 "topValue": "100",
                                 "leftValue": "600",
@@ -400,7 +400,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "713",
                                 "topValue": "310",
                                 "leftValue": "560",
@@ -446,7 +446,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "714",
                                 "topValue": "425",
                                 "leftValue": "530",
@@ -493,7 +493,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "15",
-                                "department": "steakRestaurant",
+                                "department": "iselerRestaurant",
                                 "number": "715",
                                 "topValue": "425",
                                 "leftValue": "400",
