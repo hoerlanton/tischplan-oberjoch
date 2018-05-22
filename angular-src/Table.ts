@@ -13,15 +13,13 @@ export class Table {
   borderRadius: string;
   transformValue: string;
   groups: [{
-    bestellerValue: string;
     nameValue: string;
     zimmernummerValue: string;
     kategorieValue: string;
     anreiseValue: string;
     abreiseValue: string;
     personenAnzahlValue: string;
-    preisValue: string;
-    wiederkehrerValue: string;
+    preisTypValue: string;
     bemerkungValue: string;
     departmentValue: string;
     newTraceText: string;

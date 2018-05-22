@@ -197,7 +197,7 @@ export class TischplanComponent {
     console.log("el = " + JSON.stringify(el));
 
     let information = args[0].innerText;
-    //console.log("information: " + information);
+    console.log("information: " + information);
     let informationElements = information.split(/\n/);
     //console.log(informationElements);
     let informationElements2 = [];
@@ -329,8 +329,8 @@ export class TischplanComponent {
           return 0;
         });
         this.imHausListeElemente = imHausListeElemente;
-        //console.log('IM-HAUS-LISTE:');
-        //console.log(this.imHausListeElemente);
+        console.log('IM-HAUS-LISTE:');
+        console.log(this.imHausListeElemente);
         setTimeout(() => {
           this.imHausListeComponent.sortList();
         }, 3000);

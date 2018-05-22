@@ -282,15 +282,17 @@ module.exports = {
                     }
                 });
             }).then(function () { // (**)
-                let today = dateFns.format(dispenseTable[0].date, 'DD/MM/YY');
+                let today = dateFns.format(dispenseTable[0].date, 'DD/MM/YYYY');
                 console.log(today);
                 let todayArray = today.split('/');
-                for (let q = 0; q < todayArray.length; q++) {
-                    if (todayArray[q].charAt(0) == 0) {
-                        todayArray[q] = todayArray[q].slice(1,2);
-                    }
-                }
-                today = todayArray.join('/');
+                //for (let q = 0; q < todayArray.length; q++) {
+                //    if (todayArray[q].charAt(0) == 0) {
+                //        todayArray[q] = todayArray[q].slice(1,2);
+                //    }
+                //}
+                today = todayArray.join('.');
+                console.log("TODAY!");
+                console.log(today);
                 console.log(JSON.stringify(tablesTemp3[0]));
                 for (let i = tablesTemp3[0].length - 1; i >= 0; i--) {
                     for (let k = tablesTemp3[0][i].tables.length - 1; k >= 0; k--) {

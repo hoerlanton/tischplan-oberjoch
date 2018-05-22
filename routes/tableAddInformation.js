@@ -18,7 +18,7 @@ module.exports = {
             abreiseValue = [],
             personenAnzahlValue = [],
             kategorieValue = [],
-            wiederkehrerValue = [],
+            preisTypValue = [],
             bestellerValue = [],
             departmentValue = "",
             tableValue = "",
@@ -47,20 +47,16 @@ module.exports = {
         if (informationElements2.length > 5) {
             console.log("Liste dropped");
 
-            bestellerValue.push(informationElements2[0].substring(1, informationElements2[0].length));
-            nameValue.push(informationElements2[1].substring(1, informationElements2[1].length));
-            personenAnzahlValue.push(informationElements2[2].substring(1, informationElements2[2].length));
+            nameValue.push(informationElements2[0].substring(1, informationElements2[0].length));
+            personenAnzahlValue.push(informationElements2[1].substring(1, informationElements2[1].length));
             //kategorieValue.push(informationElements2[1].substring(1, informationElements2[1].length));
-            zimmernummerValue.push(informationElements2[3].substring(1, informationElements2[3].length));
+            zimmernummerValue.push(informationElements2[2].substring(1, informationElements2[2].length));
             //preisTypValue.push(informationElements2[3].substring(1, informationElements2[3].length));
-            anreiseValue.push(informationElements2[4].substring(1, informationElements2[4].length));
-            abreiseValue.push(informationElements2[5].substring(1, informationElements2[5].length));
-            kategorieValue.push(informationElements2[6].substring(1, informationElements2[6].length));
-            wiederkehrerValue.push(informationElements2[7].substring(1, informationElements2[7].length));
-            for (let z = 8; z < informationElements2.length - 1; z++) {
-                bemerkungValueTemp += informationElements2[z].substring(1, informationElements2[z].length);
-            }
-            bemerkungValue.push(bemerkungValueTemp);
+            anreiseValue.push(informationElements2[3].substring(1, informationElements2[3].length));
+            abreiseValue.push(informationElements2[4].substring(1, informationElements2[4].length));
+            kategorieValue.push(informationElements2[5].substring(1, informationElements2[5].length));
+            preisTypValue.push(informationElements2[6].substring(1, informationElements2[6].length));
+            bemerkungValue.push(informationElements2[7].substring(1, informationElements2[7].length));
 
             //preisValue.push(informationElements2[11].substring(1, informationElements2[11].length));
             //vipValue.push(informationElements2[informationElements2.length - 3].substring(1, informationElements2[informationElements2.length - 3].length));
@@ -109,13 +105,12 @@ module.exports = {
                     {
                         $push: {
                             "tables.$.groups": {
-                                "bestellerValue": bestellerValue[0],
                                 "nameValue": nameValue[0],
                                 "zimmernummerValue": zimmernummerValue[0],
                                 "anreiseValue": anreiseValue[0],
                                 "abreiseValue": abreiseValue[0],
                                 "personenAnzahlValue": personenAnzahlValue[0],
-                                "wiederkehrerValue": wiederkehrerValue[0],
+                                "preisTypValue": preisTypValue[0],
                                 "kategorieValue": kategorieValue[0],
                                 "bemerkungValue": bemerkungValue[0],
                             }
@@ -141,7 +136,7 @@ module.exports = {
                 anreiseValue.push(umsetzen[0].groups[i].anreiseValue);
                 abreiseValue.push(umsetzen[0].groups[i].abreiseValue);
                 kategorieValue.push(umsetzen[0].groups[i].kategorieValue);
-                wiederkehrerValue.push(umsetzen[0].groups[i].wiederkehrerValue);
+                preisTypValue.push(umsetzen[0].groups[i].preisTypValue);
                 bemerkungValue.push(umsetzen[0].groups[i].bemerkungValue);
                 //vipValue.push(umsetzen[0].groups[i].vipValue);
                 //resStatusValue.push(umsetzen[0].groups[i].resStatusValue);
@@ -169,13 +164,12 @@ module.exports = {
                         {
                             $push: {
                                 "tables.$.groups": {
-                                    "bestellerValue": bestellerValue[i],
                                     "nameValue": nameValue[i],
                                     "zimmernummerValue": zimmernummerValue[i],
                                     "anreiseValue": anreiseValue[i],
                                     "abreiseValue": abreiseValue[i],
                                     "personenAnzahlValue": personenAnzahlValue[i],
-                                    "wiederkehrerValue": wiederkehrerValue[i],
+                                    "preisTypValue": preisTypValue[i],
                                     "kategorieValue": kategorieValue[i],
                                     "bemerkungValue": bemerkungValue[i],
                                 }

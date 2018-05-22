@@ -250,7 +250,7 @@ module.exports = {
                  nameValueArray.push(informationElements.groups[i].nameValue);
                  zimmernummerValueArray.push(informationElements.groups[i].zimmernummerValue);
 
-                db.oberjochAnreiseListe.update(
+                db.oberjochImHausListe.update(
                     {
                         name: nameValueArray[i],
                         "zimmernummer": zimmernummerValueArray[i],
@@ -268,13 +268,13 @@ module.exports = {
                     });
             }
         } else {
-            nameValueArray.push(informationElements[1].substring(1, informationElements[1].length));
-            zimmernummerValueArray.push(informationElements[3].substring(1, informationElements[3].length));
+            nameValueArray.push(informationElements[0].substring(1, informationElements[0].length));
+            zimmernummerValueArray.push(informationElements[2].substring(1, informationElements[2].length));
 
-            //console.log(nameValueArray[0]);
-            //console.log(zimmernummerValueArray[0]);
+            console.log(nameValueArray[0]);
+            console.log(zimmernummerValueArray[0]);
 
-            db.oberjochAnreiseListe.update(
+            db.oberjochImHausListe.update(
                 {
                     name: nameValueArray[0],
                     "zimmernummer": zimmernummerValueArray[0],
@@ -288,20 +288,20 @@ module.exports = {
                     if (err) {
                         console.log("Error");
                     }
-                    console.log("updateImHausListe Update successful");
+                    console.log("updateImHausListe Update successful", tables);
                 });
         }}
 
             setTimeout(function () {
-                db.oberjochAnreiseListe.find(
+                db.oberjochImHausListe.find(
                     {},
-                    function (err, oberjochAnreiseListe) {
+                    function (err, oberjochImHausListe) {
                         if (err) {
                             res.send(err);
                         }
-                        res.json(oberjochAnreiseListe);
-                        //console.log('oberjochImHausListe');
-                        //console.log(JSON.stringify(oberjochImHausListe));
+                        res.json(oberjochImHausListe);
+                        console.log('oberjochImHausListe');
+                        console.log(JSON.stringify(oberjochImHausListe));
                     });
             }, 700);
 
@@ -309,11 +309,11 @@ module.exports = {
     getImHausListe: function (req, res, db) {
         console.log("imHausListe get called");
     //Get guests from Mongo DB
-        db.oberjochImHausListe.find(function (err, imHausListe) {
+        db.oberjochImHausListe.find(function (err, oberjochImHausListe) {
             if (err) {
                 res.send(err);
             }
-            res.json(imHausListe);
+            res.json(oberjochImHausListe);
         });
     }
 };

@@ -374,7 +374,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                     for (let i = 0; i < kat.length; i++) {
                         //console.log(i);
                         imHausListe.push({
-                            "name": name[i],
+                            "name": name[i].substring(0, name[i].length-1),
                             "zimmernummer": zimmerNummer[i],
                             "kat": kat[i],
                             "anreise": anreise[i],
