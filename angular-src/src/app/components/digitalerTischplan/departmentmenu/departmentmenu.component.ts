@@ -257,6 +257,7 @@ export class DepartmentmenuComponent implements OnInit {
     this.showTablesPanoramaRestaurant1 = false;
     this.showTablesIselerRestaurant = false;
     this.showTablesPanoramaRestaurant2 = false;
+    this.showTablesPanoramaRestaurant3 = false;
     this.showTablesAlle = true;
 
     if (this.buttonBgColor5 === "154846") {
