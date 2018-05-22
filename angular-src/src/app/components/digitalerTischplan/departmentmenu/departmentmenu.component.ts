@@ -266,6 +266,7 @@ export class DepartmentmenuComponent implements OnInit {
       this.buttonBgColor2 = "0a7a74";
       this.buttonBgColor3 = "0a7a74";
       this.buttonBgColor4 = "0a7a74";
+      this.buttonBgColor6 = "0a7a74";
     } else {
       this.buttonBgColor5 = "0a7a74";
     }
@@ -275,6 +276,7 @@ export class DepartmentmenuComponent implements OnInit {
       this.fontColor1 = "f3efe4";
       this.fontColor2 = "f3efe4";
       this.fontColor3 = "f3efe4";
+      this.fontColor6 = "f3efe4";
     } else {
       this.fontColor5 = "f3efe4";
     }
