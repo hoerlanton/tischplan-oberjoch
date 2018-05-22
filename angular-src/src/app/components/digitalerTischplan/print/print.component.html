@@ -309,6 +309,15 @@
         </div>
       </div>
     </div>
+    <div *ngIf="showTablesPanoramaRestaurant3">
+      <div *ngFor="let tablePanoramaRestaurant3 of tablesPanoramaRestaurant3; let j = index;">
+        <div dropdownToggle type="button" class="t{{tablePanoramaRestaurant3.number}} table-item" [ngStyle]="{'top': tablePanoramaRestaurant3.topValue + 'px', 'left': tablePanoramaRestaurant3.leftValue + 'px', 'background-color': + tablePanoramaRestaurant3.bgColor, 'height': + tablePanoramaRestaurant3.height + 'px', 'width': + tablePanoramaRestaurant3.width + 'px', 'border': + tablePanoramaRestaurant3.border}" [style.border]="getStyle(tablesPanoramaRestaurant3[j].groups)" dropdown>
+          <div *ngIf="tablesPanoramaRestaurant3[j] !== tablesPanoramaRestaurant3[j+1]">
+            <p><b>{{tablePanoramaRestaurant3.number}} <br>{{erwPanoramaRestaurant3[j]}}</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div *ngIf="showTablesIselerRestaurant">
       <div *ngFor="let tableIselerRestaurant of tablesIselerRestaurant; let j = index;">
         <div dropdownToggle type="button" class="t{{tableIselerRestaurant.number}} table-item" [ngStyle]="{'top': tableIselerRestaurant.topValue + 'px', 'left': tableIselerRestaurant.leftValue + 'px', 'background-color': + tableIselerRestaurant.bgColor, 'height': + tableIselerRestaurant.height + 'px', 'width': + tableIselerRestaurant.width + 'px', 'border': + tableIselerRestaurant.border}" [style.border]="getStyle(tablesIselerRestaurant[j].groups)" dropdown>
