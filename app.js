@@ -244,23 +244,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                 if (j === 2) {
                                     erwKi.push(doc.content[i].content[j].value);
                                 }
-                                if (j === 3 && doc.content[i].content[j+1] === " ") {
-                                    if (j === 3 && doc.content[i].content[j + 2]) {
-                                        name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 2].value);
-                                    }
-                                    if (j === 6) {
-                                        anrede.push(doc.content[i].content[j].value);
-                                    }
-                                    if (j === 7) {
-                                        anreise.push(doc.content[i].content[j].value);
-                                    }
-                                    if (j === 8) {
-                                        abreise.push(doc.content[i].content[j].value);
-                                    }
-                                    if (j === 9) {
-                                        preis.push(doc.content[i].content[j].value);
-                                    }
-                                } else {
+                                if (doc.content[i].content[6].value.indexOf("2018") != -1) {
                                     if (j === 3 && doc.content[i].content[j + 1]) {
                                         name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 1].value);
                                     }
@@ -274,6 +258,22 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                         abreise.push(doc.content[i].content[j].value);
                                     }
                                     if (j === 8) {
+                                        preis.push(doc.content[i].content[j].value);
+                                    }
+                                } else {
+                                    if (j === 3 && doc.content[i].content[j + 2] && doc.content[i].content[j + 1]) {
+                                        name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 1].value + ", " + doc.content[i].content[j + 2].value);
+                                    }
+                                    if (j === 6) {
+                                        anrede.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 7) {
+                                        anreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 8) {
+                                        abreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 9) {
                                         preis.push(doc.content[i].content[j].value);
                                     }
                                 }
