@@ -233,7 +233,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                             if(JSON.stringify(doc.content[i]).indexOf("Mayer") !== -1) {
                                 console.log(doc.content[i]);
                             }
-                            if (doc.content[i].content.length > 8 && doc.content[i].content[1].value.length === 3 && '0123456789'.indexOf(doc.content[i].content[1].value.charAt(0)) !== -1) {
+                            if (doc.content[i].content.length >= 8 && doc.content[i].content[1].value.length === 3 && '0123456789'.indexOf(doc.content[i].content[1].value.charAt(0)) !== -1) {
                                 if (j === 0) {
                                     kat.push(doc.content[i].content[j].value);
                                 }
@@ -342,7 +342,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                 // }
                                 //console.log(doc.content[i].content[j]);
 
-                                if (doc.content[i].content[j] && doc.content[i + 1].content[j]) {
+                                if (doc.content[i].content[j] && doc.content[i + 1].content[j] && doc.content[i].content.length < 8) {
                                     if (doc.content[i].content[j].value.charAt(doc.content[i].content[j].value.length - 1) !== "]"                          //If last letter is not "]"
                                         && doc.content[i + 1].content[0].value.charAt(doc.content[i + 1].content[0].value.length - 1) !== "]"
                                         && !doc.content[i + 1].content[1]                                                                                   //If last letter of next array value is not "]"
@@ -358,7 +358,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                     }
                                 }
 
-                                if (doc.content[i].content[j] && doc.content[i + 1].content[1]) {
+                                if (doc.content[i].content[j] && doc.content[i + 1].content[1] && doc.content[i].content.length < 8) {
                                     if (doc.content[i].content[j].value.charAt(doc.content[i].content[j].value.length - 1) !== "]"                          //If last letter is not "]"
                                         && doc.content[i + 1].content[0].value.charAt(doc.content[i + 1].content[0].value.length - 1) !== "]"
                                         && doc.content[i + 1].content[1].value.charAt(doc.content[i + 1].content[1].value.length - 1) !== "]"                                                                            //If last letter of next array value is not "]"
@@ -374,7 +374,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                     }
                                 }
 
-                                if (doc.content[i].content[j] && !doc.content[i + 1].content[j]) {
+                                if (doc.content[i].content[j] && !doc.content[i + 1].content[j] && doc.content[i].content.length < 8) {
                                     if (doc.content[i].content[j].value.charAt(doc.content[i].content[j].value.length - 1) !== "]"
                                         && !doc.content[i + 1].content[j]
                                         && doc.content[i].content[j].value.indexOf("2018") === -1
