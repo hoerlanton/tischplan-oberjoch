@@ -129,6 +129,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
             //console.log(JSON.stringify(doc));
         });
         parseRTF.stream(fs.createReadStream(String("./uploads/" + uploadedFileName)), (err, doc) => {
+            console.log(JSON.stringify(doc));
 
             let name = [];
             let zimmerNummer = [];
@@ -243,20 +244,38 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                 if (j === 2) {
                                     erwKi.push(doc.content[i].content[j].value);
                                 }
-                                if (j === 3 && doc.content[i].content[j + 2]) {
-                                    name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 2].value);
-                                }
-                                if (j === 6) {
-                                    anrede.push(doc.content[i].content[j].value);
-                                }
-                                if (j === 7) {
-                                    anreise.push(doc.content[i].content[j].value);
-                                }
-                                if (j === 8) {
-                                    abreise.push(doc.content[i].content[j].value);
-                                }
-                                if (j === 9) {
-                                    preis.push(doc.content[i].content[j].value);
+                                if (j === 3 && doc.content[i].content[j+1] === " ") {
+                                    if (j === 3 && doc.content[i].content[j + 2]) {
+                                        name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 2].value);
+                                    }
+                                    if (j === 6) {
+                                        anrede.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 7) {
+                                        anreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 8) {
+                                        abreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 9) {
+                                        preis.push(doc.content[i].content[j].value);
+                                    }
+                                } else {
+                                    if (j === 3 && doc.content[i].content[j + 1]) {
+                                        name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 1].value);
+                                    }
+                                    if (j === 5) {
+                                        anrede.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 6) {
+                                        anreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 7) {
+                                        abreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 8) {
+                                        preis.push(doc.content[i].content[j].value);
+                                    }
                                 }
                             } else if (doc.content[i].content.length > 8 && doc.content[i].content[1].value.length === 1 && '0123456789'.indexOf(doc.content[i].content[1].value.charAt(0)) !== -1) {
                                 if (j === 0) {
@@ -377,6 +396,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                             "name": name[i].substring(0, name[i].length-1),
                             "zimmernummer": zimmerNummer[i],
                             "kat": kat[i],
+                            "anrede": anrede[i],
                             "anreise": anreise[i],
                             "abreise": abreise[i],
                             "erwKi": erwKi[i],
@@ -400,9 +420,11 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                 console.log("Promise Rejected");
             });
         });
+
         const parser = parseRTF((err, doc) => {
         });
     }
+
 });
 //data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header:1});
 //console.log(data);

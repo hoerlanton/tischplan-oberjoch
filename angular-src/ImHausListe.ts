@@ -3,6 +3,7 @@ export class ImHausListe {
   kat: string;
   name: string;
   erwKi: string;
+  anrede: string;
   anreise: string;
   abreise: string;
   preis: string;

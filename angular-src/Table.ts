@@ -14,6 +14,7 @@ export class Table {
   transformValue: string;
   groups: [{
     nameValue: string;
+    anredeValue: string;
     zimmernummerValue: string;
     kategorieValue: string;
     anreiseValue: string;
