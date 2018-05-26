@@ -110,6 +110,11 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
             //console.log(JSON.stringify(doc));
         });
         parseRTF.stream(fs.createReadStream(String("./uploads/" + uploadedFileName)), (err, doc) => {
+            if (uploadedFileName.indexOf("rtf") !== -1) {
+                res.send(req.files);
+        } else {
+        res.send(JSON.stringify("Error, falscher Datentyp"));
+        }
             console.log(JSON.stringify(doc));
 
             let name = [];
