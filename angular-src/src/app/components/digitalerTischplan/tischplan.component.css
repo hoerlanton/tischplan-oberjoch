@@ -121,7 +121,7 @@ span {
 
 }
 
-#containerFeuerstein, #containerPanoramaRestaurant1, #containerPanoramaRestaurant2, #containerIselerRestaurant {
+#containerFeuerstein, #containerPanoramaRestaurant1, #containerPanoramaRestaurant2, #containerIselerRestaurant #containerPanoramaRestaurant3{
   border-radius: 3px;
   border: solid 1px grey;
 }

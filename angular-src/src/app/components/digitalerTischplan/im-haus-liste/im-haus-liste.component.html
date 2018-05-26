@@ -2,7 +2,7 @@
 <div class="row1">
   <div class='wrapper'>
     <div *ngFor="let imHausListeElement of imHausListeElemente">
-          <div *ngIf="imHausListeElement.bemerkung === '-'">
+          <div *ngIf="imHausListeElement.bemerkung === '-' && !imHausListeElement.isAnreise">
             <div class='cards-container' id='container1' [dragula]='"evented-bag"'>
               <div class="card" id="card1" [ngStyle]="{'background-color': '#' + imHausListeElement.bgColor}">
             <p>
