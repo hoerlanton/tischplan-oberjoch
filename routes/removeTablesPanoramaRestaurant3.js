@@ -31,7 +31,7 @@ module.exports = {
                         tables: {
                             $each: [ {
                                 "arrayIndex": "14",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "203",
                                 "topValue": "350",
                                 "leftValue": "365",
@@ -80,7 +80,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "202",
                                 "topValue": "330",
                                 "leftValue": "450",
@@ -129,7 +129,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "203",
                                 "topValue": "350",
                                 "leftValue": "365",
@@ -176,7 +176,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "13",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "211",
                                 "topValue": "170",
                                 "leftValue": "417",
@@ -223,7 +223,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "212",
                                 "topValue": "150",
                                 "leftValue": "510",
@@ -270,7 +270,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "14",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "212",
                                 "topValue": "150",
                                 "leftValue": "510",
@@ -318,7 +318,7 @@ module.exports = {
                         tables: {
                             $each: [ {
                                 "arrayIndex": "10",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "205",
                                 "topValue": "400",
                                 "leftValue": "200",
@@ -365,7 +365,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "0",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "206",
                                 "topValue": "400",
                                 "leftValue": "140",
@@ -412,7 +412,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "0",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "207",
                                 "topValue": "400",
                                 "leftValue": "75",
@@ -459,7 +459,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "0",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "206",
                                 "topValue": "400",
                                 "leftValue": "140",
@@ -506,7 +506,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "0",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "207",
                                 "topValue": "400",
                                 "leftValue": "75",
@@ -553,7 +553,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "0",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "207",
                                 "topValue": "400",
                                 "leftValue": "75",
@@ -599,7 +599,7 @@ module.exports = {
                         tables: {
                             $each: [{
                                 "arrayIndex": "11",
-                                "department": "panoramaRestaurant2",
+                                "department": "panoramaRestaurant3",
                                 "number": "209",
                                 "topValue": "210",
                                 "leftValue": "140",
