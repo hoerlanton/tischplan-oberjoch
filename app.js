@@ -129,7 +129,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
             //console.log(JSON.stringify(doc));
         });
         parseRTF.stream(fs.createReadStream(String("./uploads/" + uploadedFileName)), (err, doc) => {
-            console.log(JSON.stringify(doc));
+            //console.log(JSON.stringify(doc));
 
             let name = [];
             let zimmerNummer = [];
@@ -230,9 +230,6 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                     continue;
                                 }
                             }
-                            if(JSON.stringify(doc.content[i]).indexOf("Mayer") !== -1) {
-                                console.log(doc.content[i]);
-                            }
                             if (doc.content[i].content.length >= 8 && doc.content[i].content[1].value.length === 3 && '0123456789'.indexOf(doc.content[i].content[1].value.charAt(0)) !== -1) {
                                 if (j === 0) {
                                     kat.push(doc.content[i].content[j].value);
@@ -257,6 +254,13 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                     if (j === 7) {
                                         abreise.push(doc.content[i].content[j].value);
                                     }
+                                    if (j === 7 && doc.content[i].content.length < 9) {
+                                        console.log("doc.content[i].content.length < 9");
+                                        console.log(doc.content[i].content);
+                                        console.log(doc.content[i].content.length);
+                                        console.log("-");
+                                        preis.push("-");
+                                    }
                                     if (j === 8) {
                                         preis.push(doc.content[i].content[j].value);
                                     }
@@ -272,6 +276,12 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                     }
                                     if (j === 8) {
                                         abreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (doc.content[i].content.length < 10) {
+                                        console.log("doc.content[i].content.length < 10");
+                                        console.log(doc.content[i].content.length);
+                                        console.log("-");
+                                        preis.push("-");
                                     }
                                     if (j === 9) {
                                         preis.push(doc.content[i].content[j].value);
@@ -298,11 +308,16 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                 if (j === 7) {
                                     abreise.push(doc.content[i].content[j].value);
                                 }
+                                if (doc.content[i].content.length < 9) {
+                                    console.log("doc.content[i].content.length < 9");
+                                    console.log(doc.content[i].content.length);
+                                    preis.push("-");
+                                    console.log("-");
+                                }
                                 if (j === 8) {
                                     preis.push(doc.content[i].content[j].value);
                                 }
-                            }
-                            else {
+                            } else {
                                 if (doc.content[i + 1].content[j] && doc.content[i].content[j]) {
                                     if (doc.content[i + 1].content[j].value.charAt(doc.content[i + 1].content[j].value.length - 1) === "]") {
                                         //console.log(doc.content[i].content[j].value + doc.content[i+1].content[j].value);

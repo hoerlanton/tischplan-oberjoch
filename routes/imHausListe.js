@@ -211,14 +211,14 @@ module.exports = {
         //console.log(req.body);
         let imHausListe = req.body;
         new Promise(function (resolve, reject) {
-            db.oberjochImHausListe.remove(function (err, imHausListe) {
+            db.oberjochImHausListe.remove({}, function (err, imHausListe) {
                 if (err) {
                     //res.send(err);
                     reject();
                 }
                 //res.json(imHausListe);
                 resolve();
-                console.log("imHausListe save called");
+                console.log("imHausListe remove resolved");
             });
         }).then(function () { // (**)
             db.oberjochImHausListe.save(imHausListe, function (err, imHausListe) {
