@@ -344,6 +344,8 @@ module.exports = {
                             db.oberjochTables.save(tablesTemp3[0][1]);
                             db.oberjochTables.save(tablesTemp3[0][2]);
                             db.oberjochTables.save(tablesTemp3[0][3]);
+                            db.oberjochTables.save(tablesTemp3[0][4]);
+
                         }
                     });
             });
