@@ -102,34 +102,15 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     let data = '';
     let csvRow = '';
     let json = [];
+    let doc = {};
 
     //let workbook2 = XLSX.utils.sheet_to_json(String("./uploads/" + uploadedFileName));
 
-    if (uploadedFileName.indexOf("xlsx") != -1){
-
-        let workbook = XLSX.readFile(String("./uploads/" + uploadedFileName));
-
-        //console.log(JSON.stringify(workbook.Props));
-        //console.log(JSON.stringify(workbook.SheetNames));
-        //console.log(JSON.stringify(workbook.Sheets[workbook.SheetNames[0]]));
-        //console.log(JSON.stringify(workbook.vbaraw));
-        //console.log(JSON.stringify(workbook.Workbook));
-        /* DO SOMETHING WITH workbook HERE */
-        liste = JSON.stringify(workbook.Sheets[workbook.SheetNames[0]]);
-        //console.log(JSON.stringify(workbook2));
-
-        if (liste.indexOf("Anreise-Übersicht") != -1) {
-            postAnreiseListeToDB();
-        } else {
-            postImHausListeToDB();
-        }
-        res.send(req.files);
-    } else {
         parseRTF.string('{\\rtf1\\ansi\\b hi there\\b0}', (err, doc) => {
             //console.log(JSON.stringify(doc));
         });
         parseRTF.stream(fs.createReadStream(String("./uploads/" + uploadedFileName)), (err, doc) => {
-            //console.log(JSON.stringify(doc));
+            console.log(JSON.stringify(doc));
 
             let name = [];
             let zimmerNummer = [];
@@ -142,6 +123,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
             let anrede = [];
             let k = 0;
             let i = 0;
+            imHausListe = [];
             //let spliced = false;
 
             //Add Ö Ä Ü / ö ä ü to other words
@@ -438,7 +420,6 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
 
         const parser = parseRTF((err, doc) => {
         });
-    }
 
 });
 //data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header:1});

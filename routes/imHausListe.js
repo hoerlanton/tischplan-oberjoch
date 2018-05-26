@@ -210,8 +210,9 @@ module.exports = {
          */
         //console.log(req.body);
         let imHausListe = req.body;
+        console.log();
         new Promise(function (resolve, reject) {
-            db.oberjochImHausListe.remove({}, function (err, imHausListe) {
+            db.oberjochImHausListe.remove(function (err, imHausListe) {
                 if (err) {
                     //res.send(err);
                     reject();
@@ -221,13 +222,14 @@ module.exports = {
                 console.log("imHausListe remove resolved");
             });
         }).then(function () { // (**)
-            db.oberjochImHausListe.save(imHausListe, function (err, imHausListe) {
+             db.oberjochImHausListe.save(imHausListe, function (err, imHausListe) {
                 if (err) {
                     res.send(err);
                 }
                 res.json(imHausListe);
                 console.log("imHausListe save called");
-            });
+                 console.log(imHausListe);
+             });
         });
     },
     updateImHausListe: function (req, res, db) {
