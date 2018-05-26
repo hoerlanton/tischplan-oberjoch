@@ -271,7 +271,7 @@ module.exports = {
             }
         } else {
             nameValueArray.push(informationElements[0].substring(1, informationElements[0].length));
-            zimmernummerValueArray.push(informationElements[2].substring(1, informationElements[2].length));
+            zimmernummerValueArray.push(informationElements[3].substring(1, informationElements[3].length));
 
             console.log(nameValueArray[0]);
             console.log(zimmernummerValueArray[0]);
