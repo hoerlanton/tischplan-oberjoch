@@ -174,6 +174,12 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                 //    console.log(doc.content[i].content[k].value);
                                 //}
                             }
+                            if (doc.content[i].content[k] && doc.content[i].content[k - 1]) {
+                                if (doc.content[i].content[k].value === "18") {
+                                    doc.content[i].content[k - 1].value += doc.content[i].content[k].value;
+                                    doc.content[i].content.splice(k, 1);
+                                }
+                            }
                         }
                     }
                     resolve();
@@ -201,6 +207,15 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                         || doc.content[i - 1].content[j].value == "rtaxe"
                                         || doc.content[i - 1].content[j].value == "Ku")
                                         && doc.content[i].content[j].value.charAt(doc.content[i].content[j].value.length - 1) === "]") {
+                                        continue;
+                                    }
+                                }
+                                if (doc.content[i - 1].content[j] && doc.content[i].content[j+1]) {
+                                    if ((doc.content[i - 1].content[j].value == "Kurtaxe"
+                                        || doc.content[i - 1].content[j].value == "rtaxe"
+                                        || doc.content[i - 1].content[j].value == "Ku")
+                                        && (doc.content[i].content[j].value.charAt(doc.content[i].content[j].value.length - 1) === "]" || doc.content[i].content[j+1].value.charAt(doc.content[i].content[j+1].value.length - 1) === "]")) {
+                                        j++;
                                         continue;
                                     }
                                 }
@@ -296,13 +311,124 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                     abreise.push(doc.content[i].content[j].value);
                                 }
                                 if (doc.content[i].content.length < 9) {
-                                    console.log("doc.content[i].content.length < 9");
-                                    console.log(doc.content[i].content.length);
+                                    //console.log("doc.content[i].content.length < 9");
+                                    //console.log(doc.content[i].content.length);
                                     preis.push("-");
-                                    console.log("-");
+                                    //console.log("-");
                                 }
                                 if (j === 8) {
                                     preis.push(doc.content[i].content[j].value);
+                                }
+                            } else if (doc.content[i].content.length < 8 && doc.content[i].content.length > 6 && doc.content[i].content[0].value.length === 1 && '0123456789'.indexOf(doc.content[i].content[0].value.charAt(0)) !== -1) {
+                                if (j === 0) {
+                                    erwKi.push(doc.content[i].content[j].value);
+                                    bemerkung.push("-");
+                                    zimmerNummer.push("-");
+                                    kat.push("-");
+                                }
+                                if (doc.content[i].content[4].value.indexOf("2018") != -1) {
+                                    if (j === 1 && doc.content[i].content[j + 1]) {
+                                        name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 1].value);
+                                    }
+                                    if (j === 3) {
+                                        anrede.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 4) {
+                                        anreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 5) {
+                                        abreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 5 && doc.content[i].content.length < 7) {
+                                        console.log("doc.content[i].content.length < 7");
+                                        console.log(doc.content[i].content);
+                                        console.log(doc.content[i].content.length);
+                                        console.log("-");
+                                        preis.push("-");
+                                    }
+                                    if (j === 6) {
+                                        preis.push(doc.content[i].content[j].value);
+                                    }
+                                } else {
+                                    if (j === 1 && doc.content[i].content[j + 2] && doc.content[i].content[j + 1]) {
+                                        name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 1].value + ", " + doc.content[i].content[j + 2].value);
+                                    }
+                                    if (j === 4) {
+                                        anrede.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 5) {
+                                        anreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (j === 6) {
+                                        abreise.push(doc.content[i].content[j].value);
+                                    }
+                                    if (doc.content[i].content.length < 8) {
+                                        console.log("doc.content[i].content.length < 10");
+                                        console.log(doc.content[i].content.length);
+                                        console.log("-");
+                                        preis.push("-");
+                                    }
+                                    if (j === 7) {
+                                        preis.push(doc.content[i].content[j].value);
+                                    }
+                                }
+                            } else if (doc.content[i].content.length === 8) {
+                                if (doc.content[i].content[1]) {
+                                    if (doc.content[i].content[1].value.length === 1 && '0123456789'.indexOf(doc.content[i].content[1].value.charAt(0)) !== -1) {
+                                        if (j === 0) {
+                                            kat.push(doc.content[i].content[j].value);
+                                            zimmerNummer.push("-");
+                                        }
+                                        if (j === 1) {
+                                            erwKi.push(doc.content[i].content[j].value);
+                                        }
+                                        if (doc.content[i].content[5].value.indexOf("2018") != -1) {
+                                            if (j === 2 && doc.content[i].content[j + 1]) {
+                                                name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 1].value);
+                                            }
+                                            if (j === 4) {
+                                                anrede.push(doc.content[i].content[j].value);
+                                            }
+                                            if (j === 5) {
+                                                anreise.push(doc.content[i].content[j].value);
+                                            }
+                                            if (j === 6) {
+                                                abreise.push(doc.content[i].content[j].value);
+                                            }
+                                            if (j === 6 && doc.content[i].content.length < 8) {
+                                                console.log("doc.content[i].content.length < 7");
+                                                console.log(doc.content[i].content);
+                                                console.log(doc.content[i].content.length);
+                                                console.log("-");
+                                                preis.push("-");
+                                            }
+                                            if (j === 7) {
+                                                preis.push(doc.content[i].content[j].value);
+                                            }
+                                        } else {
+                                            if (j === 2 && doc.content[i].content[j + 2] && doc.content[i].content[j + 1]) {
+                                                name.push(doc.content[i].content[j].value + ", " + doc.content[i].content[j + 1].value + ", " + doc.content[i].content[j + 2].value);
+                                            }
+                                            if (j === 5) {
+                                                anrede.push(doc.content[i].content[j].value);
+                                            }
+                                            if (j === 6) {
+                                                anreise.push(doc.content[i].content[j].value);
+                                            }
+                                            if (j === 7) {
+                                                abreise.push(doc.content[i].content[j].value);
+                                            }
+                                            if (doc.content[i].content.length < 9) {
+                                                console.log("doc.content[i].content.length < 10");
+                                                console.log(doc.content[i].content.length);
+                                                console.log("-");
+                                                preis.push("-");
+                                            }
+                                            if (j === 8) {
+                                                preis.push(doc.content[i].content[j].value);
+                                            }
+                                        }
+                                    }
                                 }
                             } else {
                                 if (doc.content[i + 1].content[j] && doc.content[i].content[j]) {
