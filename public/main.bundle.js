@@ -2767,7 +2767,10 @@ var NavigationComponent = (function () {
                 });
             }
         })
-            .subscribe(function (files) { return _this.reloadLists.emit(); });
+            .subscribe(function (files) { return console.log("files", files); });
+        setTimeout(function () {
+            _this.reloadLists.emit();
+        }, 5000);
     };
     NavigationComponent.prototype.dispenseIfAbreiseHeute = function () {
         this.dateTodayGenerated = new Date(); //Today
