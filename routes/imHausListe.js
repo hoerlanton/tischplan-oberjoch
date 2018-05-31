@@ -228,7 +228,7 @@ module.exports = {
                 }
                 res.json(imHausListe);
                 console.log("imHausListe save called");
-                 console.log(imHausListe);
+                 //console.log(imHausListe);
              });
         });
     },

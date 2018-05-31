@@ -93,7 +93,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
     console.log("console log in app.post upload", 'files', req.files);
     //res.send(req.files);
     console.log("req.files:");
-    console.log(req.files);
+    //console.log(req.files);
 
     let uploadedFileName = req.files[0].filename.replace(/ /g, "");
 
@@ -255,10 +255,10 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                         abreise.push(doc.content[i].content[j].value);
                                     }
                                     if (j === 7 && doc.content[i].content.length < 9) {
-                                        console.log("doc.content[i].content.length < 9");
-                                        console.log(doc.content[i].content);
-                                        console.log(doc.content[i].content.length);
-                                        console.log("-");
+                                        //console.log("doc.content[i].content.length < 9");
+                                        //console.log(doc.content[i].content);
+                                        //console.log(doc.content[i].content.length);
+                                        //console.log("-");
                                         preis.push("-");
                                     }
                                     if (j === 8) {
@@ -278,9 +278,9 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                         abreise.push(doc.content[i].content[j].value);
                                     }
                                     if (doc.content[i].content.length < 10) {
-                                        console.log("doc.content[i].content.length < 10");
-                                        console.log(doc.content[i].content.length);
-                                        console.log("-");
+                                        //console.log("doc.content[i].content.length < 10");
+                                        //console.log(doc.content[i].content.length);
+                                        //console.log("-");
                                         preis.push("-");
                                     }
                                     if (j === 9) {
@@ -338,10 +338,10 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                         abreise.push(doc.content[i].content[j].value);
                                     }
                                     if (j === 5 && doc.content[i].content.length < 7) {
-                                        console.log("doc.content[i].content.length < 7");
-                                        console.log(doc.content[i].content);
-                                        console.log(doc.content[i].content.length);
-                                        console.log("-");
+                                        //console.log("doc.content[i].content.length < 7");
+                                        //console.log(doc.content[i].content);
+                                        //console.log(doc.content[i].content.length);
+                                        //console.log("-");
                                         preis.push("-");
                                     }
                                     if (j === 6) {
@@ -361,9 +361,9 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                         abreise.push(doc.content[i].content[j].value);
                                     }
                                     if (doc.content[i].content.length < 8) {
-                                        console.log("doc.content[i].content.length < 10");
-                                        console.log(doc.content[i].content.length);
-                                        console.log("-");
+                                        //console.log("doc.content[i].content.length < 10");
+                                        //console.log(doc.content[i].content.length);
+                                        //console.log("-");
                                         preis.push("-");
                                     }
                                     if (j === 7) {
@@ -376,6 +376,7 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                         if (j === 0) {
                                             kat.push(doc.content[i].content[j].value);
                                             zimmerNummer.push("-");
+                                            bemerkung.push("-");
                                         }
                                         if (j === 1) {
                                             erwKi.push(doc.content[i].content[j].value);
@@ -394,10 +395,10 @@ app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
                                                 abreise.push(doc.content[i].content[j].value);
                                             }
                                             if (j === 6 && doc.content[i].content.length < 8) {
-                                                console.log("doc.content[i].content.length < 7");
-                                                console.log(doc.content[i].content);
-                                                console.log(doc.content[i].content.length);
-                                                console.log("-");
+                                                //console.log("doc.content[i].content.length < 7");
+                                                //console.log(doc.content[i].content);
+                                                //console.log(doc.content[i].content.length);
+                                                //console.log("-");
                                                 preis.push("-");
                                             }
                                             if (j === 7) {
