@@ -224,10 +224,7 @@ export class NavigationComponent implements OnInit {
           timeout: 10000
         })
       }})
-      .subscribe(files => console.log("files", files));
-    setTimeout(() => {
-      this.reloadLists.emit();
-    }, 3000);
+      .subscribe(files => this.reloadLists.emit());
   }
 
   dispenseIfAbreiseHeute() {
